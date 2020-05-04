@@ -124,13 +124,17 @@ author: Lee Je Young
 <hr />
 <center>
 <h4> DIGITS Examples</h4>
-</center>
+
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/9.png" width="600" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="/assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<Digits Data Load>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/10.png" width="600" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="/assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<Digits Train model 1>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/11.png" width="600" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="/assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<Digits Train model 1>
+<br />
 
 <br /> 
 <hr />
