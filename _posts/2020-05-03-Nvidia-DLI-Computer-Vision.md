@@ -30,7 +30,7 @@ author: Lee Je Young
 
 ### Review
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/1.png" width="30%" height="20%" layout="responsive" alt="" class="mb3"></amp-img>
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
