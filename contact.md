@@ -5,7 +5,7 @@ permalink: /contact/
 ---
 
 
-<h1>Contact List</h1>
+<h1>Contact List</h1><br /><br />
 
 <ul>
   {% for post in site.posts %}
