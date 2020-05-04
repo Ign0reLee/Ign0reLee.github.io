@@ -30,11 +30,13 @@ author: Lee Je Young
 
 ### Review
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/1.png" width="30%" height="20%" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<hr />
+
+#### Summary
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
@@ -56,7 +58,9 @@ author: Lee Je Young
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/13.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/14.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<hr />
+
+#### Experience
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/15.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
@@ -64,7 +68,9 @@ author: Lee Je Young
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/17.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/18.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<hr />
+
+#### Recommendation
 
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/19.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
