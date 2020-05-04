@@ -7,7 +7,7 @@ date: 2020-05-03 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, Computer Vision, Deep Learning, Machine Learning]
 author: Lee Je Young
 ---
-
+<meta charset="UTF8">
 <h1>Nvidia Deep Learning Institute Review<br /></h1>
 
 <br />우연치 않은 기회로 DLI리뷰 스터디들 진행하게되었습니다.
@@ -126,13 +126,13 @@ author: Lee Je Young
 <h4> DIGITS Examples</h4>
 
 <br />
-<amp-img src="/assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <Digits Data Load>
 <br />
-<amp-img src="/assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <Digits Train model 1>
 <br />
-<amp-img src="/assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <Digits Train model 1>
 <br />
 
