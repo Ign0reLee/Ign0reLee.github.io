@@ -62,116 +62,126 @@ author: Lee Je Young
 <center>
 <h4>Training Deep Neural Networks</h4>
 </center>
+<div style="text-align: left">
 
-*Biological Inspiration
+<ul>
+<li>Biological Inspiration</li><br />
+	<ul>
+	<li>딥러닝은 컴퓨터가 examples(data)로부터 학습하게 만든다.</li>
+	<br />
+	
+	<li>이 때, 두가지를 고려해야한다.</li>
+		<ol>
+		<br /><li>문제속 패턴이 식별되는가?</li>
+		
+		<br /><li>패턴을 보여줄 만큼 데이터가 충분한가?</li>
+		</ol>
+	<br /><li>Game 1</li>
+		<ul>
+		<br /><li>아무런 사전 정보 없이 사진 속에 Louie가 있는지 확신에 대해 0~10사이의 점수를 매긴다.</li>
+		</ul>
+	<br /><li>Deep Neural Networks : GPU Task1</li>
+		<ul>
+		<br /><li>영상 : Sweeping across industries</li>
+			<ul>
+			<br /><li>딥러닝이 산업 어느 분야에서 쓰이는지 살펴본다.</li>
+			
+			<br /><li>과거의 전통적인 기계학습과 Deep/End-to-End Learning의 차이</li>
+				<ol>
+				<br /><li>기계학습은 Hand designed feature가 제공되지만 Deep Learning은 그렇지 않다.</li>
+				
+				<br /><li>End-to-End의 의미 : 문제 식별을 위한 패턴을 스스로 학습한다.</li>
+				</ol>
+			</ul>
+		</ul>
+	<br /><li>DIGITS를 이용한 Image classifier 구현</li>
+		<ul>
+		<br /><li>사진이 Louie인지 아닌지 판별하는 모델을 만들어본다.</li>
+		
+		<br /><li>2 Epochs만 학습했을 경우, 정확도가 50% 이하지만 100 Epochs동안 학습한 후, 정확도가 99%에 이른다.</li>
+		</ul>
+	<br /><li>영상</li>
+	
+		<ul>
+		<br /><li>모델의 output과 실제 output을 비교하고 차이를 이용하여 Weights를 갱신한다.</li>
+		</ul>
+		
+	<br /><li>Big Data : GPU Task 2</li>
+		<ul>
+		<br /><li>근래 기계학습을 발전시키는데 기여한 요소 세 가지가 있다.</li>
+			<ol>
+			<br /><li>Deep Neural Network</li>
+			
+			<br /><li>The GPU</li>
+			
+			<br /><li>Big data</li>
+			</ol>
+		<br /><li>이 세 가지를 neural network를 학습시키는데 사용해볼 것이다.</li>
+		
+		<br /><li>새로운 데이터에 대해 neural network가 잘 작동하도록 학습시키는 것은 환경의 다양성이 표현되는 충분한 데이터가 필요하다.</li>
+		
+		<br /><li>영상</li>
+		</ul>
+	<br /><li>Deploying out Model : GPU Task 3</li>
+		<ul>
+		<br /><li>개와 고양이 구분하기.</li>
+		</ul>
 
-	-딥러닝은 컴퓨터가 examples(data)로부터 학습하게 만든다.
-	
-	-이 때, 두가지를 고려해야한다.
-	
-		1.문제속 패턴이 식별되는가?
-		
-		2.패턴을 보여줄 만큼 데이터가 충분한가?
-		
-	-Game 1
-	
-		+아무런 사전 정보 없이 사진 속에 Louie가 있는지 확신에 대해 0~10사이의 점수를 매긴다.
-		
-	-Deep Neural Networks : GPU Task1
-	
-		+영상 : Sweeping across industries
-		
-			*딥러닝이 산업 어느 분야에서 쓰이는지 살펴본다.
-			
-			*과거의 전통적인 기계학습과 Deep/End-to-End Learning의 차이
-			
-				1.기계학습은 Hand designed feature가 제공되지만 Deep Learning은 그렇지 않다.
-				
-				2.End-to-End의 의미 : 문제 식별을 위한 패턴을 스스로 학습한다.
-				
-	-DIGITS를 이용한 Image classifier 구현
-	
-		+사진이 Louie인지 아닌지 판별하는 모델을 만들어본다.
-		
-		+2 Epochs만 학습했을 경우, 정확도가 50% 이하지만 100 Epochs동안 학습한 후, 정확도가 99%에 이른다.
-		
-	-영상
-	
-		+모델의 output과 실제 output을 비교하고 차이를 이용하여 Weights를 갱신한다.
-		
-	-Big Data : GPU Task 2
-	
-		+근래 기계학습을 발전시키는데 기여한 요소 세 가지가 있다.
-		
-			1.Deep Neural Network
-			
-			2.The GPU
-			
-			3.Big data
-			
-		+이 세 가지를 neural network를 학습시키는데 사용해볼 것이다.
-		
-		+새로운 데이터에 대해 neural network가 잘 작동하도록 학습시키는 것은 환경의 다양성이 표현되는 충분한 데이터가 필요하다.
-		
-		+영상
-		
-	-Deploying out Model : GPU Task 3
-	
-		+개와 고양이 구분하기.
-		
-	
-<br />
+<br /><br />
 <hr />
 <center>
 <h4> DIGITS Examples</h4>
 
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<Digits Data Load>
+<<Digits Data Load Example>>
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<Digits Train model 1>
+<<Digits Train model 1>>
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<Digits Train model 1>
+<<Digits Train model 1>>
 <br />
 
-<br /> 
+<br /> <br />
 <hr />
 <center>
 <h4>Performance</h4>
 </center>
+<div style="text-align: left">
+<ul>
+	<li>Performance during Training : GPU Task 4</li>
+	<ul>
+		<li>정확도를 상승시키는 방법에 대해 공부한다.</li><br />
+	</ul>
+	<li>Object Detection : GPU Task5</li>
+	<ul>
+		<li>Using deployment</li>
+		<li>Caffe를 이용하여 객체 인식을 학습해보자.</li>
+		<li>의의 : Deep Learning과 전통 프로그래밍을 합쳐 이전의 불가능한 문제들에 대해 높은 성능을 보여줌을 설명한다.</li>
+	</ul>
+</ul>
 
-	-Performance during Training : GPU Task 4
-	
-		+정확도를 상승시키는 방법에 대해 공부한다.
-		
-	-Object Detection : GPU Task5
-	
-		+Using deployment
-		
-		+Caffe를 이용하여 객체 인식을 학습해보자.
-		
-		+의의 : Deep Learning과 전통 프로그래밍을 합쳐 이전의 불가능한 문제들에 대해 높은 성능을 보여줌을 설명한다.
-		
-<br />
+<br /><br />
 <hr />
 <center>
 <h4> Assessment</h4>
 </center>
-	
-	-Train and deploy a deep neural network.
-	
-		+고래의 머리가 그려져 있는 사진과, 그렇지 않은 사진들로 이루어진 데이터셋을 학습시켜라. 
-		
-		+DIGITS와 Caffe(Python) 사용법을 테스트한다.
-		
-		+Model과 Weights, Dataset 경로 설정 관련 빈칸 문제가 나온다.
-		
-		+최종적으로 모델을 학습시키는 메서드의 사용법을 숙지 해야 한다.
-		
+<div style="text-align: left">
+<ul>
 
-<br />
+	<li>Train and deploy a deep neural network.</li>
+		<ul>
+		<li>고래의 머리가 그려져 있는 사진과, 그렇지 않은 사진들로 이루어진 데이터셋을 학습시켜라.</li>
+		
+		<li>DIGITS와 Caffe(Python) 사용법을 테스트한다.</li>
+		
+		<li>Model과 Weights, Dataset 경로 설정 관련 빈칸 문제가 나온다.</li>
+		
+		<li>최종적으로 모델을 학습시키는 메서드의 사용법을 숙지 해야 한다.</li>
+		</ul>
+
+<br /><br />
 <hr />
 <center> 
 <h2>Experience</h2>
@@ -191,8 +201,9 @@ author: Lee Je Young
 <br /><br />DIGITS를 사용하여 공부하는 것은 장점과 단점 모두 가지고 있다.
 <br /><br />장점은 어렵지 않게 학습 과정을 살펴볼 수 있다는 것이고
 <br /><br />단점은 학습에 사용되는 알고리즘을 공부할 수 없다는 것이다.
+<br /><br />
 <hr />
-<br />
+<br /><br />
 <center> 
 <h4>Experience-이제영</h4>
 </center>
@@ -200,8 +211,9 @@ author: Lee Je Young
 <br /><br />기본이 caffe에서 추가된 부분인 것 같던데, 다루기 힘든 부분을 다루기 쉽도록 잘 도와준 것 같다.
 <br /><br />그냥 내용에서 직접 하는 부분이 proto 부분등 이므로 조금 부족한 것 같기도 하다.
 <br /><br />처음 배우는 사람이라면 굉장히 알차고 눈에 보이는 성과를 금방 낼 수 있을 것 같아 즐거울 것 같다.
+<br /><br />
 <hr />
-<br />
+<br /><br />
 <center> 
 <h4>Experience-박경훈</h4>
 </center>
@@ -213,7 +225,7 @@ author: Lee Je Young
 <br /><br />실습을 진행하는 방법을 잘 강의해주기 때문에 진행하는데 있어서 문제는 없었다. 제공 받은 데이터를 이용해 직접 모델을 만들 수 있고, 그 모델을 바로 테스트 해볼 수 있기 때문에 굉장히 재미 있었다.
 
 
-<br />
+<br /><br /><br />
 <hr />
 <center> 
 <h2>Recommendation</h2>
@@ -227,8 +239,9 @@ author: Lee Je Young
 <br /><br />시간이 여유롭고 영어와 친해지고 싶다, 혹은 영어에 부담 없는 사람들에겐 추천할 만 하다.
 <br /><br />딥러닝의 큰 범주의 개념들과 흐름을 파악할 수 있었다. 
 <br /><br />영어에 거부감이 있거나, 공부할 시간이 얼마 없는 사람, 그리고 딥러닝의 알고리즘부터 차근차근 공부하고 싶은 사람들에겐 추천하지 않는다.
+<br /><br />
 <hr />
-<br />
+<br /><br />
 <center> 
 <h4>Experience-이제영</h4>
 </center>
@@ -238,8 +251,9 @@ author: Lee Je Young
 <br /><br />DIGITS에 관심 있는 사람들에게는 추천
 <br /><br />Caffe를 깊게 배워 보고 싶으면 비 추천
 <br /><br />파이썬 코드를 깊게 다루면서 인공지능을 배우고 싶으면 비추천
+<br /><br />
 <hr />
-<br />
+<br /><br />
 <center> 
 <h4>Experience-박경훈</h4>
 </center>
@@ -247,7 +261,7 @@ author: Lee Je Young
 <br /><br />프로그래밍을 경험해본 사람이라면 강의내용 그대로 진행하여도 이해할 수 있어 쉽다.
 <br /><br />
 <hr />
-<br />
+<br /><br />
 <center>
 <h2>인증서</h2>
 </center>
@@ -258,7 +272,7 @@ author: Lee Je Young
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<br />
+<br /><br />
 <hr />
 
 <br />긴 글 읽어주셔서 감사합니다!
