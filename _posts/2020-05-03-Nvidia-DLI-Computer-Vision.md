@@ -134,13 +134,13 @@ author: Lee Je Young
 
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<<Digits Data Load Example>>
+<<1. Digits Data Load Example>>
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<<Digits Train model 1>>
+<<2. Digits Train model 1>>
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<<Digits Train model 1>>
+<<3. Digits Train model 1>>
 <br />
 
 <br /> <br />
@@ -152,13 +152,13 @@ author: Lee Je Young
 <ul>
 	<li>Performance during Training : GPU Task 4</li>
 	<ul>
-		<li>정확도를 상승시키는 방법에 대해 공부한다.</li><br />
+		<br /><li>정확도를 상승시키는 방법에 대해 공부한다.</li><br />
 	</ul>
 	<li>Object Detection : GPU Task5</li>
 	<ul>
-		<li>Using deployment</li>
-		<li>Caffe를 이용하여 객체 인식을 학습해보자.</li>
-		<li>의의 : Deep Learning과 전통 프로그래밍을 합쳐 이전의 불가능한 문제들에 대해 높은 성능을 보여줌을 설명한다.</li>
+		<br /><li>Using deployment</li>
+		<br /><li>Caffe를 이용하여 객체 인식을 학습해보자.</li>
+		<br /><li>의의 : Deep Learning과 전통 프로그래밍을 합쳐 이전의 불가능한 문제들에 대해 높은 성능을 보여줌을 설명한다.</li>
 	</ul>
 </ul>
 
@@ -172,13 +172,13 @@ author: Lee Je Young
 
 	<li>Train and deploy a deep neural network.</li>
 		<ul>
-		<li>고래의 머리가 그려져 있는 사진과, 그렇지 않은 사진들로 이루어진 데이터셋을 학습시켜라.</li>
+		<br /><li>고래의 머리가 그려져 있는 사진과, 그렇지 않은 사진들로 이루어진 데이터셋을 학습시켜라.</li>
 		
-		<li>DIGITS와 Caffe(Python) 사용법을 테스트한다.</li>
+		<br /><li>DIGITS와 Caffe(Python) 사용법을 테스트한다.</li>
 		
-		<li>Model과 Weights, Dataset 경로 설정 관련 빈칸 문제가 나온다.</li>
+		<br /><li>Model과 Weights, Dataset 경로 설정 관련 빈칸 문제가 나온다.</li>
 		
-		<li>최종적으로 모델을 학습시키는 메서드의 사용법을 숙지 해야 한다.</li>
+		<br /><li>최종적으로 모델을 학습시키는 메서드의 사용법을 숙지 해야 한다.</li>
 		</ul>
 
 <br /><br />
