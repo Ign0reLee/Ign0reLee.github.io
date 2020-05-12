@@ -55,13 +55,13 @@ author: Lee Je Young
 <h4>Accelerating Applications with CUDA C/C++</h4>
 </center>
 
-<br />CUDA는 세계에서 가장 성능이 뛰어난 병렬 프로세서인 NVIDA GPU에서 가속화되고 대량 병렬화된 코드를 실행할 수 있도록 해준다. 따라서 CUDA를 배운다면 CPU로는 불가능한 계산을 가능하게 해줍니다.
+<br /><br />CUDA는 세계에서 가장 성능이 뛰어난 병렬 프로세서인 NVIDA GPU에서 가속화되고 대량 병렬화된 코드를 실행할 수 있도록 해준다. 따라서 CUDA를 배운다면 CPU로는 불가능한 계산을 가능하게 해줍니다.
 
-<br />__global__ void GPUFunciont() : __global__ 키워드는 뒤에 함수가 GPU에서 실행된다는 것을 말합니다.
+<br /><br />__global__ void GPUFunciont() : __global__ 키워드는 뒤에 함수가 GPU에서 실행된다는 것을 말합니다.
 
-<br />GPUFunction<<<a, b, c, d, e>>>() : GPU함수를 실행시킬 때 “<<< … >>>”  이런 기호를 쓰는데 a에는 블록 수, b에는 스레드 수, c에는 바이트 수, d에는 스트림, e에는 뭐라한다. 우린 이런 함수를 커널이라고 부릅니다.
+<br /><br />GPUFunction<<<a, b, c, d, e>>>() : GPU함수를 실행시킬 때 “<<< … >>>”  이런 기호를 쓰는데 a에는 블록 수, b에는 스레드 수, c에는 바이트 수, d에는 스트림, e에는 뭐라한다. 우린 이런 함수를 커널이라고 부릅니다.
 
-<br />cudaDeviceSynchronize() : 실행 커널은 비동기적이기 때문에 CPU 코드는 커널의 끝을 기다리지 않는다. 따라서 이 코드를 호출한다면 커널이 완료될 때까지 CPU코드를 기다리게 할 수 있습니다.
+<br /><br />cudaDeviceSynchronize() : 실행 커널은 비동기적이기 때문에 CPU 코드는 커널의 끝을 기다리지 않는다. 따라서 이 코드를 호출한다면 커널이 완료될 때까지 CPU코드를 기다리게 할 수 있습니다.
 <hr />
 <br />
 
@@ -81,13 +81,13 @@ cudaDeviceSynchronize() 이 코드를 어디에서 호출하냐에 따라 결과
 <h4>Launching Parallel Kernels</h4>
 </center>
 <div style="text-align: left">
-<br />
+<br /><br />
 <<< NUMBER_OF_BLOCKS, NUMBER_OF_THREADS_PER_BLOCKS>>>
-<br />
+<br /><br />
 grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특정 스레드
-<br />
+<br /><br />
 커널을 이용해 다음과 같이 바꿔줄 수 있습니다.
-<br />
+<br /><br />
 <amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
@@ -98,7 +98,7 @@ grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특
 <h4>Allocating Memory to be accessed on the GPU and the CPU</h4>
 </center>
 <div style="text-align: left">
-<br />
+<br /><br />
 Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 할 수 없다. GPU 코드를 실행하기 위해서는 
 cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree() 함수를 통해 해제를 해줘야한다.
 </div>
@@ -136,11 +136,11 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 <h4>Iterative Optimizations with the NVIDIA Command Line Profiler</h4>
 </center>
 <div style="text-align: left">
-<br />Nsys는 Nsight Systems 명령어 도구입니다. 
+<br /><br />Nsys는 Nsight Systems 명령어 도구입니다. 
 
-<br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
+<br /><br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/4.png" width="656" height="600" layout="responsive" alt="" class="mb3"></amp-img>
 <br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
@@ -152,11 +152,11 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 </center>
 <div style="text-align: left">
 
-<br />호스트나 디바이스가 메모리에 접근하려고 하면 Page fault가 발생하여 필요한 데이터를 일괄적으로 이동합니다. 
+<br /><br />호스트나 디바이스가 메모리에 접근하려고 하면 Page fault가 발생하여 필요한 데이터를 일괄적으로 이동합니다. 
 
-<br />이런 Page fault와 요구로 인한 메모리의 이동의 오버헤드를 줄이기 위한 기술을 비동기 메모리 프리패치라고 합니다. 
+<br /><br />이런 Page fault와 요구로 인한 메모리의 이동의 오버헤드를 줄이기 위한 기술을 비동기 메모리 프리패치라고 합니다. 
 
-<br />코드를 사용하기 전에 통합메모리를 비동기적으로 이동시켜 GPU 커널과 CPU 성능을 높일 수 있습니다.
+<br /><br />코드를 사용하기 전에 통합메모리를 비동기적으로 이동시켜 GPU 커널과 CPU 성능을 높일 수 있습니다.
 </div>
 <br />
 <hr />
@@ -192,7 +192,7 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 
 <br />Nsys는 Nsight Systems 명령어 도구다. 응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -205,9 +205,9 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 
 <br />CUDA 프로그래밍에서 스트림은 순서대로 실행되는 명령이 연속적으로 있습니다.
 
-<br />하지만 기본 스트림 외에 다른 스트림을 생성하여 활용한다면 다중 작업을 서로 다른 스트림에서 동시에 수행할 수 있습니다. 
+<br /><br />하지만 기본 스트림 외에 다른 스트림을 생성하여 활용한다면 다중 작업을 서로 다른 스트림에서 동시에 수행할 수 있습니다. 
 
-<br />기본 스트림이 아닌 다른 스트림에서 커널을 실행하기 위해서는 커널의 4번째 인수를 사용해야 합니다.
+<br /><br />기본 스트림이 아닌 다른 스트림에서 커널을 실행하기 위해서는 커널의 4번째 인수를 사용해야 합니다.
 </div>
 <br />
 <hr />
@@ -220,13 +220,13 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 
 <br />cudaMallocManaged()와 cudaMemPrefetchAsync()도 충분히 성능이 좋지만 좀 더 좋게하는 방법이 있습니다.
 
-<br />cudaMalloc()은 메모리를 GPU에 직접 할당하지만 반환되는 포인터는 호스트 코드로 접근이 불가능합니다.
+<br /><br />cudaMalloc()은 메모리를 GPU에 직접 할당하지만 반환되는 포인터는 호스트 코드로 접근이 불가능합니다.
 
-<br />cudaMallocHost()는 CPU에 직접 할당하고 마찬가지로 디바이스 코드는 접근이 불가능합니다.
+<br /><br />cudaMallocHost()는 CPU에 직접 할당하고 마찬가지로 디바이스 코드는 접근이 불가능합니다.
 
-<br />cudaMemcpy()를 통해 호스트와 디바이스간에 메모리를 복사해서 사용할 수 있습니다.
+<br /><br />cudaMemcpy()를 통해 호스트와 디바이스간에 메모리를 복사해서 사용할 수 있습니다.
 
-<br />마무리로 고정된 메모리는 cudaFreeHost()와 cudaFree()로 해제하면 됩니다.
+<br /><br />마무리로 고정된 메모리는 cudaFreeHost()와 cudaFree()로 해제하면 됩니다.
 </div>
 <br />
 <hr />
@@ -276,13 +276,13 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 <br /><br />단계 별로 비교하는 문제에서 좀 더 구체적인 솔루션이 있었으면 좋겠다
 <br /><br />GPU에 관심이 있는 사람에게 추천해주고 싶다.
 
-
+<center>
 <h2>인증서</h2>
 </center>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />
