@@ -57,7 +57,7 @@ author: Lee Je Young
 
 <br /><br />CUDA는 세계에서 가장 성능이 뛰어난 병렬 프로세서인 NVIDA GPU에서 가속화되고 대량 병렬화된 코드를 실행할 수 있도록 해준다. 따라서 CUDA를 배운다면 CPU로는 불가능한 계산을 가능하게 해줍니다.
 
-<br /><br />&#95&#95global&#95&#95 void GPUFunciont() : &#95&#95global&#95&#95 키워드는 뒤에 함수가 GPU에서 실행된다는 것을 말합니다.
+<br /><br />\__global__ void GPUFunciont() : \__global__ 키워드는 뒤에 함수가 GPU에서 실행된다는 것을 말합니다.
 
 <br /><br />GPUFunction<<<a, b, c, d, e>>>() : GPU함수를 실행시킬 때 “<<< … >>>”  이런 기호를 쓰는데 a에는 블록 수, b에는 스레드 수, c에는 바이트 수, d에는 스트림, e에는 뭐라한다. 우린 이런 함수를 커널이라고 부릅니다.
 
