@@ -49,7 +49,7 @@ author: Lee Je Young
 <br />
 <center>
 <h2>Summary</h2>
-
+<hr />
 
 <br />
 <h4>Accelerating Applications with CUDA C/C++</h4>
@@ -249,12 +249,12 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 </ul>
 
 
-
+<hr />
 <center>
 <h2>Experience</h2>
 </center>
-
 <hr />
+
 <br />
 <center> 
 <h4>Experience-이제영</h4>
@@ -276,11 +276,11 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 <br /><br />Nsight System을 통해 시각적으로 볼 수 있어 재미있다.
 <br /><br />단계 별로 비교하는 문제에서 좀 더 구체적인 솔루션이 있었으면 좋겠다
 <br /><br />GPU에 관심이 있는 사람에게 추천해주고 싶다.
-
+<hr />
 <center>
 <h2>인증서</h2>
 </center>
-
+<hr />
 <amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
 <amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
