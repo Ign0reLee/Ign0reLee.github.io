@@ -250,7 +250,7 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 
 
 
-
+<center>
 <h2>Experience</h2>
 </center>
 
