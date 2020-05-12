@@ -1,7 +1,7 @@
 ---
 layout: post
 cover: 'assets/DLI_CUDA/Review/Main.png'
-title: Nvidia Deep Learning Institute FUNDAMENTALS OF ACCELERATED COMPUTING WITH CUDA C/C++ Review
+title: FUNDAMENTALS OF ACCELERATED COMPUTING WITH CUDA C/C++ Review
 published: true
 date: 2020-05-10 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, CUDA,NVCC,C/C++, Deep Learning, Machine Learning]
@@ -10,8 +10,12 @@ author: Lee Je Young
 <meta charset="UTF8">
 <h1>Nvidia Deep Learning Institute FUNDAMENTALS OF ACCELERATED COMPUTING WITH CUDA C/C++ Review<br /></h1>
 
+
+
 <br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.
+
+<br />드디어 두번째 시간이 다가왔습니다! 스터디를 이어가게 해주신 손해인님, Nvidia-Korea분들 모두에게 감사드립니다!
 
 <br />이번주는 저번주에 말씀드렸듯이  ACCELERATED COMPUTING WITH CUDA C/C++을 진행하였습니다.
 
@@ -22,8 +26,6 @@ author: Lee Je Young
 <br />많이 부족하지만 앞으로도 잘 부탁드리겠습니다.
 
 <br />질문있으시면 언제든지 메일을 보내주세요! 기다리고 있겠습니다.
-
-<br />또한 이런 기회를 만들어주신 Nvidia, 손해인님께 감사드립니다.
 
 <hr />
 <center>

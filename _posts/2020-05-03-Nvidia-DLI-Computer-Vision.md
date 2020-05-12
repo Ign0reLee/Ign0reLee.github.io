@@ -1,7 +1,7 @@
 ---
 layout: post
 cover: 'assets/images/tree.jpg'
-title: Nvidia Deep Learning Institute Fundamentals of DL for Computer Vision Review
+title: Fundamentals of DL for Computer Vision Review
 published: true
 date: 2020-05-03 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, Computer Vision, Deep Learning, Machine Learning]
