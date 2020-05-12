@@ -99,8 +99,9 @@ grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특
 </center>
 <div style="text-align: left">
 <br /><br />
-Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 할 수 없다. GPU 코드를 실행하기 위해서는 
-cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree() 함수를 통해 해제를 해줘야한다.
+Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 할 수 없습니다. 
+
+<br /><br />GPU 코드를 실행하기 위해서는 cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree() 함수를 통해 해제를 해줘야한다.
 </div>
 <br />
 <hr />
@@ -140,7 +141,7 @@ cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree(
 
 <br /><br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/4.png" width="656" height="600" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
 <br /><amp-img src="{{ site.baseurl }}assets/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
