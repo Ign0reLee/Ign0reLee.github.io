@@ -1,7 +1,7 @@
 ---
 layout: post
 cover: 'assets/DLI_CUDA/Review/Main.png'
-title: FUNDAMENTALS OF ACCELERATED COMPUTING WITH CUDA C/C++ Review
+title: Fundamentals of Accelerated Computing with CUDA C/C++ Review
 published: true
 date: 2020-05-10 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, CUDA,NVCC,C/C++, Deep Learning, Machine Learning]
