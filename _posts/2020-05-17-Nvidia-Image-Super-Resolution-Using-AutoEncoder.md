@@ -171,7 +171,6 @@ author: Lee Je Young
 <h4>What kind of data does an Autoencoder manipulate </h4>
 </center>
 <div style="text-align: left">
-<br /><br />Nsys는 Nsight Systems 명령어 도구입니다. 
 
 <br /><br />Autoencoder는 손실 압축이지만 우리는 이점을 얻습니다. 
 
