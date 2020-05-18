@@ -330,6 +330,7 @@ author: Lee Je Young
 <center> 
 <h4>Experience-구정수</h4>
 </center>
+<div style="text-align: left">
 <br /><br />Autoencoder와 encoder, decoder에 대한 자세한 설명이 인상적이었다.
 
 <br /><br />convolution layer와 upsampling, downsampling, dropout, merge layer에 대해 개념적으로 잘 설명되어 있어서 쉽게 이해할 수 있었다.
@@ -339,13 +340,13 @@ author: Lee Je Young
 <br /><br />두 이미지를 비교하는 loss metrics를 여러가지 소개해주어서 새롭게 배웠다.
 
 <br /><br />CNN을 막 배우고 어떻게 활용되는지 알아보고 싶은 학생들에게 추천하고 싶다.
-
+</div>
 <hr />
 <br /><br />
 <center> 
 <h4>Experience-이제영</h4>
 </center>
-
+<div style="text-align: left">
 <br /><br />Auto Encoder의 중요한 부분만 잘 찝어낸 것 같다.
 
 <br /><br />케라스로 표현하여 쉽게 표현했다.
@@ -355,14 +356,14 @@ author: Lee Je Young
 <br /><br />처음 시작하는 단계 사람들에게 추천할만 한 것 같다.
 
 <br /><br />내용이 많지는 않았다.
-
+</div>
 <br /><br />
 <hr />
 <br /><br />
 <center> 
 <h4>Experience-박경훈</h4>
 </center>
-
+<div style="text-align: left">
 <br /><br />짧은 강의이기 때문에 깊은 내용은 알 수 없다.
 
 <br /><br />해상도를 높이는 과정을 간략하게 알 수 있다.
@@ -373,14 +374,15 @@ author: Lee Je Young
 
 <hr />
 
-<br />긴 글 읽어주셔서 감사합니다! 내용이 적다고 생각했는데, 다들 자세하게 다뤄주어서 길어졌습니다!
+<br /><br />긴 글 읽어주셔서 감사합니다! 내용이 적다고 생각했는데, 다들 자세하게 다뤄주어서 길어졌습니다!
 
-<br />마찬가지로 모든 리뷰는 주관적이라는점 알아주시면 감사하겠습니다!
+<br /><br />마찬가지로 모든 리뷰는 주관적이라는점 알아주시면 감사하겠습니다!
 
-<br />앞으로 저희의 리뷰를 통해 Nvidia에서 열리는 DLI 프로그램에 대해 궁금하신점을 해결해가셨으면 좋겠습니다!
+<br /><br />앞으로 저희의 리뷰를 통해 Nvidia에서 열리는 DLI 프로그램에 대해 궁금하신점을 해결해가셨으면 좋겠습니다!
 
-<br />리뷰는 내용 요약이 들어가있지만, 실제로 DLI프로그램을 진행하면 직접 코딩하시면서 하실 수 있습니다.
+<br /><br />리뷰는 내용 요약이 들어가있지만, 실제로 DLI프로그램을 진행하면 직접 코딩하시면서 하실 수 있습니다.
 
-<br />언제나 처럼 이런 흐름이다~ 라고 생각하시고 보시면 좋을 것 같습니다, 감사합니다!
+<br /><br />언제나 처럼 이런 흐름이다~ 라고 생각하시고 보시면 좋을 것 같습니다, 감사합니다!
 
-<br />다음주에는 Fundamentals of Accelerated Computing with CUDA Python리뷰로 돌아오겠습니다!
+<br /><br />다음주에는 Fundamentals of Accelerated Computing with CUDA Python리뷰로 돌아오겠습니다!
+</div>
