@@ -88,7 +88,7 @@ author: Lee Je Young
 
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<center>\< 제한된 예시 \>
+<center>\<제한된 예시>
 </center>
 </div>
 <br />
@@ -121,7 +121,7 @@ author: Lee Je Young
 <br /><br /> 그림을 먼저 보겠습니다.
 
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<center>\< 일반적인 AutoEncoder \>
+<center>\<일반적인 AutoEncoder>
 </center>
 
 
