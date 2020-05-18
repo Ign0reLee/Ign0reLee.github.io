@@ -189,7 +189,7 @@ author: Lee Je Young
 <h4>The Encoder</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -199,7 +199,7 @@ author: Lee Je Young
 <h4>The Decoder</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/5.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -209,7 +209,7 @@ author: Lee Je Young
 <h4>The Model</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/6.png" width="656" height="600" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/6.png" width="656" height="1000" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -252,7 +252,7 @@ author: Lee Je Young
 <br />
 <hr />
 <br />
-
+<center>
 <h4>SSIM</h4>
 </center>
 <div style="text-align: left">
@@ -267,7 +267,7 @@ author: Lee Je Young
 <br />
 <hr />
 <br />
-
+<center>
 <h4>PSNR</h4>
 </center>
 <div style="text-align: left">
@@ -283,7 +283,7 @@ author: Lee Je Young
 <br />
 <hr />
 <br />
-
+<center>
 <h4>HFENN</h4>
 </center>
 <div style="text-align: left">
