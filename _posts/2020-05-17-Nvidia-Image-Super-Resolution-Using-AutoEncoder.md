@@ -88,7 +88,8 @@ author: Lee Je Young
 
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
-<center>\<제한된 예시>
+<center>
+< 제한된 예시 >
 </center>
 </div>
 <br />
@@ -121,7 +122,8 @@ author: Lee Je Young
 <br /><br /> 그림을 먼저 보겠습니다.
 
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<center>\<일반적인 AutoEncoder>
+<center> 
+< 일반적인 AutoEncoder >
 </center>
 
 
@@ -189,7 +191,7 @@ author: Lee Je Young
 <h4>The Encoder</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -199,7 +201,7 @@ author: Lee Je Young
 <h4>The Decoder</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/5.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/5.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -209,7 +211,7 @@ author: Lee Je Young
 <h4>The Model</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/6.png" width="656" height="1000" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/6.png" width="656" height="1500" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -254,7 +256,7 @@ author: Lee Je Young
 <br />
 <center>
 <h4>SSIM</h4>
-</center>
+
 <div style="text-align: left">
 <br /><br /> Structural similarity(SSIM)는 TV 또는 그러한 미디어에서 다루어질 두 이미지 사이의 유사도를 측정합니다.
 
@@ -269,7 +271,7 @@ author: Lee Je Young
 <br />
 <center>
 <h4>PSNR</h4>
-</center>
+
 <div style="text-align: left">
 
 <br /><br /> Peak signal-to-noise ratio는 MSE를 이용하여 정의된 metric입니다.
@@ -285,7 +287,7 @@ author: Lee Je Young
 <br />
 <center>
 <h4>HFENN</h4>
-</center>
+
 <div style="text-align: left">
 
 <br /><br /> HFENNHigh Frequency Error Norm Normalized) metric은 두 이미지 사이의 고주파 디테일이 차이가 나는지 측정합니다.
@@ -299,9 +301,9 @@ author: Lee Je Young
 <hr />
 <br />
 
-
+<center>
 <h4>What to remember</h4>
-</center>
+
 <div style="text-align: left">
 
 <br /><br /> AutoEncoder는 Deep Neural Networks입니다.
@@ -369,16 +371,6 @@ author: Lee Je Young
 
 <br /><br />기본적으로 딥러닝에 대한 기초가 있는 사람이 수강하는걸 추천한다.
 
-<hr />
-<center>
-<h2>인증서</h2>
-</center>
-<hr />
-<amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-<br />
-<amp-img src="{{ site.baseurl }}assets/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-
-<br /><br />
 <hr />
 
 <br />긴 글 읽어주셔서 감사합니다! 내용이 적다고 생각했는데, 다들 자세하게 다뤄주어서 길어졌습니다!
