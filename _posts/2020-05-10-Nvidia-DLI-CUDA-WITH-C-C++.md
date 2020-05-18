@@ -40,7 +40,6 @@ author: Lee Je Young
 
 <h4>-Experience</h4>
 
-<h4>-Recommendation</h4>
 
 </center>
 
