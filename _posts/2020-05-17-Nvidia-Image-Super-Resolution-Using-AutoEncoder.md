@@ -178,7 +178,13 @@ author: Lee Je Young
 
 <br /><br />이번 강의에서 예를 들면, 우리는 low quality image information에 대해 손실을 가지며, 새로운 선명한 image로 재건하는 것입니다.
 
-<br /><br />어떻게 autoencoder가 위의 손실을 학습할까? Autoencoder는 다양한 이미지들의 한 쌍에 대해서 패턴을 찾아야합니다. 
+<br /><br />어떻게 autoencoder가 위의 손실을 학습할까? Autoencoder는 다양한 이미지들의 한 쌍에 대해서 패턴을 찾아야합니다. 어떻게 autoencoder가 위의 손실을 학습할까? Autoencoder는 다양한 이미지들의 한 쌍에 대해서 패턴을 찾아야합니다. 
+
+<br /><br /> 지금 부터 우리가 사용할 모델과, 그 결과를 살펴 보겠습니다!
+
+<br /><br /> 사용된 코드와 설명은 직접 DLI를 수강하셔서 보시길 바랍니다!
+
+<br /><br /> 이번엔 이런 구조의 아키텍쳐를 사용했고, 이런결과가 나왔음을 그림으로 보여드리겠습니다!
 
 <br />
 <br />
@@ -190,6 +196,8 @@ author: Lee Je Young
 <center>
 <h4>The Encoder</h4>
 </center>
+
+
 <div style="text-align: left">
 <amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
