@@ -62,7 +62,7 @@ author: Lee Je Young
 	<li>Numba를 활용하여 CPU에서 Python function들을 Compile 할 수 있습니다.</li><br />
 	<li>Numba가 어떻게 Python Function들을 compile 하는지 알 수 있습니다.</li><br />
 	<li>NumPy ufuncs GPU 가속화 할 수 있습니다.</li><br />
-	<li>hand-written vectorized functions GPU 가속화 할 수 있습니다./li><br />
+	<li>hand-written vectorized functions GPU 가속화 할 수 있습니다.</li><br />
 	<li>CPU host와 GPU device간의 데이터 전송을 최적화 할 수 있습니다/</li><br />
 	</ul>
 </ul>
@@ -138,7 +138,7 @@ author: Lee Je Young
 <br />
 
 <center>
-<h4Custom Kernels and Memory Management for CUDA Python with Numba</h4>
+<h4>Custom Kernels and Memory Management for CUDA Python with Numba</h4>
 </center>
 <div style="text-align: left">
 
