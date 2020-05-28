@@ -108,11 +108,10 @@ author: Lee Je Young
 <center>
 <h4>How Numba Works</h4>
 </center>
-<div style="text-align: left">
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < Numba의 작동 순서도 >
-
+<div style="text-align: left">
 <br /><br /> Numba 컴파일러는 function decorator를 사용하여 활성화할 수 있습니다.
 <br /><br /> Decorators는 함수를 변형합니다.
 <br /><br /> Numba에서의 CPU compilation decorator는 @jit입니다.
