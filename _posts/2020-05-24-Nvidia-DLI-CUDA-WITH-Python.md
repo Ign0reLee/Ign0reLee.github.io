@@ -51,7 +51,7 @@ author: Lee Je Young
 <hr />
 
 <br />
-<h4>Introduction to CUDA Python with Numba</h4>
+<h2>Introduction to CUDA Python with Numba</h2>
 </center>
 
 <div style="text-align: left">
@@ -138,7 +138,7 @@ author: Lee Je Young
 <br />
 
 <center>
-<h4>Custom Kernels and Memory Management for CUDA Python with Numba</h4>
+<h2>Custom Kernels and Memory Management for CUDA Python with Numba</h2>
 </center>
 <div style="text-align: left">
 
@@ -283,7 +283,7 @@ author: Lee Je Young
 <br />
 
 <center>
-<h4>Multidimensional Grids and Shared Memory for CUDA Python with Numba</h4>
+<h2>Multidimensional Grids and Shared Memory for CUDA Python with Numba</h2>
 </center>
 <div style="text-align: left">
 <ul>
