@@ -5,10 +5,10 @@ permalink: /Nvidia_DLI_Review/
 ---
 
 
-<h1>Post List</h1><br /><br />
+<h3>Post List</h3><br /><br />
 
 <ul>
-  {% for post in site.DLI %}
+  {% for post in site.tags.DLI %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
