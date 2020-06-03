@@ -72,11 +72,7 @@ author: Lee Je Young
 	<li>계속해서 RAPIDS 기능을 배울 수 있는 기초 구축</li><br />
 	</ul>
 </ul>
-
-
-<center>
-<h4>How Numba Works</h4>
-</center>
+<hr />
 <br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_RAPIDS/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < 전통적인 모델의 GPU 작동 순서도 >
@@ -133,7 +129,7 @@ author: Lee Je Young
 
 <br /><br /> 저희가 이 과정에서 배우는 것은 극히 일부일 뿐이며, 더 자세한 내용의 위의 공식 홈페이지에서 확인할 수 있었습니다.
 
-<br /><br /> https://rapids.ai/
+<br /><br /> [공식 홈페이지 바로가기](https://rapids.ai/)
 
 <br /><br /> 처음 보시는 분이라면 다소 불편할 수도 있습니다. 하지만 천천히 보시면 금방 익숙해 지실 수 있습니다.
 
@@ -344,9 +340,9 @@ author: Lee Je Young
 <br /><br /> 자세한 내용은 링크 남기도록 하겠습니다!
 
 
-<br /><br /> 온라인 세미나 : https://youtu.be/L717kWEmgbY
+<br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY)
 
-<br /><br /> 자세히보기 : (모바일)-http://me2.do/FTnFsv66  (PC)-http://me2.do/FoAMy5jr
+<br /><br /> 자세히보기 : [모바일](http://me2.do/FTnFsv66)  [PC](http://me2.do/FoAMy5jr)
 
 <br /><br /> 감사합니다! 다음번에 다른 포스트로 다시 찾아뵙겠습니다!
 </div>
