@@ -332,9 +332,9 @@ author: Lee Je Young
 
 <br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY)
 
-<br /> [모바일에서 자세히 보기](http://me2.do/FTnFsv66)
+<br /><br />[모바일에서 자세히 보기](http://me2.do/FTnFsv66)
 
-<br /> [PC에서 자세히 보기](http://me2.do/FoAMy5jr)
+<br /><br /> [PC에서 자세히 보기](http://me2.do/FoAMy5jr)
 
 <br /><br /> 감사합니다! 다음번에 다른 포스트로 다시 찾아뵙겠습니다!
 </div>
