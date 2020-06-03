@@ -360,17 +360,6 @@ author: Lee Je Young
 <center> 
 <h4>Experience-구정수</h4>
 </center>
-<div style="text-align: left">
-<br /><br />Autoencoder와 encoder, decoder에 대한 자세한 설명이 인상적이었다.
-
-<br /><br />convolution layer와 upsampling, downsampling, dropout, merge layer에 대해 개념적으로 잘 설명되어 있어서 쉽게 이해할 수 있었다.
-
-<br /><br />중간 과정에서 데이터를 시각화하여 볼 수 있어서 더욱 쉽게 이해되었다.
-
-<br /><br />두 이미지를 비교하는 loss metrics를 여러가지 소개해주어서 새롭게 배웠다.
-
-<br /><br />CNN을 막 배우고 어떻게 활용되는지 알아보고 싶은 학생들에게 추천하고 싶다.
-</div>
 <hr />
 <br /><br />
 <center> 
