@@ -343,9 +343,7 @@ author: Lee Je Young
 <br /><br /> 자세한 내용은 링크 남기도록 하겠습니다!
 
 
-<br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY)
-
-<br /><br /> 자세히보기 : [모바일](http://me2.do/FTnFsv66)  [PC](http://me2.do/FoAMy5jr)
+<br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY) [모바일에서 자세히 보기](http://me2.do/FTnFsv66)  [PC에서 자세히 보기](http://me2.do/FoAMy5jr)
 
 <br /><br /> 감사합니다! 다음번에 다른 포스트로 다시 찾아뵙겠습니다!
 </div>
