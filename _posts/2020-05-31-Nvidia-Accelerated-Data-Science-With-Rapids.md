@@ -1,21 +1,21 @@
 ---
 layout: post
 cover: 'assets/DLI_RAPIDS/Review/main.png'
-title: Fundamentals Of Accelerated Ddata Science With RAPIDS
+title: Fundamentals Of Accelerated Data Science With RAPIDS
 published: true
 date: 2020-05-31 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, Data Science, RAPIDS ,Python, Deep Learning, Machine Learning]
 author: Lee Je Young
 ---
 <meta charset="UTF8">
-<h1>Fundamentals Of Accelerated Ddata Science With RAPIDS Review<br /></h1>
+<h1>Fundamentals Of Accelerated Data Science With RAPIDS Review<br /></h1>
 
 
 
 <br /><br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.
 
-<br /><br /> 다섯번째 시간입니다! 이번엔 Fundamentals Of Accelerated Ddata Science With RAPIDS Review로 돌아왔습니다!
+<br /><br /> 다섯번째 시간입니다! 이번엔 Fundamentals Of Accelerated Data Science With RAPIDS Review로 돌아왔습니다!
 
 <br /><br /> 안타까운 소식이지만 아마 저희 스터디는 이번주로 마무리 지을 것 같습니다!, 기존에 친구들과 약속한 시간이 다 되었기 때문입니다.
 
