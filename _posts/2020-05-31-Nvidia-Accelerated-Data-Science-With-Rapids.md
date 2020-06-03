@@ -329,9 +329,9 @@ author: Lee Je Young
 <br /><br /> NVIDIA 엔지니어 분들이 심사위원으로 참여하며 무려 사업 지원비 최대 3억, 뽑힌 30개의 기업들끼리 추가 심사를 통해 R&D 투자비 최대 4억을 지원해주는 프로그램이라고 합니다!
 
 <br /><br /> 자세한 내용은 링크 남기도록 하겠습니다!
-
-
-<br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY)  [모바일에서 자세히 보기](http://me2.do/FTnFsv66)  [PC에서 자세히 보기](http://me2.do/FoAMy5jr)
+<br /><br /> [온라인 세미나](https://youtu.be/L717kWEmgbY)  
+[모바일에서 자세히 보기](http://me2.do/FTnFsv66)  
+[PC에서 자세히 보기](http://me2.do/FoAMy5jr)
 
 <br /><br /> 감사합니다! 다음번에 다른 포스트로 다시 찾아뵙겠습니다!
 </div>
