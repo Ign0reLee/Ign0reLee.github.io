@@ -112,8 +112,31 @@ author: Lee Je Young
   
   간단한 두가지 명령어만 테스트 해보겠습니다.
   
-  ```python
-  ```
+  저는 주피터 환경에서 테스트 하였습니다.
   
   ```python
+  import cupy as cp
+  import cudf as cd
+  import cuml as cm
   ```
+  
+  ```python  
+  X_cp = cp.array([1,2,3,4,5,6,7,8,9])
+  y_cp = cp.array([11,22,33,44,53,66,77,87,95])
+
+  print("X : ", X_cp)
+
+  !nvidia-smi
+  ```
+  
+  ![RAPIDS_testing]({{ site.baseurl }}assets/RAPIDS/install/RAPIS_Testing.png "RAPIDS 테스팅"){: width="100%" height="100%"}
+  
+  마지막으로 원본 코드 주소를 첨부하겠습니다.
+  
+  [원본코드 보러가기](https://github.com/Ign0reLee/Data_Science_With_RAPIDS/blob/master/Chapter%2001.Installation/Testing_Installation.ipynb)
+  
+  깃허브에서 보시면 추가로 행렬간의 내적으로 시간을 측정한 부분도 포함되어있습니다.
+  
+  이번챕터에서는 다루지 않았지만, 시간이 더 빨랐다 정도만 챙겨가시면 될 것 같습니다.
+  
+  감사합니다.
