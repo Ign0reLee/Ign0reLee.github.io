@@ -25,10 +25,10 @@ github:  Ign0reLee
 
 #Additional Pages
 about: about
-post: post
 contact: contact
 privacy-policy: privacy-policy
 Nvidia_DLI_Review: Nvidia_DLI_Review
+Data_Science_With_RAPIDS: Data_Science_With_RAPIDS
 
 
 permalink: /:title
