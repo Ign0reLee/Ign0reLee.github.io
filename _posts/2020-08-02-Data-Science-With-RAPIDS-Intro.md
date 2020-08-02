@@ -76,7 +76,7 @@ author: Lee Je Young
   
   우선 RAPIDS는 다음과 같이 구성되어 있습니다.
   
-  ![RAPIDS_Structure]({{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all.jpg "RAPIDS 구조"){: width="100%" height="100%"}
+  ![RAPIDS_Structure]({{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all.jpg "RAPIDS 구조"){: width="100%" height="150%"}
   
   이번 칼럼은 Data Science의 기초부분을 다루고자합니다.
   
@@ -86,7 +86,7 @@ author: Lee Je Young
   
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
-  ![RAPIDS_Structures]({{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.png "이번 칼럼에서 살펴 볼 부분(빨간색)"){: width="100%" height="100%"}
+  ![RAPIDS_Structures]({{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.png "이번 칼럼에서 살펴 볼 부분(빨간색)"){: width="100%" height="150%"}
   <br><br>
   
 ---
