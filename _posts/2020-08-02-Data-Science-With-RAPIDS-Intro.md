@@ -1,10 +1,10 @@
 ---
 layout: post
 cover: 'assets/RAPIDS/Main.png'
-title: 00.Data Science With RAPIDS Introduction
+title: **00.** Data Science With RAPIDS Introduction
 published: true
 date: 2020-08-02 19:00:00
-tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, Cudf,Data, Data Science]
+tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, Cudf,CuML, Data, Data Science]
 author: Lee Je Young
 ---
 <meta charset="UTF8">
