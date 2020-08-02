@@ -129,7 +129,7 @@ author: Lee Je Young
   !nvidia-smi
   ```
   
-  ![RAPIDS_testing]({{ site.baseurl }}assets/RAPIDS/install/RAPIS_Testing.png "RAPIDS 테스팅"){: width="100%" height="100%"}
+  ![RAPIDS_testing]({{ site.baseurl }}assets/RAPIDS/install/Testing.png "RAPIDS 테스팅"){: width="100%" height="100%"}
   
   마지막으로 원본 코드 주소를 첨부하겠습니다.
   
