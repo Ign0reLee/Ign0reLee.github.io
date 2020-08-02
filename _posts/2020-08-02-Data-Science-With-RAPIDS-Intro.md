@@ -4,14 +4,14 @@ cover: 'assets/RAPIDS/Main.png'
 title: 00.Data Science With RAPIDS Introduction
 published: true
 date: 2020-08-02 19:00:00
-tags: [RAPIDS ,Python, Machine Learning, Data Science, Cupy, Cudf]
+tags: [RAPIDS ,Python, Machine Learning, DataScience, Cupy, Cudf,Data, Data Science]
 author: Lee Je Young
 ---
 <meta charset="UTF8">
 
 # Data Science With RAPIDS Introduction
 ---
-
+  <br><br>
   안녕하세요, 그리고 오랜만입니다.
   
   기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다.
@@ -26,9 +26,9 @@ author: Lee Je Young
   
   이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다.
   
-  
+  <br><br>
 ---
-  
+  <br><br>
   아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.
   
   그래서 이번기회에 한글로 소개하고자합니다.
@@ -39,10 +39,10 @@ author: Lee Je Young
   
   
 ---
-
+  <br><br>
 ## Enviroment
-
 ---
+  <br><br>
   아쉽지만, 이 칼럼에서는 환경을 조금 제한해야합니다.
   
   공식적으로 지원되고 있는 환경이 넓지는 않습니다.
@@ -70,18 +70,17 @@ author: Lee Je Young
 >Cudnn >= 7.6
 >NUMPY >= 1.16.1
   
-  
+  <br><br>
 ---
   
 ## Goal Of This Column
-  
 ---
-  
+  <br><br>
   이 칼럼의 목표에 대해 알려드리겠습니다.
   
   우선 RAPIDS는 다음과 같이 구성되어 있습니다.
   
-  ![RAPIDS_Structure]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all.jpg" Rapids구조)
+  ![RAPIDS_Structure]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all.jpg")
   
   이번 칼럼은 Data Science의 기초부분을 다루고자합니다.
   
@@ -91,10 +90,10 @@ author: Lee Je Young
   
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
-  ![RAPIDS_Structures]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.jpg" 이 칼럼에서 다루는 부분(빨간색))
+  ![RAPIDS_Structures]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.jpg")
   
 ---
-  
+  <br><br>
   앞으로 일주일에 한번 연재하는 것이 목표입니다.
   
   앞으로도 잘 부탁드리겠습니다. 감사합니다!

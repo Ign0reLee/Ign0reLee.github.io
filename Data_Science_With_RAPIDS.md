@@ -8,7 +8,7 @@ permalink: /Data_Science_With_RAPIDS/
 <h3>Post List</h3><br /><br />
 
 <ul>
-  {% for post in site.tags."Data Science" %}
+  {% for post in site.tags."DataScience" %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
