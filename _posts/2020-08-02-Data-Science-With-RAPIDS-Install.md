@@ -68,7 +68,7 @@ author: Lee Je Young
   
   아나콘다에서는 어떻게 설치하는지 그림으로 먼저 살펴보겠습니다.
   
-  ![RAPIDS_Installation]({{ site.baseurl }}assets/RAPIDS/install/RAPIDS_install.png "RAPIDS 설치 방법"){: width="100%" height="100%"}
+  ![RAPIDS_Installation]({{ site.baseurl }}assets/RAPIDS/install/RAPIS_install.png "RAPIDS 설치 방법"){: width="100%" height="100%"}
   
   순서대로 살펴 볼까요?
   
