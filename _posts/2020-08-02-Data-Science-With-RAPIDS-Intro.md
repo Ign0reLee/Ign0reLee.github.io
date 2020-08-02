@@ -4,7 +4,7 @@ cover: 'assets/RAPIDS/Main.png'
 title: 00.Data Science With RAPIDS Introduction
 published: true
 date: 2020-08-02 19:00:00
-tags: [RAPIDS ,Python, Machine Learning, DataScience, Cupy, Cudf,Data, Data Science]
+tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, Cudf,Data, Data Science]
 author: Lee Je Young
 ---
 <meta charset="UTF8">
@@ -27,7 +27,9 @@ author: Lee Je Young
   이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다.
   
   <br><br>
+  
 ---
+
   <br><br>
   아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.
   
@@ -63,11 +65,17 @@ author: Lee Je Young
   
   
 >Ubuntu >= 18.04 LST
+
 >Anaconda
+
 >Python >= 3.6.8
+
 >RAPIDS(stable) >= 0.12
+
 >CUDA >= 10.0
+
 >Cudnn >= 7.6
+
 >NUMPY >= 1.16.1
   
   <br><br>
