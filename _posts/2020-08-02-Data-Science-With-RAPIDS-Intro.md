@@ -26,8 +26,6 @@ author: Lee Je Young
   
   이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다.
   
-  <br><br>
-  
   아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.
   
   그래서 이번기회에 한글로 소개하고자합니다.
@@ -88,7 +86,7 @@ author: Lee Je Young
   
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
-  ![RAPIDS_Structures]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.jpg")
+  ![RAPIDS_Structures]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.png")
   <br><br>
   
 ---
