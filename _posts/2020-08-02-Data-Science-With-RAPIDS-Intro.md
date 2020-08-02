@@ -28,9 +28,6 @@ author: Lee Je Young
   
   <br><br>
   
----
-
-  <br><br>
   아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.
   
   그래서 이번기회에 한글로 소개하고자합니다.
@@ -39,8 +36,7 @@ author: Lee Je Young
   
   다만, GPU를 이용한 데이터 과학에 대해서 한번 생각해보시는 계기가 되셨으면합니다.
   
-  
----
+ 
   <br><br>
 ## Enviroment
 ---
@@ -65,21 +61,15 @@ author: Lee Je Young
   
   
 >Ubuntu >= 18.04 LST
-
->Anaconda
-
->Python >= 3.6.8
-
->RAPIDS(stable) >= 0.12
-
->CUDA >= 10.0
-
->Cudnn >= 7.6
-
->NUMPY >= 1.16.1
+><br>Anaconda
+><br>Python >= 3.6.8
+><br>RAPIDS(stable) >= 0.12
+><br>CUDA >= 10.0
+><br>Cudnn >= 7.6
+><br>NUMPY >= 1.16.1
   
   <br><br>
----
+
   
 ## Goal Of This Column
 ---
@@ -99,8 +89,10 @@ author: Lee Je Young
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
   ![RAPIDS_Structures]("{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.jpg")
+  <br><br>
   
 ---
+
   <br><br>
   앞으로 일주일에 한번 연재하는 것이 목표입니다.
   
