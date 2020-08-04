@@ -7,7 +7,7 @@ date: 2020-05-31 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, Data Science, RAPIDS ,Python, Deep Learning, Machine Learning]
 author: Lee Je Young
 ---
-<meta charset="UTF8">
+
 <h1>Fundamentals Of Accelerated Data Science With RAPIDS Review<br /></h1>
 
 

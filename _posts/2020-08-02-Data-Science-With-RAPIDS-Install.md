@@ -69,7 +69,7 @@ author: Lee Je Young
   아나콘다에서는 어떻게 설치하는지 그림으로 먼저 살펴보겠습니다.
   
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/RAPIS_install.png" width="100%" height="100%" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/RAPIS_install.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   순서대로 살펴 볼까요?
   
@@ -130,7 +130,7 @@ author: Lee Je Young
   !nvidia-smi
   ```
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/Testing.png" width="100%" height="100%" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/Testing.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   마지막으로 원본 코드 주소를 첨부하겠습니다.
   
