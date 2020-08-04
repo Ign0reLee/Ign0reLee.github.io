@@ -7,7 +7,7 @@ date: 2020-05-24 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, CUDA,Numba,Python, Deep Learning, Machine Learning]
 author: Lee Je Young
 ---
-<meta charset="UTF8">
+
 <h1>Fundamentals of Accelerated Computing with CUDA Python Review<br /></h1>
 
 

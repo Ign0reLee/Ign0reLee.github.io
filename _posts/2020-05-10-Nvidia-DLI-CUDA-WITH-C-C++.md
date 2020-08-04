@@ -7,7 +7,7 @@ date: 2020-05-10 22:00:00
 tags: [Nvidia Deep Learning Institute, Review, DLI, CUDA,NVCC,C/C++, Deep Learning, Machine Learning]
 author: Lee Je Young
 ---
-<meta charset="UTF8">
+
 <h1>Nvidia Deep Learning Institute Fundamentals of Accelerated Computing with CUDA C/C++ Review<br /></h1>
 
 
