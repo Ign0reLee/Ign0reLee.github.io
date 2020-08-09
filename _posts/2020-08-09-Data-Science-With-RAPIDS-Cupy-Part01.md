@@ -149,6 +149,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 1. n=100
+---
   **numpy**
 
   ```python
@@ -177,6 +178,7 @@ author: Lee Je Young
   <br><br>
   
 ### Case 2. n=1000
+---
   **numpy**
   
   ```python
@@ -205,6 +207,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 3. n=10000
+---
   **numpy**
 
   ```python
