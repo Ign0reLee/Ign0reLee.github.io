@@ -254,7 +254,7 @@ author: Lee Je Young
   print(Num_array)
   print(type(Num_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/ndarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/ndarray.png" width="300" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   
   ```python
@@ -262,7 +262,7 @@ author: Lee Je Young
   print(Cupy_array)
   print(type(Cupy_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cudarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cudarray.png" width="300" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   둘이 데이터 타입이 조금 다름을 알 수 있습니다.
 
   ndarray이긴 하나, Numpy의 ndarray와 cuda의 core에 올라가있는 cupy의 ndarray입니다.
@@ -284,7 +284,7 @@ author: Lee Je Young
   print(cpu_array)
   print(type(cpu_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="300" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 
   <br><br>
 
@@ -303,6 +303,8 @@ author: Lee Je Young
   [cupy documentation](https://docs.cupy.dev/en/stable/)
 
   실습 코드와 결과는 원본 코드를 참고해주시길 바라겠습니다.
+
+---
 
 ### cupy.array(arg)
   cupy ndarray를 반환합니다.
