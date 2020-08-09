@@ -82,9 +82,6 @@ author: Lee Je Young
   간단한 코드를 통해 사용법을 보도록하겠습니다.
 
   먼저 Numpy 버전 코드입니다.
-
-  <br><br>
-
   ```python
   %time
 
@@ -98,9 +95,6 @@ author: Lee Je Young
   <br><br>
 
   다음은 Cupy 버전 코드입니다.
-
-  <br><br>
-
   ```python
   %time
 
@@ -119,4 +113,126 @@ author: Lee Je Young
 
   GPU에 Array가 올라갔음을 알 수 있습니다.
 
+  <br><br>
+
+## Time
+---
+
+  <br><br>
+  
+  그런데 한가지 이상한 점이 있습니다.
+
+  Numpy보다 빠르다고 이야기를 했는데, 위의 코드에서는 Numpy가 Cupy보다 동작 시간이 더 짧음을 볼 수 있습니다.
+
+  어째서 Numpy의 동작 시간이 더 빨랐을까요?
+
+  지금의 경우에는 연산량이 작기 때문입니다.
+
+  무슨 이야기냐면, GPU는 항상 CPU보다 빠른것이 아닙니다.
+
+  다음과 같은 상황에서는 CPU가 GPU보다 빠른 성능을 낼 수도 있습니다.
+
+    1. 계산량이 충분하지 않은 경우
+    <br>
+    2. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
+    <br>
+    3. (쉘 동작 시간에서는)처음 호출하는 경우
+
+  지금의 경우 3번과 1번에 해당하는 상황인 것 같습니다.
+
+  자 그러면 실제로 연산량이 많을수록 Cupy가 동작시간이 더 짧은지 코드로 확인해보겠습니다.
+
+
+## Computing Time Test
+---
+
+  <br><br>
+
+  지금 부터 간단하게 연산 시간 테스를 해보겠습니다.
+
+  랜덤하게 생성한 N * N 크기의 행렬을 두개 만든 후, 내적을 실행해보겠습니다.
+
+  그리고 N의 크기를 증가 시켜가면서 속도를 테스트 해 볼 예정입니다.
+
+  직접 하셔도 좋고, 결과만 보고 가셔도 괜찮습니다.
+  
+  <br><br>
+
+  ### Case 1. n=100
+
+  ```python
+
+  %time
+
+  a = np.random.rand(n,n)
+  b = np.random.rand(n,n)
+  result = np.matmul(a,b)
+
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <br>
+
+  ```python
+
+  %time
+
+  a = cp.random.rand(n,n)
+  b = cp.random.rand(n,n)
+  result = cp.matmul(a,b)
+
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <br><br>
+  
+  ### Case 2. n=1000
+
+  ```python
+
+  %time
+
+  a = np.random.rand(n,n)
+  b = np.random.rand(n,n)
+  result = np.matmul(a,b)
+
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <br>
+
+  ```python
+
+  %time
+
+  a = cp.random.rand(n,n)
+  b = cp.random.rand(n,n)
+  result = cp.matmul(a,b)
+  
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <br><br>
+
+  ### Case 3. n=10000
+
+  ```python
+
+  %time
+
+  a = np.random.rand(n,n)
+  b = np.random.rand(n,n)
+  result = np.matmul(a,b)
+
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <br>
+
+  ```python
+
+  %time
+
+  a = cp.random.rand(n,n)
+  b = cp.random.rand(n,n)
+  result = cp.matmul(a,b)
+  
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <br><br>
   
