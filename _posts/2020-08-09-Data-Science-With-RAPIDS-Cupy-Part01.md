@@ -54,12 +54,12 @@ author: Lee Je Young
 
 ## Import 하기
 ---
+  <br>
+
   ```python
   import cupy as cp
   import numpy as np
   ```
-
-  <br><br>
 
   이번 과정에서는 항상 Numpy와 Cupy 모두를 Import 할 예정입니다.
 
@@ -73,7 +73,7 @@ author: Lee Je Young
 
 ## Simple Test Code
 ---
-
+  <br>
   간단한 코드를 통해 사용법을 보도록하겠습니다.
 
   먼저 Numpy 버전 코드입니다.
@@ -100,8 +100,6 @@ author: Lee Je Young
   !nvidia-smi
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
-  <br><br>
-
   지난번에 보았던 설치 부분에서도 봤던 코드와 유사합니다.
 
   결과 출력된 화면을 보면, GPU메모리가 올라간게 보이시나요?
@@ -112,7 +110,7 @@ author: Lee Je Young
 
 ## Time
 ---
-  
+  <br>
   그런데 한가지 이상한 점이 있습니다.
 
   Numpy보다 빠르다고 이야기를 했는데, 위의 코드에서는 Numpy가 Cupy보다 동작 시간이 더 짧음을 볼 수 있습니다.
@@ -126,11 +124,9 @@ author: Lee Je Young
   다음과 같은 상황에서는 CPU가 GPU보다 빠른 성능을 낼 수도 있습니다.
 
   1. 계산량이 충분하지 않은 경우
-  <br>
   1. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
-  <br>
   1. (쉘 동작 시간에서는)처음 호출하는 경우
-
+  <br>
   지금의 경우 3번과 1번에 해당하는 상황인 것 같습니다.
 
   자 그러면 실제로 연산량이 많을수록 Cupy가 동작시간이 더 짧은지 코드로 확인해보겠습니다.
@@ -151,7 +147,7 @@ author: Lee Je Young
   
   <br><br>
 
-  ### Case 1. n=100
+### Case 1. n=100
 
   ```python
 
@@ -177,7 +173,7 @@ author: Lee Je Young
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
-  ### Case 2. n=1000
+### Case 2. n=1000
 
   ```python
 
@@ -203,7 +199,7 @@ author: Lee Je Young
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
-  ### Case 3. n=10000
+### Case 3. n=10000
 
   ```python
 
