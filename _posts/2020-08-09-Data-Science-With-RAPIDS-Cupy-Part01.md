@@ -126,7 +126,9 @@ author: Lee Je Young
   1. 계산량이 충분하지 않은 경우
   1. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
   1. (쉘 동작 시간에서는)처음 호출하는 경우
+  
   <br>
+
   지금의 경우 3번과 1번에 해당하는 상황인 것 같습니다.
 
   자 그러면 실제로 연산량이 많을수록 Cupy가 동작시간이 더 짧은지 코드로 확인해보겠습니다.
@@ -148,6 +150,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 1. n=100
+  numpy
 
   ```python
 
@@ -160,6 +163,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
+  cupy
 
   ```python
 
@@ -174,7 +178,8 @@ author: Lee Je Young
   <br><br>
   
 ### Case 2. n=1000
-
+  numpy
+  
   ```python
 
   %time
@@ -186,6 +191,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
+  cupy
 
   ```python
 
@@ -200,6 +206,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 3. n=10000
+  numpy
 
   ```python
 
@@ -212,6 +219,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
+  cupy
 
   ```python
 
