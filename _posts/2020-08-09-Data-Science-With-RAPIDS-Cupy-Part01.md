@@ -303,82 +303,183 @@ author: Lee Je Young
   [cupy documentation](https://docs.cupy.dev/en/stable/)
 
   실습 코드와 결과는 원본 코드를 참고해주시길 바라겠습니다.
+  
+  <br><br>
 
 ---
 
 ### cupy.array(arg)
   cupy ndarray를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.arange(strat, stop=None, step=1, dtype=None)
   시작부터 끝지점까지 step 간격을 가진 cupy ndarray를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.empty(shape, dtype)
   초기화한 cupy ndarray를 반환합니다.
+  
+  <br><br>
+  
+---
 
 ### cupy.ones(shape, dtype)
   1로 초기화한 cupy ndarray를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.zeros(shape, dtype)
   0으로 초기화한 cupy ndarray를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.linalg.norm(cupy.ndarray)
   Euclidean norm(a.k.a L2 norm)한 결과를 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.cuda.Device(int).use()
   cupy는 기본적으로 gpu 0을 사용하게 되어있습니다.
   이 명령어를 통해 원하는 gpu로 옮길 수 있습니다.
 
+  <br><br>
+  
+---
+
 ### cupy.asnumpy(cupy.ndarray)
   앞서 잠깐 살펴보았던 .get()메서드와 같은 역할입니다.
   둘 중 원하는 방법으로 사용하셔도 무방합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.add(array1, array2)
   두 어레이의 원소별 덧셈을 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.subtract(array1, array2)
   두 어레이의 원소별 뺄셈을 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.multiply(array1, array2)
   두 어레이의 원소별 곱셈을 반환합니다.
+
+  <br><br>
+  
+---
 
 ###  cupy.divide(array1, array2)
   두 어레이의 원소별 나눗셈을 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.power(array1, array2)
   두 어레이의 원소별 승곱을 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.mod(array1, array2)
   두 어레이의 원소별 나머지를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.absolute(array)
   어레이의 원소별 절대값을 취한 값을 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.exp(array)
   어레이의 원소별 Exponential 결과를 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.log(array)
   어레이의 원소별 log를 수행합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.sqrt(array)
   어레이의 원소별 sqaure root 연산을 수행합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.square(array)
   어레이의 원소별 제곱연산을 수행합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.sin, cupy.cos, cupy.tan
   다양한 삼각함수들도 지원하고 있습니다.
 
+  <br><br>
+  
+---
+
 ### cupy.equal(array1, array2)
   두 어레이의 각 원소별로 값이 같은지 비교하여 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.maximum(array1, array2)
   두 어레이의 각 원소별로 큰 값을 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.minimum(array1, array2)
   두 어레이의 각 원소별로 작은 값을 반환합니다.
+
+  <br><br>
+  
+---
 
 ### cupy.floor(array)
   원소별 floor연산을 수행 후 반환합니다.
 
+  <br><br>
+  
+---
+
 ### cupy.ceil(array)
   원소별 ceil연산을 수행 후 반환합니다.
+
+  <br><br>
+  
