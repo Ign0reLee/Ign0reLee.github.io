@@ -9,79 +9,85 @@
 
 <url>
   <loc>https://ign0relee.github.io/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/about/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/contact/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia_DLI_Review/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Data_Science_With_RAPIDS/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia-Accelerated-Data-Science-With-Rapids</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia-DLI-CUDA-WITH-Python</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia-Image-Super-Resolution-Using-AutoEncoder</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia-DLI-CUDA-WITH-C-C++</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Nvidia-DLI-Computer-Vision</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part01</loc>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Data-Science-With-RAPIDS-Install</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ign0relee.github.io/tags/</loc>
-  <lastmod>2020-08-02T13:58:40+00:00</lastmod>
+  <lastmod>2020-08-09T14:57:05+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
