@@ -126,7 +126,7 @@ author: Lee Je Young
   1. 계산량이 충분하지 않은 경우
   1. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
   1. (쉘 동작 시간에서는)처음 호출하는 경우
-  
+
   <br>
 
   지금의 경우 3번과 1번에 해당하는 상황인 것 같습니다.
@@ -136,8 +136,7 @@ author: Lee Je Young
 
 ## Computing Time Test
 ---
-
-  <br><br>
+  <br>
 
   지금 부터 간단하게 연산 시간 테스를 해보겠습니다.
 
@@ -150,7 +149,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 1. n=100
-  numpy
+  **numpy**
 
   ```python
 
@@ -163,7 +162,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
-  cupy
+  **cupy**
 
   ```python
 
@@ -178,7 +177,7 @@ author: Lee Je Young
   <br><br>
   
 ### Case 2. n=1000
-  numpy
+  **numpy**
   
   ```python
 
@@ -191,7 +190,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
-  cupy
+  **cupy**
 
   ```python
 
@@ -206,7 +205,7 @@ author: Lee Je Young
   <br><br>
 
 ### Case 3. n=10000
-  numpy
+  **numpy**
 
   ```python
 
@@ -219,7 +218,7 @@ author: Lee Je Young
   ```
   <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
-  cupy
+  **cupy**
 
   ```python
 
@@ -238,4 +237,146 @@ author: Lee Je Young
   반면 n이 작을땐, Numpy가 속도가 더 빠른걸 볼 수 있습니다.
 
   <br><br>
+
+
+## Cupy Data Type
+---
+  <br>
   
+  처음 Cupy 매서드와 Numpy의 매서드가 거의 동일하다고 말씀 드렸습니다.
+
+  그렇다면 데이터 타입도 같을까요?
+
+  한번 확인해보겠습니다.
+
+  ```python
+  Num_array = np.arange(6)
+  print(Num_array)
+  print(type(Num_array))
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/ndarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <br>
+  
+  ```python
+  Cupy_array = cp.arange(6)
+  print(Cupy_array)
+  print(type(Cupy_array))
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cudarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  둘이 데이터 타입이 조금 다름을 알 수 있습니다.
+
+  ndarray이긴 하나, Numpy의 ndarray와 cuda의 core에 올라가있는 cupy의 ndarray입니다.
+
+  <br><br>
+
+## .get()
+---
+  <br>
+  
+  그렇다면, cupy ndarray를 numpy ndarray타입으로 바꿀 수는 없을까요?
+
+  밑에 추가로 바꾸는 방법이 나오지만, 우선 .get()은 자주 사용할 예정임으로 따로 만들었습니다.
+
+  cupy array뒤에 .get()을 붙임으로 numpy ndarray로 만들 수 있습니다.
+
+  ```python
+  cpu_array = Cupy_array.get()
+  print(cpu_array)
+  print(type(cpu_array))
+  ```
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+
+  <br><br>
+
+## Cupy Method
+---
+  <br>
+
+  마지막으로 앞으로 자주 쓰일 매서드를 몇가지만 살펴보도록 하겠습니다.
+
+  Numpy 사용이 익숙하신 분들은 이 부분은 넘어가셔도 관계 없습니다.
+
+  또한 제대로 이해하시려면 documentation을 참고하시기 바랍니다. 
+
+  지금은 쉽게 사용하기 위해 꼭 필요한 부분만 적어 넣었습니다.
+
+  [cupy documentation](https://docs.cupy.dev/en/stable/)
+
+  실습 코드와 결과는 원본 코드를 참고해주시길 바라겠습니다.
+
+### cupy.array(arg)
+  cupy ndarray를 반환합니다.
+
+### cupy.arange(strat, stop=None, step=1, dtype=None)
+  시작부터 끝지점까지 step 간격을 가진 cupy ndarray를 반환합니다.
+
+### cupy.empty(shape, dtype)
+  초기화한 cupy ndarray를 반환합니다.
+
+### cupy.ones(shape, dtype)
+  1로 초기화한 cupy ndarray를 반환합니다.
+
+### cupy.zeros(shape, dtype)
+  0으로 초기화한 cupy ndarray를 반환합니다.
+
+### cupy.linalg.norm(cupy.ndarray)
+  Euclidean norm(a.k.a L2 norm)한 결과를 반환합니다.
+
+### cupy.cuda.Device(int).use()
+  cupy는 기본적으로 gpu 0을 사용하게 되어있습니다.
+  이 명령어를 통해 원하는 gpu로 옮길 수 있습니다.
+
+### cupy.asnumpy(cupy.ndarray)
+  앞서 잠깐 살펴보았던 .get()메서드와 같은 역할입니다.
+  둘 중 원하는 방법으로 사용하셔도 무방합니다.
+
+### cupy.add(array1, array2)
+  두 어레이의 원소별 덧셈을 반환합니다.
+
+### cupy.subtract(array1, array2)
+  두 어레이의 원소별 뺄셈을 반환합니다.
+
+### cupy.multiply(array1, array2)
+  두 어레이의 원소별 곱셈을 반환합니다.
+
+###  cupy.divide(array1, array2)
+  두 어레이의 원소별 나눗셈을 반환합니다.
+
+### cupy.power(array1, array2)
+  두 어레이의 원소별 승곱을 반환합니다.
+
+### cupy.mod(array1, array2)
+  두 어레이의 원소별 나머지를 반환합니다.
+
+### cupy.absolute(array)
+  어레이의 원소별 절대값을 취한 값을 반환합니다.
+
+### cupy.exp(array)
+  어레이의 원소별 Exponential 결과를 반환합니다.
+
+### cupy.log(array)
+  어레이의 원소별 log를 수행합니다.
+
+### cupy.sqrt(array)
+  어레이의 원소별 sqaure root 연산을 수행합니다.
+
+### cupy.square(array)
+  어레이의 원소별 제곱연산을 수행합니다.
+
+### cupy.sin, cupy.cos, cupy.tan
+  다양한 삼각함수들도 지원하고 있습니다.
+
+### cupy.equal(array1, array2)
+  두 어레이의 각 원소별로 값이 같은지 비교하여 반환합니다.
+
+### cupy.maximum(array1, array2)
+  두 어레이의 각 원소별로 큰 값을 반환합니다.
+
+### cupy.minimum(array1, array2)
+  두 어레이의 각 원소별로 작은 값을 반환합니다.
+
+### cupy.floor(array)
+  원소별 floor연산을 수행 후 반환합니다.
+
+### cupy.ceil(array)
+  원소별 ceil연산을 수행 후 반환합니다.
