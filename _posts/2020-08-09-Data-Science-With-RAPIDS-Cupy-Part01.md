@@ -54,9 +54,6 @@ author: Lee Je Young
 
 ## Import 하기
 ---
-  
-  <br><br>
-
   ```python
   import cupy as cp
   import numpy as np
@@ -76,8 +73,6 @@ author: Lee Je Young
 
 ## Simple Test Code
 ---
-  
-  <br><br>
 
   간단한 코드를 통해 사용법을 보도록하겠습니다.
 
@@ -117,8 +112,6 @@ author: Lee Je Young
 
 ## Time
 ---
-
-  <br><br>
   
   그런데 한가지 이상한 점이 있습니다.
 
@@ -132,11 +125,11 @@ author: Lee Je Young
 
   다음과 같은 상황에서는 CPU가 GPU보다 빠른 성능을 낼 수도 있습니다.
 
-    1. 계산량이 충분하지 않은 경우
-    <br>
-    2. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
-    <br>
-    3. (쉘 동작 시간에서는)처음 호출하는 경우
+  1. 계산량이 충분하지 않은 경우
+  <br>
+  1. 잘못된 구조로 GPU 아키텍쳐를 만들었을 경우
+  <br>
+  1. (쉘 동작 시간에서는)처음 호출하는 경우
 
   지금의 경우 3번과 1번에 해당하는 상황인 것 같습니다.
 
@@ -169,7 +162,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
 
   ```python
@@ -181,7 +174,7 @@ author: Lee Je Young
   result = cp.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
   ### Case 2. n=1000
@@ -195,7 +188,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
 
   ```python
@@ -207,7 +200,7 @@ author: Lee Je Young
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
   ### Case 3. n=10000
@@ -221,7 +214,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="200" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
 
   ```python
@@ -233,6 +226,12 @@ author: Lee Je Young
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <br>
+
+  확실히 연산량이 늘어나면 늘어날수록 Numpy에 비해 Cupy가 훨씬 빠른 속도를 냄을 알 수 있습니다.
+
+  반면 n이 작을땐, Numpy가 속도가 더 빠른걸 볼 수 있습니다.
+
   <br><br>
   
