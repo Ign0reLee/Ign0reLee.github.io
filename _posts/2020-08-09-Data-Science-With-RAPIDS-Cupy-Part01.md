@@ -78,7 +78,7 @@ author: Lee Je Young
 
   먼저 Numpy 버전 코드입니다.
   ```python
-  %time
+  %%time
 
   x_num = np.arange(6).reshape(2,3).astype("f")
   print("X : ", x_num)
@@ -91,7 +91,7 @@ author: Lee Je Young
 
   다음은 Cupy 버전 코드입니다.
   ```python
-  %time
+  %%time
 
   x_cp = cp.arange(6).reshape(2,3).astype('f')
   print("X : " , x_cp)
@@ -154,7 +154,7 @@ author: Lee Je Young
 
   ```python
 
-  %time
+  %%time
 
   a = np.random.rand(n,n)
   b = np.random.rand(n,n)
@@ -167,7 +167,7 @@ author: Lee Je Young
 
   ```python
 
-  %time
+  %%time
 
   a = cp.random.rand(n,n)
   b = cp.random.rand(n,n)
@@ -183,7 +183,7 @@ author: Lee Je Young
   
   ```python
 
-  %time
+  %%time
 
   a = np.random.rand(n,n)
   b = np.random.rand(n,n)
@@ -196,7 +196,7 @@ author: Lee Je Young
 
   ```python
 
-  %time
+  %%time
 
   a = cp.random.rand(n,n)
   b = cp.random.rand(n,n)
@@ -212,7 +212,7 @@ author: Lee Je Young
 
   ```python
 
-  %time
+  %%time
 
   a = np.random.rand(n,n)
   b = np.random.rand(n,n)
@@ -225,7 +225,7 @@ author: Lee Je Young
 
   ```python
 
-  %time
+  %%time
 
   a = cp.random.rand(n,n)
   b = cp.random.rand(n,n)
