@@ -389,9 +389,9 @@ print(result)
   
   행렬 파트를 공부할 때는 random.rand함수를 사용하도록 하겠습니다.
 
-  random은 말 그대로 random함 값을 사용하고 싶을 때 사용하는 매소드입니다.
+  random은 행렬의 원소에 random한 실수 값을 주고 싶을 때 사용하는 메소드입니다.
 
-  그 중 rand함수는, 뒤에서 배울 shape를 부여한다면, 해당 shape의 랜덤한 array를 생성해줍니다.
+  그 중 rand함수는, 원하는 shape의 랜덤한 array를 생성해줍니다.
 
   이때 값은 0에서 1사이입니다.
 
