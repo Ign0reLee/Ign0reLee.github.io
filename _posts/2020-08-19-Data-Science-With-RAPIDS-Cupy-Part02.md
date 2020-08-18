@@ -1,14 +1,14 @@
 ---
 layout: post
 cover: 'assets/RAPIDS/Main.png'
-title: 02. Data Science With RAPIDS Cupy Part 02
+title: 03. Data Science With RAPIDS Cupy Part 02
 published: true
-date: 2020-08-09 22:00:00
+date: 2020-08-19 22:00:00
 tags: [RAPIDS ,Python, Machine Learning, DataScience, Cupy, cupy , Data, Data Science]
 author: Lee Je Young
 ---
 
-# 02. Data Science With RAPIDS Cupy Part 02 - 선형대수학
+# 03. Data Science With RAPIDS Cupy Part 02 - 선형대수학
 ---
   <br><br>
   
