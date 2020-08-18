@@ -57,7 +57,7 @@ author: Lee Je Young
 
   다만, 이번 챕터에서는 시간에 대한 부분은 빠져있습니다.
 
-  왜냐하면 이런 함수를 사용한다가 중요한 부분이기 때문입니다.
+  함수 사용에 관해 배울땐, 시간을 고려할 필요가 없기 때문입니다.
 
   <br><br>
 
@@ -68,7 +68,7 @@ author: Lee Je Young
 ### 2.1.0 벡터의 개념
 ---
 
-  벡터와 스칼라는 수학을 공부해본 사람이라면 많이 봐왔을 개념일 것입니다.
+  벡터와 스칼라는 수학을 공부해본 사람이라면 많이 보았을 개념일 것입니다.
 
   저는 수학과가 아니여서 그런지 벡터는 간단하게 방향이 있는 값 정도로 이해하고 있습니다.
 
@@ -120,7 +120,7 @@ cupy_vector = cp.array([10, 20, 30])
 
   그림으로 보았던 예시를 코드로 실험해보겠습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector1 = np.array([1,2])
 vector2 = np.array([2,1])
@@ -145,7 +145,7 @@ print(result)
 
   Numpy와 Cupy 모두 subtract라는 함수로 구현되어 있습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector1 = np.array([1,2])
 vector2 = np.array([2,1])
@@ -170,7 +170,7 @@ print(result)
 
   이는 multiply 함수로 표현할 수 있습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector = np.array([1,2])
 scalar = 2
@@ -195,7 +195,7 @@ print(result)
 
   numpy와 cupy에선 dot이라는 함수로 구현되어 있습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector1 = np.array([1,2])
 vector2 = np.array([2,1])
@@ -213,12 +213,12 @@ print(result)
 ```
 <br><br>
 
-### 2.1.6 벡터의 제곱
+### 2.1.6 벡터의 요소별 제곱
 ---
 
   벡터의 요소별 제곱은 square라는 함수로 구현되어 있습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector = np.array([1,2])
 
@@ -240,7 +240,7 @@ print(result)
 
   벡터의 요소별 루트는 sqrt라는 함수로 구현되어 있습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector = np.array([1,2])
 
@@ -263,7 +263,7 @@ print(result)
 
   거리에도 여러가지 개념이 존재하지만, 지금은 가장 일반적이라고 할 수 있는 유클리디언 거리를 측정해보도록 하겠습니다.
 
-  __Nnmpy__
+  __Numpy__
 ```python
 vector1 = np.array([1,2])
 vector2 = np.array([2,3])
