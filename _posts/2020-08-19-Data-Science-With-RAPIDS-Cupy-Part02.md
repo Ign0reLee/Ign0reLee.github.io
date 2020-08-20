@@ -542,7 +542,11 @@ print("Result \n",result)
 
   더 배우고 싶으시다면, cupy나 numpy의 공식 document를 참고하시길 바라겠습니다.
 
-  또한 질문은 언제든지 해주세요, 댓글 기능은 조만간 활성화 시키려고 합니다.
+  또한 질문 및 이야기는 언제든지 부탁드리겠습니다.
+
+  질문은 제가 활동하고 있는 사이트 Devstu에서 부탁드리겠습니다.
+
+  [질문 하러 가기](https://devstu.co.kr)
 
   [Numpy Document](https://numpy.org/doc/)
 
