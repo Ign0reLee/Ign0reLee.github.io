@@ -14,8 +14,8 @@ author: Lee Je Young
 
 <br /> Tensorflow2 Document를 따라 제작하였으며,  내용은 거의 같습니다.
 
-[참고 사이트](https://www.tensorflow.org/guide/keras/customizing_what_happens_in_fit)
-[참고 사이트](https://www.tensorflow.org/guide/distributed_training?hl=ko)
+[참고 사이트1](https://www.tensorflow.org/guide/keras/customizing_what_happens_in_fit)<br />
+[참고 사이트2](https://www.tensorflow.org/guide/distributed_training?hl=ko)<br />
 [PPT의 코드](https://github.com/Ign0reLee/Study_repository/tree/master/Keras)
 
 <iframe src="https://catholicackr-my.sharepoint.com/personal/dlwpdud_catholic_ac_kr/_layouts/15/Doc.aspx?sourcedoc={b3dfe436-617a-4a1b-b936-5ebb94b9dd61}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe>
