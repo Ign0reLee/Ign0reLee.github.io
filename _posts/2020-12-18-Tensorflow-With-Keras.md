@@ -24,7 +24,7 @@ author: Lee Je Young
 </style>
 <div class="responsive-wrap">
 
-<iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETbk37N6YRtKuTZeu5S53WEBiZL6zAazIIqxCTWiyqDJxw?e=8O1qsW" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe>
+<iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETbk37N6YRtKuTZeu5S53WEBiZL6zAazIIqxCTWiyqDJxw?e=8O1qsW&amp;action=embedview&amp;wdAr=1.7777777777777776" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe>
 
 </div>
 
