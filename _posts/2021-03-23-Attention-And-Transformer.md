@@ -1,14 +1,16 @@
 ---
 layout: post
-cover: 'assets/images/tree.jpg'
+read_time: true
+show_date: true
+img: images/images/tree.jpg
 title: Attention And Transofrmer
 published: true
-date: 2021-03-23 14:00:00
+date: 2021-03-23 14:00:00 0900
 tags: [Deep Learning, Machine Learning, Keras, Tensorflow, Attention, Transformer, PersonalStudy]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
-
-<h1>Attention And Transofrmer<br /></h1>
 
 <br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.
 

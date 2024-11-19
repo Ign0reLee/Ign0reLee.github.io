@@ -1,14 +1,16 @@
 ---
 layout: post
-cover: 'assets/images/tree.jpg'
+read_time: true
+show_date: true
+img: images/images/tree.jpg
 title: Tensorflow with Keras
 published: true
-date: 2020-12-18 22:00:00
+date: 2020-12-18 22:00:00 0900
 tags: [Deep Learning, Machine Learning, Keras, Tensorflow, Distributed Training, Sub-Classing, PersonalStudy]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
-
-<h1>Tensorflow with Keras<br /></h1>
 
 <br /> Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.
 

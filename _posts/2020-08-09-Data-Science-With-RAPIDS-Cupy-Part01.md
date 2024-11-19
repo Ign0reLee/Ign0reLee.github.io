@@ -1,15 +1,17 @@
 ---
 layout: post
-cover: 'assets/RAPIDS/Main.png'
+read_time: true
+show_date: true
+img: images/RAPIDS/Main.png
 title: 02. Data Science With RAPIDS Cupy Part 01
 published: true
-date: 2020-08-09 22:00:00
+date: 2020-08-09 22:00:00 0900
 tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, cupy , Data, Data Science]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
 
-# 02. Data Science With RAPIDS Cupy Part 01 - 기초
----
   <br><br>
   
   안녕하세요, 두번째 챕터 Cupy Part 01입니다.
@@ -86,7 +88,7 @@ author: Lee Je Young
 
   !nvidia-smi
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
   다음은 Cupy 버전 코드입니다.
@@ -99,7 +101,7 @@ author: Lee Je Young
 
   !nvidia-smi
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   지난번에 보았던 설치 부분에서도 봤던 코드와 유사합니다.
 
   결과 출력된 화면을 보면, GPU메모리가 올라간게 보이시나요?
@@ -161,7 +163,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -174,7 +176,7 @@ author: Lee Je Young
   result = cp.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
 ### Case 2. n=1000
@@ -190,7 +192,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -203,7 +205,7 @@ author: Lee Je Young
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
 ### Case 3. n=10000
@@ -219,7 +221,7 @@ author: Lee Je Young
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -232,7 +234,7 @@ author: Lee Je Young
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
 
   확실히 연산량이 늘어나면 늘어날수록 Numpy에 비해 Cupy가 훨씬 빠른 속도를 냄을 알 수 있습니다.
@@ -257,7 +259,7 @@ author: Lee Je Young
   print(Num_array)
   print(type(Num_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   
   ```python
@@ -265,7 +267,7 @@ author: Lee Je Young
   print(Cupy_array)
   print(type(Cupy_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
   둘이 데이터 타입이 조금 다름을 알 수 있습니다.
 
   ndarray이긴 하나, Numpy의 ndarray와 cuda의 core에 올라가있는 cupy의 ndarray입니다.
@@ -287,7 +289,7 @@ author: Lee Je Young
   print(cpu_array)
   print(type(cpu_array))
   ```
-  <amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
 
   <br><br>
 

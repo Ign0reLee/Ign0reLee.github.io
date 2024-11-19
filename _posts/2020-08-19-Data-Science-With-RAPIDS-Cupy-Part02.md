@@ -1,15 +1,18 @@
 ---
 layout: post
-cover: 'assets/RAPIDS/Main.png'
+read_time: true
+show_date: true
+img: images/RAPIDS/Main.png
 title: 03. Data Science With RAPIDS Cupy Part 02
 published: true
-date: 2020-08-19 22:00:00
+date: 2020-08-19 22:00:00 0900
 tags: [RAPIDS ,Python, Machine Learning, DataScience, Cupy, cupy , Data, Data Science]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
 
-# 03. Data Science With RAPIDS Cupy Part 02 - 선형대수학
----
+
   <br><br>
   
   안녕하세요, 두번째 챕터 Cupy Part 02입니다.
@@ -103,7 +106,7 @@ cupy_vector = cp.array([10, 20, 30])
   
   사진으로 확인해보겠습니다.
 
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br><br>
 
 ### 2.1.2 벡터의 덧셈
@@ -113,7 +116,7 @@ cupy_vector = cp.array([10, 20, 30])
 
   벡터끼리 더한다는 것은, 각 벡터상에서 같은 위치에 있는 성분끼리 더한다는 의미입니다.
 
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br>
 
   Numpy와 Cupy 모두 add라는 함수로 구현되어 있습니다.

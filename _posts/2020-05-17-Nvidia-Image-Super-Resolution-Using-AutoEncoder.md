@@ -1,16 +1,16 @@
 ---
 layout: post
-cover: 'assets/DLI_AutoEncoder/Review/Main.png'
+read_time: true
+show_date: true
+img: images/DLI_AutoEncoder/Review/Main.png
 title: Image Super Resolution Using AutoEncoder Review
 published: true
-date: 2020-05-17 22:00:00
+date: 2020-05-17 22:00:00 0900
 tags: [Nvidia Deep Learning Institute, Review, DLI, AutoEncoder,Image Super Resolution,Computer Vison, Deep Learning, Machine Learning]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
-
-<h1>Image Super Resolution Using AutoEncoder Review<br /></h1>
-
-
 
 <br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.
@@ -32,7 +32,7 @@ author: Lee Je Young
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -86,7 +86,7 @@ author: Lee Je Young
 
 <br /><br />이러한 감쇠는 센서의 제한에서 비롯되는 경우가 많습니다.
 
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <center>
 < 제한된 예시 >
@@ -121,7 +121,7 @@ author: Lee Je Young
 
 <br /><br /> 그림을 먼저 보겠습니다.
 
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center> 
 < 일반적인 AutoEncoder >
 </center>
@@ -199,7 +199,7 @@ author: Lee Je Young
 
 
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -209,7 +209,7 @@ author: Lee Je Young
 <h4>The Decoder</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/5.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/5.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -219,7 +219,7 @@ author: Lee Je Young
 <h4>The Model</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/6.png" width="656" height="1500" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/6.png" width="656" height="1500" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -229,7 +229,7 @@ author: Lee Je Young
 <h4>Display the results</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_AutoEncoder/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_AutoEncoder/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />

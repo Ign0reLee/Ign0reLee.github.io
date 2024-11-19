@@ -1,17 +1,18 @@
 ---
 layout: post
-cover: 'assets/RAPIDS/Main.png'
+read_time: true
+show_date: true
+img: images/RAPIDS/Main.png
 title: 01. RAPIDS Installation
 published: true
-date: 2020-08-02 22:00:00
+date: 2020-08-02 22:00:00 0900
 tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, Cudf,CuML, Data, Data Science]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
 
-
-# 01. RAPIDS Installation
----
-  <br><br>
+<br><br>
   
   우선 첫번째 챕터 설치부터 살펴보겠습니다.
   
@@ -69,7 +70,7 @@ author: Lee Je Young
   아나콘다에서는 어떻게 설치하는지 그림으로 먼저 살펴보겠습니다.
   
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/RAPIS_install.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/install/RAPIS_install.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   순서대로 살펴 볼까요?
   
@@ -130,7 +131,7 @@ author: Lee Je Young
   !nvidia-smi
   ```
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/install/Testing.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/install/Testing.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   마지막으로 원본 코드 주소를 첨부하겠습니다.
   

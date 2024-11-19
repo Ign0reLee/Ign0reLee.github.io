@@ -1,0 +1,408 @@
+
+
+[   
+      
+  {
+  "tag" : "Attention",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "AutoEncoder",
+  "posts" : [
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "C/C++",
+  "posts" : [
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "CUDA",
+  "posts" : [
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Computer Vision",
+  "posts" : [
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Computer Vison",
+  "posts" : [
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "CuML",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Cudf",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Cupy",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "DLI",
+  "posts" : [
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html",
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Data",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Data Science",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html",
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "DataScience",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Deep Learning",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html",
+      
+      "./Tensorflow-With-Keras.html",
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html",
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Distributed Training",
+  "posts" : [
+      
+      "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Image Super Resolution",
+  "posts" : [
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Keras",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html",
+      
+      "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Machine Learning",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html",
+      
+      "./Tensorflow-With-Keras.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html",
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html",
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "NVCC",
+  "posts" : [
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Numba",
+  "posts" : [
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Nvidia Deep Learning Institute",
+  "posts" : [
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html",
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "PersonalStudy",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html",
+      
+      "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Python",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html",
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "RAPIDS",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html",
+      
+      "./Data-Science-With-RAPIDS-Install.html",
+      
+      "./Data-Science-With-RAPIDS-Intro.html",
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Review",
+  "posts" : [
+      
+      "./Nvidia-Accelerated-Data-Science-With-Rapids.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-Python.html",
+      
+      "./Nvidia-Image-Super-Resolution-Using-AutoEncoder.html",
+      
+      "./Nvidia-DLI-CUDA-WITH-C-C++.html",
+      
+      "./Nvidia-DLI-Computer-Vision.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Sub-Classing",
+  "posts" : [
+      
+      "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Tensorflow",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html",
+      
+      "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Transformer",
+  "posts" : [
+      
+      "./Attention-And-Transformer.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "cupy",
+  "posts" : [
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part02.html",
+      
+      "./Data-Science-With-RAPIDS-Cupy-Part01.html"
+      
+    ]
+  } 
+    
+]

@@ -1,72 +1,92 @@
 # Site settings
-title: Lee Je Young's Blog
-description: My Studying Blog
-cover: assets/images/radhakrishna.jpg
-logo: assets/images/logo.png
-favicon: assets/images/favicon.png
-baseurl: "https://ign0relee.github.io/" # the subpath of your site, e.g. /blog/ or / for root
-url: "" # the base hostname & protocol for your site
-theme: hanuman
+title: blog for daily JeyoungLee
+description: 'A day without laughter is a day wasted.' # this means to ignore newlines until "baseurl:"
+permalink: ':title:output_ext'
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://ign0relee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/img/branding/MVM-logo-full.svg"
+logo-icon: "/assets/img/branding/MVM-symbol.svg"
+logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
 
-pagination:
+# Night/Dark mode
+# Default mode is "auto", "auto" is for auto nightshift
+# (19:00 - 07:00), "manual" is for manual toggle, and
+# "on/off" is for default on/off.
+#
+# Whatever the user's choice is, it will supersede the
+# default setting of the site and be kept during the
+# visit (session). Only the dark mode setting is "manual",
+# it will be always kept on every visit (i.e. no matter
+# the browser is closed or not)
+night_mode: "auto"
 
-  # Site-wide kill switch, disabled here it doesn't run at all 
-  enabled: true
+logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
-  # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
-  debug: false
+# Author settings
+author: Jeyoung Lee # add your name
+author-pic: Myself_Neon_grey.jpg
+about-author: Ph D. Candidate at The Catholic of University of Korea, Computer Vision researcher
 
-  per_page: 5
+# Contact links
+email: dlwpdud@gmail.com # Add your Email address
+# phone: # Add your Phone number
+website:  "https://cvmilab-cuk.github.io"# Add your website
+linkedin: https://www.linkedin.com/in/%EC%A0%9C%EC%98%81-%EC%9D%B4-2857a517b/ # Add your Linkedin handle
+github: https://github.com/Ign0reLee # Add your Github handle
+# twitter: '@MvmThe' # Add your Twitter handle
+# bandcamp: armandomaynez # Add your Bandcamp username
+# stackoverflow: stackoverflow # Add your stackoverflow account
 
-# Social
-facebook: jeyoung.lee.716
-#twitter: twitter
-github:  Ign0reLee
+# Newsletter
+mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
 
-#Additional Pages
-about: about
-contact: contact
-privacy-policy: privacy-policy
-Nvidia_DLI_Review: Nvidia_DLI_Review
-Data_Science_With_RAPIDS: Data_Science_With_RAPIDS
-translation : translation
-Personal_Study : Personal_Study
+# Tracker
+analytics: G-R8SZS2YBZK
+fbadmin: ar.maybach
 
+# Paginate
+paginate: 6
+paginate_path: 'page:num'
+words_per_minute: 200
 
-permalink: /:title
+extensions:
+  mermaid_enable: true
 
-
-# Google Analytics
-analytics_id: ""
+# Comments
+comments: utteranc  #[disqus, utteranc]
+comments_opts:
+  comments_curtain: yes # leave empty to show the disqus embed directly
+  repo: # The GitHub repo URL.  https://utteranc.es/
+  issue_term: # The GitHub issue label
+  label: # The GitHub comments label
+  theme: # The GitHub comment's there. e.g. github-dark
+  # Disqus
+  discus_identifier: # Add your discus identifier
 
 # Build settings
 markdown: kramdown
+mathjax: true
+highlighter: rouge
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
 
-kramdown:
-  parse_block_html: true
+# Outputting
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+category_archive:
+  type: liquid
+  path: /categories/
+
+sass:
+  style: compressed
 
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
 
-
-# Settings for rake task
-safe: False
-lsi: False
-username: Ign0reLee #github username
-repo: https://github.com/Ign0reLee/Ign0reLee.github.io #github repository
-branch: master #branch
-relative_source: ../hanuman/ #source directory
-destination: ../hanuman-pages/ #destination directory
-production_url:  https://samanyougarg.com/
-source_url:  https://github.com/samanyougarg/hanuman #source repository url
-future: true
-
-exclude:
-  - README.md
-  - Rakefile
-  - Gemfile
-  - Gemfile.lock
-  - changelog.md
-  - "*.Rmd"
-  - vendor
-  - .travis.yml
+include: [_pages]
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]

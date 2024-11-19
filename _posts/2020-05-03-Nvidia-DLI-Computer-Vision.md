@@ -1,14 +1,16 @@
 ---
 layout: post
-cover: 'assets/images/tree.jpg'
+read_time: true
+show_date: true
+img: images/images/tree.jpg
 title: Fundamentals of DL for Computer Vision Review
 published: true
-date: 2020-05-03 22:00:00
+date: 2020-05-03 22:00:00 +0900
 tags: [Nvidia Deep Learning Institute, Review, DLI, Computer Vision, Deep Learning, Machine Learning]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
-
-<h1>Nvidia Deep Learning Institute Fundamentals of DL for Computer Vision Review<br /></h1>
 
 <br />우연치 않은 기회로 DLI리뷰 스터디들 진행하게되었습니다.
 
@@ -31,7 +33,7 @@ author: Lee Je Young
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -133,13 +135,13 @@ author: Lee Je Young
 <h4> DIGITS Examples</h4>
 
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <<1. Digits Data Load Example>>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <<2. Digits Train model 1>>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <<3. Digits Train model 1>>
 <br />
 
@@ -266,11 +268,11 @@ author: Lee Je Young
 <h2>인증서</h2>
 </center>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />

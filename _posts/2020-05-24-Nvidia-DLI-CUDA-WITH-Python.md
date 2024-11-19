@@ -1,16 +1,16 @@
 ---
 layout: post
-cover: 'assets/DLI_Python/Review/main.png'
+read_time: true
+show_date: true
+img: images/DLI_Python/Review/main.png
 title: Fundamentals of Accelerated Computing with CUDA Python Review
 published: true
-date: 2020-05-24 22:00:00
+date: 2020-05-24 22:00:00 0900
 tags: [Nvidia Deep Learning Institute, Review, DLI, CUDA,Numba,Python, Deep Learning, Machine Learning]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
-
-<h1>Fundamentals of Accelerated Computing with CUDA Python Review<br /></h1>
-
-
 
 <br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.
@@ -32,7 +32,7 @@ author: Lee Je Young
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}assets/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -108,7 +108,7 @@ author: Lee Je Young
 <center>
 <h4>How Numba Works</h4>
 </center>
-<br /><br /><amp-img src="{{ site.baseurl }}assets/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < Numba의 작동 순서도 >
 </center>
@@ -408,11 +408,11 @@ author: Lee Je Young
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="{{ site.baseurl }}assets/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}assets/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />

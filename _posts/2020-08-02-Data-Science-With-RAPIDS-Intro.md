@@ -1,15 +1,17 @@
 ---
 layout: post
-cover: 'assets/RAPIDS/Main.png'
+read_time: true
+show_date: true
+img: images/RAPIDS/Main.png
 title: 00. Data Science With RAPIDS Introduction
 published: true
-date: 2020-08-02 19:00:00
+date: 2020-08-02 19:00:00 0900
 tags: [RAPIDS ,Python, Machine Learning,DataScience, Cupy, Cudf,CuML, Data, Data Science]
-author: Lee Je Young
+author: Jeyoung Lee
+mathjax: yes 
+toc: yes 
 ---
 
-# 00. Data Science With RAPIDS Introduction
----
   <br><br>
   안녕하세요, 그리고 오랜만입니다.
   
@@ -75,7 +77,7 @@ author: Lee Je Young
   
   우선 RAPIDS는 다음과 같이 구성되어 있습니다.
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   이번 칼럼은 Data Science의 기초부분을 다루고자합니다.
   
@@ -85,7 +87,7 @@ author: Lee Je Young
   
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
-<amp-img src="{{ site.baseurl }}assets/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
 ---
