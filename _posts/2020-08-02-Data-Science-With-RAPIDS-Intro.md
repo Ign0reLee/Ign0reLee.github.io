@@ -77,7 +77,7 @@ toc: yes
   
   우선 RAPIDS는 다음과 같이 구성되어 있습니다.
   
-<amp-img src="{{ site.baseurl }}/assets/img/images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   
   이번 칼럼은 Data Science의 기초부분을 다루고자합니다.
   
@@ -87,7 +87,7 @@ toc: yes
   
   또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.
   
-<amp-img src="{{ site.baseurl }}/assets/img/images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
 ---

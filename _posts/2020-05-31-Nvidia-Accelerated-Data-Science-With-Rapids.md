@@ -40,7 +40,7 @@ toc: yes
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -73,12 +73,12 @@ toc: yes
 	</ul>
 </ul>
 <hr />
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < 전통적인 모델의 GPU 작동 순서도 >
 </center>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS를 사용한 GPU 작동 순서도 >
 </center>
@@ -90,7 +90,7 @@ toc: yes
 <br /><br /> 따라서 전통적인 모델에 비해서 더 빠른 성능을 낼 수 있습니다.
 </div>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS의 구성 >
 </center>
@@ -105,7 +105,7 @@ toc: yes
 
 </div>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS가 지원하는 데이터 과학용 툴 >
 </center>
@@ -120,7 +120,7 @@ toc: yes
 </div>
 
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS의 공식 홈페이지 >
 </center>
@@ -137,7 +137,7 @@ toc: yes
 
 
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < CUDF의 설명 >
 </center>
@@ -151,7 +151,7 @@ toc: yes
 
 </div>
 
-<br /><br /> <amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/8.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /> <amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/8.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS로 연결할 수 있는 라이브러리들 >
 </center>
@@ -163,7 +163,7 @@ toc: yes
 </div>
 
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/9.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/9.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < CuPY의 설명 >
 </center>
@@ -178,7 +178,7 @@ toc: yes
 
 </div>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/10.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/10.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < CUGRAPH의 설명 >
 </center>
@@ -203,7 +203,7 @@ toc: yes
 
 </div>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/11.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/11.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < RAPIDS에서 지원하는 TASK SCHEDULER 모형 >
 </center>
@@ -214,7 +214,7 @@ toc: yes
 
 </div>
 
-<br /><br /><amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/Review/12.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/Review/12.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 < CuML의 설명 >
 </center>
@@ -294,11 +294,11 @@ toc: yes
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_RAPIDS/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.url }}/assets/img/images/DLI_RAPIDS/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />
