@@ -32,7 +32,7 @@ toc: yes
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.url }}/assets/img/images/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 
 <h2>Index </h2><br />
 
@@ -108,7 +108,7 @@ toc: yes
 <center>
 <h4>How Numba Works</h4>
 </center>
-<br /><br /><amp-img src="{{ site.url }}/assets/img/images/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><img src="./assets/img/images/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <center>
 < Numba의 작동 순서도 >
 </center>
@@ -408,11 +408,11 @@ toc: yes
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="{{ site.url }}/assets/img/images/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <br />
-<amp-img src="{{ site.url }}/assets/img/images/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <br />
-<amp-img src="{{ site.url }}/assets/img/images/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 
 <br /><br />
 <hr />

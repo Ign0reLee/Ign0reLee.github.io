@@ -33,7 +33,7 @@ toc: yes
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 
 <h2>Index </h2><br />
 
@@ -135,13 +135,13 @@ toc: yes
 <h4> DIGITS Examples</h4>
 
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/Review/Train_Data.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <<1. Digits Data Load Example>>
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/Review/Train_model_1.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <<2. Digits Train model 1>>
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/Review/Train_model_2.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <<3. Digits Train model 1>>
 <br />
 
@@ -268,11 +268,11 @@ toc: yes
 <h2>인증서</h2>
 </center>
 
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 <br />
-<amp-img src="{{ site.baseurl }}/assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<img src="./assets/img/images/DLI_Computer_Vision/In/Fundamentals_of_DL_for_Computer_Vision_institute_이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3">
 
 <br /><br />
 <hr />
