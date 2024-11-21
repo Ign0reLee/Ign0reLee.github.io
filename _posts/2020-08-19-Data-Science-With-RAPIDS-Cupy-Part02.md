@@ -106,7 +106,7 @@ cupy_vector = cp.array([10, 20, 30])
   
   사진으로 확인해보겠습니다.
 
-<amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/img/images/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br><br>
 
 ### 2.1.2 벡터의 덧셈
@@ -116,7 +116,7 @@ cupy_vector = cp.array([10, 20, 30])
 
   벡터끼리 더한다는 것은, 각 벡터상에서 같은 위치에 있는 성분끼리 더한다는 의미입니다.
 
-<amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/img/images/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br>
 
   Numpy와 Cupy 모두 add라는 함수로 구현되어 있습니다.

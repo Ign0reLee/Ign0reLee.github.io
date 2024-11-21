@@ -1,5 +1,5 @@
 # Site settings
-title: blog for daily JeyoungLee
+title: Jeyoung Lee's Blog
 description: 'A day without laughter is a day wasted.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
