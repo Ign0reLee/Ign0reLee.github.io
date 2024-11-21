@@ -88,7 +88,7 @@ toc: yes
 
   !nvidia-smi
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
   다음은 Cupy 버전 코드입니다.
@@ -101,7 +101,7 @@ toc: yes
 
   !nvidia-smi
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
   지난번에 보았던 설치 부분에서도 봤던 코드와 유사합니다.
 
   결과 출력된 화면을 보면, GPU메모리가 올라간게 보이시나요?
@@ -163,7 +163,7 @@ toc: yes
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -176,7 +176,7 @@ toc: yes
   result = cp.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
   
 ### Case 2. n=1000
@@ -192,7 +192,7 @@ toc: yes
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -205,7 +205,7 @@ toc: yes
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br><br>
 
 ### Case 3. n=10000
@@ -221,7 +221,7 @@ toc: yes
   result = np.matmul(a,b)
 
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   **cupy**
 
@@ -234,7 +234,7 @@ toc: yes
   result = cp.matmul(a,b)
   
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
 
   확실히 연산량이 늘어나면 늘어날수록 Numpy에 비해 Cupy가 훨씬 빠른 속도를 냄을 알 수 있습니다.
@@ -259,7 +259,7 @@ toc: yes
   print(Num_array)
   print(type(Num_array))
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
   <br>
   
   ```python
@@ -267,7 +267,7 @@ toc: yes
   print(Cupy_array)
   print(type(Cupy_array))
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
   둘이 데이터 타입이 조금 다름을 알 수 있습니다.
 
   ndarray이긴 하나, Numpy의 ndarray와 cuda의 core에 올라가있는 cupy의 ndarray입니다.
@@ -289,7 +289,7 @@ toc: yes
   print(cpu_array)
   print(type(cpu_array))
   ```
-  <amp-img src="{{ site.baseurl }}images/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+  <amp-img src="{{ site.baseurl }}/assets/images/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
 
   <br><br>
 

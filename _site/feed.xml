@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-19T21:45:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blog for daily JeyoungLee</title><subtitle>A day without laughter is a day wasted.</subtitle><author><name>Jeyoung Lee</name></author><entry><title type="html">Attention And Transofrmer</title><link href="http://localhost:4000/Attention-And-Transformer.html" rel="alternate" type="text/html" title="Attention And Transofrmer" /><published>2021-03-23T14:00:00+09:00</published><updated>2021-03-23T14:00:00+09:00</updated><id>http://localhost:4000/Attention-And-Transformer</id><content type="html" xml:base="http://localhost:4000/Attention-And-Transformer.html"><![CDATA[<p><br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-21T20:47:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blog for daily JeyoungLee</title><subtitle>A day without laughter is a day wasted.</subtitle><author><name>Jeyoung Lee</name></author><entry><title type="html">Attention And Transofrmer</title><link href="http://localhost:4000/Attention-And-Transformer.html" rel="alternate" type="text/html" title="Attention And Transofrmer" /><published>2021-03-23T14:00:00+09:00</published><updated>2021-03-23T14:00:00+09:00</updated><id>http://localhost:4000/Attention-And-Transformer</id><content type="html" xml:base="http://localhost:4000/Attention-And-Transformer.html"><![CDATA[<p><br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.</p>
 
 <p><br />학교 발표용 자료로, 자세한 내용은 생략하고, 간단하게 정리했습니다.</p>
 
@@ -122,7 +122,7 @@
 
 <p>사진으로 확인해보겠습니다.</p>
 
-<amp-img src="/images/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-02/GPU-MEMORY.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /><br /></p>
 
 <h3 id="212-벡터의-덧셈">2.1.2 벡터의 덧셈</h3>
@@ -132,7 +132,7 @@
 
 <p>벡터끼리 더한다는 것은, 각 벡터상에서 같은 위치에 있는 성분끼리 더한다는 의미입니다.</p>
 
-<amp-img src="/images/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-02/Vector-add.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /></p>
 
 <p>Numpy와 Cupy 모두 add라는 함수로 구현되어 있습니다.</p>
@@ -611,7 +611,7 @@
 
   <span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/CPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /><br /></p>
 
 <p>다음은 Cupy 버전 코드입니다.</p>
@@ -623,7 +623,7 @@
 
   <span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/GPUTest.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <p>지난번에 보았던 설치 부분에서도 봤던 코드와 유사합니다.</p>
 
 <p>결과 출력된 화면을 보면, GPU메모리가 올라간게 보이시나요?</p>
@@ -685,7 +685,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case1_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br />
   <strong>cupy</strong></p>
 
@@ -697,7 +697,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">cp</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case1_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /><br /></p>
 
 <h3 id="case-2-n1000">Case 2. n=1000</h3>
@@ -712,7 +712,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case2_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br />
   <strong>cupy</strong></p>
 
@@ -724,7 +724,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">cp</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
   
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case2_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /><br /></p>
 
 <h3 id="case-3-n10000">Case 3. n=10000</h3>
@@ -739,7 +739,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case3_cpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br />
   <strong>cupy</strong></p>
 
@@ -751,7 +751,7 @@
   <span class="n">result</span> <span class="o">=</span> <span class="n">cp</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
   
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/case3_gpu.png" width="656" height="50" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /></p>
 
 <p>확실히 연산량이 늘어나면 늘어날수록 Numpy에 비해 Cupy가 훨씬 빠른 속도를 냄을 알 수 있습니다.</p>
@@ -774,14 +774,14 @@
   <span class="nf">print</span><span class="p">(</span><span class="n">Num_array</span><span class="p">)</span>
   <span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">Num_array</span><span class="p">))</span>
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Cupy_array</span> <span class="o">=</span> <span class="n">cp</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
   <span class="nf">print</span><span class="p">(</span><span class="n">Cupy_array</span><span class="p">)</span>
   <span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">Cupy_array</span><span class="p">))</span>
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/cudarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
 <p>둘이 데이터 타입이 조금 다름을 알 수 있습니다.</p>
 
 <p>ndarray이긴 하나, Numpy의 ndarray와 cuda의 core에 올라가있는 cupy의 ndarray입니다.</p>
@@ -802,7 +802,7 @@
   <span class="nf">print</span><span class="p">(</span><span class="n">cpu_array</span><span class="p">)</span>
   <span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">cpu_array</span><span class="p">))</span>
 </code></pre></div></div>
-<amp-img src="/images/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/Cupy-01/cuda_to_ndarray.png" width="150" height="25" layout="responsive" alt="" class="mb3"></amp-img>
 
 <p><br /><br /></p>
 
@@ -1049,7 +1049,7 @@
 
 <p>아나콘다에서는 어떻게 설치하는지 그림으로 먼저 살펴보겠습니다.</p>
 
-<amp-img src="/images/RAPIDS/install/RAPIS_install.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/install/RAPIS_install.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <p>순서대로 살펴 볼까요?</p>
 
@@ -1107,7 +1107,7 @@
   <span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
 </code></pre></div></div>
 
-<amp-img src="/images/RAPIDS/install/Testing.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/install/Testing.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <p>마지막으로 원본 코드 주소를 첨부하겠습니다.</p>
 
@@ -1187,7 +1187,7 @@
 
 <p>우선 RAPIDS는 다음과 같이 구성되어 있습니다.</p>
 
-<amp-img src="/images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <p>이번 칼럼은 Data Science의 기초부분을 다루고자합니다.</p>
 
@@ -1197,7 +1197,7 @@
 
 <p>또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.</p>
 
-<amp-img src="/images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <p><br /><br /></p>
 
 <hr />
@@ -1240,7 +1240,7 @@
 
 <br /><h1>Review</h1>
 
-<amp-img src="/images/DLI_RAPIDS/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_RAPIDS/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -1273,12 +1273,12 @@
 	</ul>
 </ul>
 <hr />
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; 전통적인 모델의 GPU 작동 순서도 &gt;
 </center>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS를 사용한 GPU 작동 순서도 &gt;
 </center>
@@ -1290,7 +1290,7 @@
 <br /><br /> 따라서 전통적인 모델에 비해서 더 빠른 성능을 낼 수 있습니다.
 </div>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/4.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS의 구성 &gt;
 </center>
@@ -1305,7 +1305,7 @@
 
 </div>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS가 지원하는 데이터 과학용 툴 &gt;
 </center>
@@ -1320,7 +1320,7 @@
 </div>
 
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS의 공식 홈페이지 &gt;
 </center>
@@ -1337,7 +1337,7 @@
 
 
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; CUDF의 설명 &gt;
 </center>
@@ -1351,7 +1351,7 @@
 
 </div>
 
-<br /><br /> <amp-img src="/images/DLI_RAPIDS/Review/8.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /> <amp-img src="//assets/images/DLI_RAPIDS/Review/8.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS로 연결할 수 있는 라이브러리들 &gt;
 </center>
@@ -1363,7 +1363,7 @@
 </div>
 
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/9.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/9.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; CuPY의 설명 &gt;
 </center>
@@ -1378,7 +1378,7 @@
 
 </div>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/10.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/10.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; CUGRAPH의 설명 &gt;
 </center>
@@ -1403,7 +1403,7 @@
 
 </div>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/11.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/11.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; RAPIDS에서 지원하는 TASK SCHEDULER 모형 &gt;
 </center>
@@ -1414,7 +1414,7 @@
 
 </div>
 
-<br /><br /><amp-img src="/images/DLI_RAPIDS/Review/12.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_RAPIDS/Review/12.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center>
 &lt; CuML의 설명 &gt;
 </center>
@@ -1494,11 +1494,11 @@
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="/images/DLI_RAPIDS/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_RAPIDS/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="/images/DLI_RAPIDS/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_RAPIDS/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="/images/DLI_RAPIDS/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_RAPIDS/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />
@@ -1559,7 +1559,7 @@
 
 <br /><h1>Review</h1>
 
-<amp-img src="/images/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_Python/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -1636,7 +1636,7 @@
 <center>
 <h4>How Numba Works</h4>
 </center>
-<p><br /><br /><amp-img src="/images/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img></p>
+<p><br /><br /><amp-img src="//assets/images/DLI_Python/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img></p>
 <center>
 &lt; Numba의 작동 순서도 &gt;
 </center>
@@ -1947,11 +1947,11 @@
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="/images/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_Python/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="/images/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_Python/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="/images/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_Python/In/구정수.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />
@@ -1991,7 +1991,7 @@
 
 <br /><h1>Review</h1>
 
-<amp-img src="/images/DLI_AutoEncoder/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_AutoEncoder/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -2046,7 +2046,7 @@
 
 <br /><br />이러한 감쇠는 센서의 제한에서 비롯되는 경우가 많습니다.
 
-<br /><br /><amp-img src="/images/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_AutoEncoder/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <center>
 &lt; 제한된 예시 &gt;
@@ -2083,7 +2083,7 @@
 
 <br /><br /> 그림을 먼저 보겠습니다.
 
-<br /><br /><amp-img src="/images/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_AutoEncoder/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <center> 
 &lt; 일반적인 AutoEncoder &gt;
 </center>
@@ -2163,7 +2163,7 @@
 </center>
 
 <div style="text-align: left">
-<amp-img src="/images/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_AutoEncoder/Review/4.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2174,7 +2174,7 @@
 <h4>The Decoder</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="/images/DLI_AutoEncoder/Review/5.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_AutoEncoder/Review/5.png" width="656" height="1200" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2185,7 +2185,7 @@
 <h4>The Model</h4>
 </center>
 <div style="text-align: left">
-<amp-img src="/images/DLI_AutoEncoder/Review/6.png" width="656" height="1500" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_AutoEncoder/Review/6.png" width="656" height="1500" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2196,7 +2196,7 @@
 <h4>Display the results</h4>
 </center>
 <div style="text-align: left">
-<br /><br /><amp-img src="/images/DLI_AutoEncoder/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_AutoEncoder/Review/7.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2385,7 +2385,7 @@
 
 <br /><h1>Review</h1>
 
-<amp-img src="/images/DLI_CUDA/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_CUDA/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -2424,7 +2424,7 @@
 <div style="text-align: left">
 <br />
 cudaDeviceSynchronize() 이 코드를 어디에서 호출하냐에 따라 결과가 달라집니다.
-<amp-img src="/images/DLI_CUDA/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_CUDA/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2442,7 +2442,7 @@ grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특
 <br /><br />
 커널을 이용해 다음과 같이 바꿔줄 수 있습니다.
 <br /><br />
-<amp-img src="/images/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2498,8 +2498,8 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 
 <br /><br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><amp-img src="/images/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
-<br /><amp-img src="/images/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="//assets/images/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="//assets/images/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2552,7 +2552,7 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 
 <br />Nsys는 Nsight Systems 명령어 도구다. 응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><br /><amp-img src="/images/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="//assets/images/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <p><br /></p>
 <hr />
@@ -2643,9 +2643,9 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="/images/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="/images/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="//assets/images/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />

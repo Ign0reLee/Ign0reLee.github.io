@@ -31,7 +31,7 @@ toc: yes
 
 <br /><h1>Review</h1>
 
-<amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <h2>Index </h2><br />
 
@@ -69,7 +69,7 @@ toc: yes
 <div style="text-align: left">
 <br />
 cudaDeviceSynchronize() 이 코드를 어디에서 호출하냐에 따라 결과가 달라집니다.
-<amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -86,7 +86,7 @@ grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특
 <br /><br />
 커널을 이용해 다음과 같이 바꿔줄 수 있습니다.
 <br /><br />
-<amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -139,8 +139,8 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 
 <br /><br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
-<br /><amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -191,7 +191,7 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 
 <br />Nsys는 Nsight Systems 명령어 도구다. 응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
 
-<br /><br /><amp-img src="{{ site.baseurl }}images/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<br /><br /><amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 </div>
 <br />
 <hr />
@@ -279,9 +279,9 @@ Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 
 <h2>인증서</h2>
 </center>
 <hr />
-<amp-img src="{{ site.baseurl }}images/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 <br />
-<amp-img src="{{ site.baseurl }}images/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
+<amp-img src="{{ site.baseurl }}/assets/images/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3"></amp-img>
 
 <br /><br />
 <hr />
