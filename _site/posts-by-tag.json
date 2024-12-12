@@ -36,6 +36,8 @@
   "tag" : "CUDA",
   "posts" : [
       
+      "./Understanding_task_units_of_CUDA.html",
+      
       "./Nvidia-DLI-CUDA-WITH-Python.html",
       
       "./Nvidia-DLI-CUDA-WITH-C-C++.html"
@@ -199,6 +201,16 @@
   "posts" : [
       
       "./Tensorflow-With-Keras.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "GPU",
+  "posts" : [
+      
+      "./Understanding_task_units_of_CUDA.html"
       
     ]
   } ,
@@ -401,6 +413,16 @@
       "./Data-Science-With-RAPIDS-Cupy-Part02.html",
       
       "./Data-Science-With-RAPIDS-Cupy-Part01.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "multiprocessing",
+  "posts" : [
+      
+      "./Understanding_task_units_of_CUDA.html"
       
     ]
   } 

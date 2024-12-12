@@ -7,8 +7,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>00. Data Science With RAPIDS Introduction - Jeyoung Lee's Blog</title>
-	<link rel="canonical" href="https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html">
+	<title>Understanding task units of CUDA - Jeyoung Lee's Blog</title>
+	<link rel="canonical" href="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html">
 	<meta name="description" content="A day without laughter is a day wasted.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -19,13 +19,13 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://ign0relee.github.io"},
-  "headline": "00. Data Science With RAPIDS Introduction",
+  "headline": "Understanding task units of CUDA",
   "abstract": "",
-    "keywords": "RAPIDS, Python, Machine Learning, DataScience, Cupy, Cudf, CuML, Data, Data Science",
-    "wordcount": "260",
-    "image": ["https://ign0relee.github.io/assets/imgimages/RAPIDS/Main.png"],
-  "datePublished": "2020-08-02 19:00:00 +0900",
-  "dateModified": "2020-08-02 19:00:00 +0900",
+    "keywords": "CUDA, GPU, multiprocessing",
+    "wordcount": "960",
+    "image": ["https://ign0relee.github.io/assets/imgimages/images/tree.jpg"],
+  "datePublished": "2024-12-12 18:50:00 +0900",
+  "dateModified": "2024-12-12 18:50:00 +0900",
   "author": {
     "@type": "Person",
     "name": "Jeyoung Lee"},
@@ -40,30 +40,30 @@
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html"/>
+<meta property="og:url" content="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="00. Data Science With RAPIDS Introduction"/>
+<meta property="og:title" content="Understanding task units of CUDA"/>
 <meta property="og:description" content=""/>
-<meta property="og:image" content="https://ign0relee.github.io/assets/imgimages/RAPIDS/Main.png"/>
-<meta property="og:image:alt" content="00. Data Science With RAPIDS Introduction"/>
+<meta property="og:image" content="https://ign0relee.github.io/assets/imgimages/images/tree.jpg"/>
+<meta property="og:image:alt" content="Understanding task units of CUDA"/>
 <meta property="og:site_name" content="Jeyoung Lee's Blog" />
-<meta property="article:published_time" content="2020-08-02 19:00:00 +0900" />
-<meta property="article:modified_time" content="2020-08-02 19:00:00 +0900" />
-<meta property="article:tag" content="RAPIDS, Python, Machine Learning, DataScience, Cupy, Cudf, CuML, Data, Data Science" />
+<meta property="article:published_time" content="2024-12-12 18:50:00 +0900" />
+<meta property="article:modified_time" content="2024-12-12 18:50:00 +0900" />
+<meta property="article:tag" content="CUDA, GPU, multiprocessing" />
 <meta property="fb:admins" content="ar.maybach" />
 <!-- Schema.org markup for Google -->
-<meta itemprop="name" content="00. Data Science With RAPIDS Introduction">
+<meta itemprop="name" content="Understanding task units of CUDA">
 <meta itemprop="description" content="">
-<meta itemprop="image" content="https://ign0relee.github.io/assets/imgimages/RAPIDS/Main.png">
+<meta itemprop="image" content="https://ign0relee.github.io/assets/imgimages/images/tree.jpg">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
-<meta name="twitter:title" content="00. Data Science With RAPIDS Introduction">
+<meta name="twitter:title" content="Understanding task units of CUDA">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="260"/>
-<meta name="twitter:image:src" content="https://ign0relee.github.io/assets/img/images/RAPIDS/Main.png">
+<meta data-rh="true" name="twitter:data1" content="960"/>
+<meta name="twitter:image:src" content="https://ign0relee.github.io/assets/img/images/images/tree.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -139,7 +139,7 @@
 
 <section class="hidden">
   <div class="post">
-      <a  class="post-list-title" href="./Data-Science-With-RAPIDS-Intro.html">00. Data Science With RAPIDS Introduction</a>
+      <a  class="post-list-title" href="./Understanding_task_units_of_CUDA.html">Understanding task units of CUDA</a>
       
 
   <span class = "post-card-meta">
@@ -151,7 +151,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2020-08-02T19:00:00+09:00">August 2, 2020</time>
+        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
       </span>
     
     
@@ -163,7 +163,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        4 minute read
       
     </span>
   
@@ -171,7 +171,7 @@
   </span>
 
         <div class="post-excerpt">
-            <p><br /><br /> 안녕하세요, 그리고 오랜만입니다.</p><p>기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다.</p><p>과거 DLI Review를 진행하다가 RAPIDS와 처음 만났습니다.</p><p>그리고 RAPIDS는 제게 굉장히 큰 충격을 안겨주었습니다.</p><p>기존의 NUMPY와 PANDAS를 GPU에서 돌릴 수 있다.</p><p>매서드가 동일하여 이름만 바꾸면 된다.</p><p>이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다.</p><p>아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.</p><p>그래서 이번기회에 한글로 소개하고자합니다.</p><p>아직 학부생이기에 부족한 점도 많고, 제가 모르는 점도 많을 것 같습니다.</p><p>다만, GPU를 이용한 데이터 과학에 대해서 한번 생각해보시는 계기가 되셨으면합니다.</p><p><br /><br /></p><h2 id="enviroment">Enviroment</h2><hr /><p><br /><br /> 아쉽지만, 이 칼럼에서는 환경을 조금 제한해야합니다.</p><p>공식적으로 지원되고 있는 환경이 넓지는 않습니다.</p><p>왠만하면 아래 환경을 따라가시기를 권장드립니다.</p><p>또한 리눅스를 사용하기...<a class="read-more" href="./Data-Science-With-RAPIDS-Intro.html"> read more</a>
+            <h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
         </div>
   </div>
 </section>
@@ -269,17 +269,17 @@
 </header> <!-- End Header -->
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="  Data Science With RAPIDS Introduction">
+    <meta itemprop="headline" content="Understanding task units of CUDA">
 
-<meta itemprop="datePublished" content="2020-08-02T19:00:00+09:00">
+<meta itemprop="datePublished" content="2024-12-12T18:50:00+09:00">
 
     <div class="page-image">
-      <div class="cover-image" style="background: url('./assets/img/images/RAPIDS/Main.png') center no-repeat; background-size: cover;"></div>
+      <div class="cover-image" style="background: url('./assets/img/images/images/tree.jpg') center no-repeat; background-size: cover;"></div>
     </div>
     <div class="wrapper">
       <div class="page-content">
         <div class="header-page">
-          <h1 class="page-title">00. Data Science With RAPIDS Introduction</h1>
+          <h1 class="page-title">Understanding task units of CUDA</h1>
           
 
   <span class = "post-page-meta">
@@ -291,7 +291,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2020-08-02T19:00:00+09:00">August 2, 2020</time>
+        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
       </span>
     
     
@@ -303,7 +303,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        4 minute read
       
     </span>
   
@@ -322,23 +322,11 @@
     
         <ul class="tags side">
             
-                <li><a href="./tag.html?tag=RAPIDS" class="tag side">RAPIDS</a></li>
+                <li><a href="./tag.html?tag=CUDA" class="tag side">CUDA</a></li>
             
-                <li><a href="./tag.html?tag=Python" class="tag side">Python</a></li>
+                <li><a href="./tag.html?tag=GPU" class="tag side">GPU</a></li>
             
-                <li><a href="./tag.html?tag=Machine+Learning" class="tag side">Machine Learning</a></li>
-            
-                <li><a href="./tag.html?tag=DataScience" class="tag side">DataScience</a></li>
-            
-                <li><a href="./tag.html?tag=Cupy" class="tag side">Cupy</a></li>
-            
-                <li><a href="./tag.html?tag=Cudf" class="tag side">Cudf</a></li>
-            
-                <li><a href="./tag.html?tag=CuML" class="tag side">CuML</a></li>
-            
-                <li><a href="./tag.html?tag=Data" class="tag side">Data</a></li>
-            
-                <li><a href="./tag.html?tag=Data+Science" class="tag side">Data Science</a></li>
+                <li><a href="./tag.html?tag=multiprocessing" class="tag side">multiprocessing</a></li>
             
     
         </ul>
@@ -347,11 +335,11 @@
     <div class="share-hover side">
         <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons side" id="sidebar-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=00. Data Science With RAPIDS Introduction&url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html&title=00. Data Science With RAPIDS Introduction" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html&title=00. Data Science With RAPIDS Introduction&summary=&source=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=00. Data Science With RAPIDS Introduction&body=%0A%0ARead more here: https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -364,102 +352,184 @@
     <li class="toc-title">
       <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
     </li>
-    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#enviroment">Enviroment</a></li><li class="toc-item-1"><a href="#goal-of-this-column">Goal Of This Column</a></li></ul>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#0-시작하며">0. 시작하며</a></li><li class="toc-item-1"><a href="#1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</a></li><li class="toc-item-1"><a href="#2-간단한-예시-rtx-3090">2. 간단한 예시 RTX 3090</a></li><li class="toc-item-1"><a href="#3-gpu와-cuda-core">3. GPU와 CUDA core</a></li><li class="toc-item-1"><a href="#4-thread-할당과-warp-연산">4. thread 할당과 warp 연산</a></li><li class="toc-item-1"><a href="#5-thread-할당과-block-할당">5. thread 할당과 block 할당</a></li><li class="toc-item-1"><a href="#6-block할당과-gpu성능">6. block할당과 GPU성능</a></li></ul>
   </nav>
 </aside>
 
         
-        <p><br /><br />
-  안녕하세요, 그리고 오랜만입니다.</p>
-
-<p>기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다.</p>
-
-<p>과거 DLI Review를 진행하다가 RAPIDS와 처음 만났습니다.</p>
-
-<p>그리고 RAPIDS는 제게 굉장히 큰 충격을 안겨주었습니다.</p>
-
-<p>기존의 NUMPY와 PANDAS를 GPU에서 돌릴 수 있다.</p>
-
-<p>매서드가 동일하여 이름만 바꾸면 된다.</p>
-
-<p>이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다.</p>
-
-<p>아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다.</p>
-
-<p>그래서 이번기회에 한글로 소개하고자합니다.</p>
-
-<p>아직 학부생이기에 부족한 점도 많고, 제가 모르는 점도 많을 것 같습니다.</p>
-
-<p>다만, GPU를 이용한 데이터 과학에 대해서 한번 생각해보시는 계기가 되셨으면합니다.</p>
-
-<p><br /><br /></p>
-<h2 id="enviroment">Enviroment</h2>
+        <h2 id="0-시작하며">0. 시작하며</h2>
 <hr />
 
-<p><br /><br />
-  아쉽지만, 이 칼럼에서는 환경을 조금 제한해야합니다.</p>
+<p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p>
 
-<p>공식적으로 지원되고 있는 환경이 넓지는 않습니다.</p>
+<p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p>
 
-<p>왠만하면 아래 환경을 따라가시기를 권장드립니다.</p>
+<p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p>
 
-<p>또한 리눅스를 사용하기 어려우신 분들은 콜랩환경을 권장드립니다.</p>
+<p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p>
 
-<p>다만, 콜랩 환경은 세션을 실행시킬 때 마다, RAPIDS를 새로 인스톨 해주어야합니다.</p>
-
-<p>이와 관련해서는 다시 글을 작성하도록 하겠습니다.</p>
-
-<p>Anaconda사용을 권장드립니다.</p>
-
-<p>마지막으로 Ubuntu환경을 작성하기로는 18.04LST 이상이라고 적혀있으나, 제가 사용하는 버전 이상이라는 의미입니다.</p>
-
-<p>또한, 하위 버전에서도 아마 가능할겁니다. 제가 아직 리눅스를 잘 다루지 못하여, 테스트를 할 수 없는점 죄송합니다.</p>
-
-<blockquote>
-  <p>Ubuntu &gt;= 18.04 LST
-<br />Anaconda
-<br />Python &gt;= 3.6.8
-<br />RAPIDS(stable) &gt;= 0.12
-<br />CUDA &gt;= 10.0
-<br />Cudnn &gt;= 7.6
-<br />NUMPY &gt;= 1.16.1</p>
-</blockquote>
-
-<p><br /><br /></p>
-
-<h2 id="goal-of-this-column">Goal Of This Column</h2>
+<h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2>
 <hr />
 
-<p><br /><br />
-  이 칼럼의 목표에 대해 알려드리겠습니다.</p>
+<p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p>
 
-<p>우선 RAPIDS는 다음과 같이 구성되어 있습니다.</p>
+<p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p>
 
-<p><img src="./assets/img/images/RAPIDS/intro/RAPIDS_all.jpg" width="656" height="400" layout="responsive" alt="" class="mb3" /></p>
+<p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p>
 
-<p>이번 칼럼은 Data Science의 기초부분을 다루고자합니다.</p>
+<p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를 집고 주로 Kernel Function을 작성하는 예제로 넘어가게 됩니다.</p>
 
-<p>따라서 딥러닝 부분에 대한 이야기는 나중에 따로 칼럼을 준비하겠습니다.</p>
+<p>제가 갑자기 헷갈렸던 것은 <strong>GPU</strong>의 <strong>스펙</strong>과 <strong>thread/block</strong>과의 관계였습니다.</p>
 
-<p>이 칼럼에서 알아보고자 하는 부분은 Numpy를 대체할 수 있는 Cupy,그리고 PANDAS를 대체할 수 있는 Cudf 마지막으로 scikit-learn을 대체할 수 있는 cuML부분입니다.</p>
+<p>제가 Ambassador로 활동하고 있는 NVIDIA DLI과정 중 Accelerating Data Engineering Pipelines Optimization 과정에선 Hardware System으로서의 Data Engineering Pipelines 파트가 있습니다.</p>
 
-<p>또한 각각의 예시를 CPU버젼, GPU버젼으로 시간을 비교하며 진행하도록 하겠습니다.</p>
+<p>이 파트에서 <strong>GPU</strong>의 <strong>CUDA Core</strong>와 <strong>Streaming Multiprocessor(SM)</strong>의 언급과 쉽게 설명하기 위해 <strong>정확하진 않지만, 쉽게 말하자면, 한번에 연산가능한 CUDA Core가 thread의 개수를 의미하는 것이고 SM이 Block의 개수를 의미하는 것이다.</strong>라고 강의자료에 되어있습니다.</p>
 
-<p><img src="./assets/img/images/RAPIDS/intro/RAPIDS_all_now.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-  <br /><br /></p>
+<p>그런데, <strong>실제로 Block개수와 Thread의 개수를 GPU에 작성되어있는 CORE개수와 SM개수만큼 할당하고 연산할 수 있는 것일까요??</strong></p>
 
+<p>제가 간단하게 검색해보기론 이러한 부분에 대한 이야기가 자세히 나와있지 않은것 같아서 정리해보고자 합니다.</p>
+
+<h2 id="2-간단한-예시-rtx-3090">2. 간단한 예시 RTX 3090</h2>
 <hr />
 
-<p><br /><br />
-  앞으로 일주일에 한번 연재하는 것이 목표입니다.</p>
+<p>이에대해 파악하기 위해 우선 간단하고 유명한 GPU인 RTX 3090중 CUDA 프로그래밍 특히 이번 포스트에서 알아보고자 하는 부분을 이해하기 위한 스펙을 적어보도록하겠습니다.</p>
 
-<p>앞으로도 잘 부탁드리겠습니다. 감사합니다!</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">항목</th>
+      <th style="text-align: center">세부내용</th>
+      <th style="text-align: center">항목</th>
+      <th style="text-align: center">세부내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">CUDA core 개수</td>
+      <td style="text-align: center">8704개</td>
+      <td style="text-align: center">블록당 최대 쓰레드 수</td>
+      <td style="text-align: center">1024개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM 개수</td>
+      <td style="text-align: center">68개</td>
+      <td style="text-align: center">워프 당 실행 쓰레드 수</td>
+      <td style="text-align: center">32개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM당 CUDA 코어 수</td>
+      <td style="text-align: center">128개</td>
+      <td style="text-align: center">SM당 최대 워프 수</td>
+      <td style="text-align: center">64개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM당 최대 쓰레드 수</td>
+      <td style="text-align: center">2048개</td>
+      <td style="text-align: center">SM당 최대 블록 수</td>
+      <td style="text-align: center">32개</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>질문 및 이야기는 언제든지 부탁드리겠습니다.</p>
+<center> 
+table 1. RTX 3090 스펙 
+</center>
 
-<p>질문은 제가 활동하고 있는 사이트 Devstu에서 부탁드리겠습니다.</p>
+<h2 id="3-gpu와-cuda-core">3. GPU와 CUDA core</h2>
+<hr />
 
-<p><a href="https://devstu.co.kr">질문 하러 가기</a></p>
+<p>일반적으로 <strong>GPU</strong>를 잘쓴다는 것은 무엇일까요? 여러가지 의미가 있겠지만, 보통 GPU를 잘 다룬다는 것은 Utilization은 최대한 100%로 유지하면서, task를 처리하는 것일 겁니다. 즉 <strong>GPU</strong>의 사용량은 최대로(효과적으로) 유지하면서 나의 작업을 빠르게 처리하는 것이 보통 GPU를 잘 다룬다는 것일 겁니다.</p>
+
+<p>그리고 실은(어찌보면 당연한 것이겠지만) 우리가 할당할 수 있는 thread의 개수와 block의 개수는 <strong>GPU</strong>별로 다르며, 또한 한번에 연산가능한 숫자와 한 Kernel function이 할당 받을 수 있는 thread와 block의 개수도 <strong>GPU</strong>의 제원을 통해 어느정도 확인 가능 합니다.</p>
+
+<p>따라서 우리는 우리가 사용하고자하는 <strong>GPU</strong>의 사양을 명확하게 알고, CUDA 프로그래밍을 시도해야겠습니다.</p>
+
+<p>일단 가장 먼저 봐야하는 것은 당연하게도 CUDA core의 개수인데요, CUDA Core의 개수는 말 그대로 CUDA core의 총 개수를 의미하는 것이기 때문에, SM당 CUDA코어 수와 SM개수를 곱하는 것으로 구할 수 있습니다. 또한 기본적으론 CUDA core의 개수가 우리가 사용하고자 하는 <strong>GPU</strong>의 <strong>한번에 연산 가능한 thread의 총 개수</strong>라고 보면 될 것 같습니다 :)</p>
+
+<p>여기서 한가지 의문이 드는데요, 한번에 연산 가능한 thread의 총 개수가 RTX 3090의 개수라고하면, 할당 가능한 총 쓰레드의 개수는 다를까요??</p>
+
+<p>정답은 다르다입니다. 이를 위해서 확인 해봐야 하는 것은 SM당 최대 쓰레드 수인데요. <strong>GPU</strong>에서 쓰레드를 할당 한다는 것은, <strong>GPU</strong>를 사용해 한번에 연산한다는 것과는 다른 의미였습니다…</p>
+
+<h2 id="4-thread-할당과-warp-연산">4. thread 할당과 warp 연산</h2>
+<hr />
+
+<p>그러면 한번에 연산 가능한 최대 개수가 8704개라는 것과 할당 가능한 thread의 개수가 차이가 나는 이유가 무엇일까요?? 이는 CUDA 코어와 쓰레드의 차이에 대해 이해 해야합니다.</p>
+
+<p>그냥 쉽게 말하자면, <strong>CUDA 코어는 실제 연산을 수행하는 물리적 계산 장치</strong>이고, <strong>쓰레드는 작업을 나누기 위한 논리적 작업 단위</strong>이기 때문입니다.</p>
+
+<p>어찌보면 모두가 알고 있는 것인데, 제대로 생각해본적이 없는 것 같습니다 :)</p>
+
+<p>그렇다면 우리가 thread를 할당할 때 최대 몇개까지 할당할 수 있을까요??</p>
+
+<p>정답은  $2048 * 68 = 139264 \; 개입니다. 그렇다면 왜 2048개의 thread까지 할당할 수 있을까요?? 이는 <strong>GPU</strong>에서의 warp연산과 스케줄링을 이해 해야합니다.</p>
+
+<p>GPU에서 연산을 처리할 때, 기본적으로 SM은 thread의 스케줄링과 실행을 담당하게 됩니다. 이때 SM의 thread를 warp 단위로 묶어서 처리하게 되는데, warp는 주로 32개의 thread가 1개로 묶여 작업하게 됩니다.</p>
+
+<p>이는 무슨 이야기냐면, SM은 쿠다 코어를 32개를 1개로 묶어 동시에 연산을 시키게 되는데요, RTX 3090은 SM 안에 쿠다 코어가 128개 씩 존재하니, 총 4개의 warp가 동시에 실행된다고 볼 수 있습니다.</p>
+
+<p>마지막으로 SM당 할당 가능한 최대 warp의 숫자는 64개이므로 $64 * 32 = 2048 \; 개까지 할당 가능합니다.</p>
+
+<h2 id="5-thread-할당과-block-할당">5. thread 할당과 block 할당</h2>
+<hr />
+
+<p>마지막으로 block에 대한 이야기인데요, 일반적으로 CUDA를 배운다고 하면, thread의 묶음을 block로 배우곤합니다.</p>
+
+<p>물론 맞는 이야기입니다만, 오늘은 GPU에서 할당되는 연산과 엮어서 같이 볼 예정이므로, block당 thread의 최대개수와 SM당 block의 최대개수를 동시에 보면서 이야기 하겠습니다.</p>
+
+<p>우선 기본적으로 block은 thread의 묶음이 맞습니다. 그래서 우리가 CUDA에서 맨처음 하는 것은 thread 개수와 block 개수를 정하게 되죠, <strong>기본적으로 CUDA는 받은 thread개수와 block개수를 SM이 최대한 공평하게 나누어 가지려고 시도</strong>합니다. 지금의 경우에는 68개의 <strong>SM이 최대한 공평하게</strong> 나누어 가지게되겠네요.</p>
+
+<p>이 때, <strong>SM은 최대 32개</strong>의 block까지 할당 가능합니다. 또한 한 block당 thread의 최대 개수는 <strong>1024개</strong>까지입니다. 이 점을 주목하며 한번 생각 해보겠습니다.</p>
+
+<p>만약 CUDA를 아래와 같이 코딩한다면 GPU에는 어떻게 할당이 될까요?</p>
+
+<pre><code class="language-CPP">#include &lt;cuda_runtime.h&gt;
+#include &lt;stdio.h&gt;
+
+__global__ void printThreadInfo() {
+    // Global ID 계산
+    int globalIdx = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // 블록 ID와 쓰레드 ID 출력
+    printf("BlockIdx.x: %d, ThreadIdx.x: %d, Global ID: %d\n", blockIdx.x, threadIdx.x, globalIdx);
+}
+
+int main(){
+    int threadsPerBlock = 128;
+    int numBlocks = 4;
+    printThreadInfo&lt;&lt;&lt;numBlocks, threadsPerBlock&gt;&gt;&gt;();
+}
+</code></pre>
+
+<p>이경우 CUDA는 4개의 SM에 Block을 하나씩 할당하여 128개의 thread씩, 총 512개의 thread를 할당할 것입니다.</p>
+
+<p>또한 RTX 3090기준으론 하나의 SM에 128개의 쿠다 코어가 존재하니 GPU는 한번에 512개의 값을 연산할 수 있을 것입니다.</p>
+
+<p>그렇다면 남은 SM은 어떻게 될까요??</p>
+
+<h2 id="6-block할당과-gpu성능">6. block할당과 GPU성능</h2>
+<hr />
+
+<p>이 때 CUDA 프로그래밍의 묘미가 발생하게 됩니다.</p>
+
+<p>실은 위의 방식은 예제이기 때문에, 간단하게 이야기했지만, 현재의 상태에선 남은 <strong>64개의 SM은 활용하고 있지 않습니다.</strong></p>
+
+<p>즉 우리가 효과적으로 GPU를 활용하기 위해선, 어떻게하면 SM을 효율적으로 사용할 수 있을지를 고민해야합니다.</p>
+
+<p>지금의 경우, 우리의 CUDA 코어는 128개이므로 한번 연산할때 128번이상 계산하지는 못할 것입니다.</p>
+
+<p>또 SM의 개수는 68개이지만, block는 32개씩할당이 가능합니다. 연산만 놓고 봤을땐, 한번에 $128 * 68 = 8704\;번 계산되겠죠? 즉 GPU가 한번 딸깍하면 8704번 덧셈합니다.</p>
+
+<p>우리는 이런 환경에서 어떻게 데이터를 잘게 쪼개어서 효과적으로 연산할지를 고민해야합니다.</p>
+
+<p>여기서 추가적으로 고려 해봐야하는 것도 있습니다. 워프의 기본단위는 32입니다. 즉 하나의 thread는 32개씩 연산이됩니다. 32의 배수로 할당하는 것이 좋을까요?</p>
+
+<p>혹은 128개의 thread를 68개의 block으로 할당할수도, 32개의 thread를 272개의 block에 할당할 수도 있을 것입니다. 두개의 차이는 무엇일까요? 둘다 RTX3090은 한번에 연산할 것입니다.</p>
+
+<p>block의 개수는 68개의 SM에맞추어 배수로 설정하는 것이 좋을까요?? thread의 처리와 block의 처리중 어느것을 우선하여 처리할까요? 예를들면, 272개의 block에 128개의 thread를 할당하면 어떻게 될까요??</p>
+
+<p>많은 질문이 새롭게 떠오르면 즐거운 밤입니다.</p>
+
+<p>감사합니다.</p>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -470,23 +540,11 @@
     
         <ul class="tags inline">
             
-                <li><a href="./tag.html?tag=RAPIDS" class="tag inline">RAPIDS</a></li>
+                <li><a href="./tag.html?tag=CUDA" class="tag inline">CUDA</a></li>
             
-                <li><a href="./tag.html?tag=Python" class="tag inline">Python</a></li>
+                <li><a href="./tag.html?tag=GPU" class="tag inline">GPU</a></li>
             
-                <li><a href="./tag.html?tag=Machine+Learning" class="tag inline">Machine Learning</a></li>
-            
-                <li><a href="./tag.html?tag=DataScience" class="tag inline">DataScience</a></li>
-            
-                <li><a href="./tag.html?tag=Cupy" class="tag inline">Cupy</a></li>
-            
-                <li><a href="./tag.html?tag=Cudf" class="tag inline">Cudf</a></li>
-            
-                <li><a href="./tag.html?tag=CuML" class="tag inline">CuML</a></li>
-            
-                <li><a href="./tag.html?tag=Data" class="tag inline">Data</a></li>
-            
-                <li><a href="./tag.html?tag=Data+Science" class="tag inline">Data Science</a></li>
+                <li><a href="./tag.html?tag=multiprocessing" class="tag inline">multiprocessing</a></li>
             
     
         </ul>
@@ -495,11 +553,11 @@
     <div class="share-hover inline">
         <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons inline" id="post-end-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=00. Data Science With RAPIDS Introduction&url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html&title=00. Data Science With RAPIDS Introduction" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html&title=00. Data Science With RAPIDS Introduction&summary=&source=https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=00. Data Science With RAPIDS Introduction&body=%0A%0ARead more here: https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -892,14 +950,14 @@
     }
 
     function copyToClipboard() {
-      navigator.clipboard.writeText('https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html').then(function() {
+      navigator.clipboard.writeText('https://ign0relee.github.io/Understanding_task_units_of_CUDA.html').then(function() {
       alerts = document.getElementsByClassName('alert')
       for (i=0; i < alerts.length; i++){
         alerts[i].innerHTML='\u00ABlink copied\u00BB';
         setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
       };
       }, function() {
-        prompt("Unable to copy, please use this link:", "https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html");
+        prompt("Unable to copy, please use this link:", "https://ign0relee.github.io/Understanding_task_units_of_CUDA.html");
       });
     }
 

@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Archive - Jeyoung Lee's Blog</title>
-	<link rel="canonical" href="http://localhost:4000/archive.html">
+	<link rel="canonical" href="https://ign0relee.github.io/archive.html">
 	<meta name="description" content="A day without laughter is a day wasted.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -18,12 +18,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:4000"},
+    "@id": "https://ign0relee.github.io"},
   "headline": "Archive",
   "abstract": "",
     "keywords": "",
     "wordcount": "43",
-    "image": ["http://localhost:4000/assets/img"],
+    "image": ["https://ign0relee.github.io/assets/img"],
   "datePublished": "",
   "dateModified": "",
   "author": {
@@ -34,17 +34,17 @@
     "logo": {
         "@type": "ImageObject",
         "encodingFormat": "image/png",
-        "contentUrl": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png",
-        "url": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png"},
+        "contentUrl": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png",
+        "url": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png"},
     "name" : "Jeyoung Lee's Blog"}
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="http://localhost:4000/archive.html"/>
+<meta property="og:url" content="https://ign0relee.github.io/archive.html"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Archive"/>
 <meta property="og:description" content=""/>
-<meta property="og:image" content="http://localhost:4000/assets/img"/>
+<meta property="og:image" content="https://ign0relee.github.io/assets/img"/>
 <meta property="og:image:alt" content="Archive"/>
 <meta property="og:site_name" content="Jeyoung Lee's Blog" />
 <meta property="article:published_time" content="" />
@@ -54,7 +54,7 @@
 <!-- Schema.org markup for Google -->
 <meta itemprop="name" content="Archive">
 <meta itemprop="description" content="">
-<meta itemprop="image" content="http://localhost:4000/assets/img">
+<meta itemprop="image" content="https://ign0relee.github.io/assets/img">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
@@ -63,7 +63,7 @@
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
 <meta data-rh="true" name="twitter:data1" content="43"/>
-<meta name="twitter:image:src" content="http://localhost:4000/assets/img/">
+<meta name="twitter:image:src" content="https://ign0relee.github.io/assets/img/">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -240,6 +240,45 @@
 		<div class="post">
 			
 
+			<a class="post-list-title" href="./Understanding_task_units_of_CUDA.html">Understanding task units of CUDA</a>
+			
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        4 minute read
+      
+    </span>
+  
+  
+  </span>
+
+			<div class="post-excerpt">
+				<h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
+			</div>
+		</div>
+	
+		<div class="post">
+			
+
 			<a class="post-list-title" href="./Attention-And-Transformer.html">Attention And Transofrmer</a>
 			
 
@@ -312,45 +351,6 @@
 
 			<div class="post-excerpt">
 				<p><br /> Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.</p><p><br /> Tensorflow2 Document를 따라 제작하였으며,  내용은 거의 같습니다.</p><p><a href="https://www.tensorflow.org/guide/keras/customizing_what_happens_in_fit">참고 사이트1</a><br /><a href="https://www.tensorflow.org/guide/distributed_training?hl=ko">참고 사이트2</a><br /><a href="https://github.com/Ign0reLee/Study_repository/tree/master/Keras">PPT의 코드</a></p><style>.responsive-wrap iframe{ max-width: 100%;}</style><div class="responsive-wrap"><iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETbk37N6YRtKuTZeu5S53WEBiZL6zAazIIqxCTWiyqDJxw?e=8O1qsW&amp;action=embedview&amp;wdAr=1.7777777777777776" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe></div><a class="read-more" href="./Tensorflow-With-Keras.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./Data-Science-With-RAPIDS-Cupy-Part02.html">03. Data Science With RAPIDS Cupy Part 02</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2020-08-19T22:00:00+09:00">August 19, 2020</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        5 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<p><br /><br /></p><p>안녕하세요, 두번째 챕터 Cupy Part 02입니다.</p><p>오늘은 Cupy로 표현하는 선형대수학을 하도록 하겠습니다.</p><p>마찬가지로 코드위주로 작성할 예정이기 때문에 원본코드를 먼저 첨부하겠습니다.</p><p><a href="https://github.com/Ign0reLee/Data_Science_With_RAPIDS/blob/master/Chapter%2002.Cupy/Cupy%20Part-02.ipynb">원본코드 보러가기</a></p><p><br /><br /></p><h2 id="cupy와-선형대수">Cupy와 선형대수</h2><hr /><p><br /><br /></p><p>선형 대수는 데이터 과학에서 기술과 개념을 뒷받침 해주는 분야입니다.</p><p>이번 챕터에서는 Cupy를 이용한 선형 대수 표현을 배우겠습니다.</p><p>실은 Cupy에서 이미 대부분의 선형대수의 개념을 함수로 만들어 놓았습니다.</p><p>그래도 아직 익수하지 못한 분들을 위해, 그리고 처음 보는 분들을 위해 선형 대수 부분을 넣어두었습니다.</p><p>따라서 앞서 배운 기초 부분과 많이 유사할 예정이며, 사용에 익숙하신 분들이라면 넘어가셔도 관계 없습니다.</p><p>자 그럼 시작하겠습니다.</p><p>주피터 노트북 환경에서, 쉘별로 확인해보도록 하겠습니다.</p><p><br /><br /></p><h2 id="import-하기">Import 하기</h2><hr /><p><br /></p><div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="n">cupy</span>...<a class="read-more" href="./Data-Science-With-RAPIDS-Cupy-Part02.html"> read more</a>
 			</div>
 		</div>
 	

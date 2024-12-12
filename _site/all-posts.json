@@ -1,6 +1,8 @@
 {
   "posts" : [
     
+    "./Understanding_task_units_of_CUDA.html",
+    
     "./Attention-And-Transformer.html",
     
     "./Tensorflow-With-Keras.html",

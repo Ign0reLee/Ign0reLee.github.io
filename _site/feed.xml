@@ -1,4 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-21T21:19:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jeyoung Lee’s Blog</title><subtitle>A day without laughter is a day wasted.</subtitle><author><name>Jeyoung Lee</name></author><entry><title type="html">Attention And Transofrmer</title><link href="http://localhost:4000/Attention-And-Transformer.html" rel="alternate" type="text/html" title="Attention And Transofrmer" /><published>2021-03-23T14:00:00+09:00</published><updated>2021-03-23T14:00:00+09:00</updated><id>http://localhost:4000/Attention-And-Transformer</id><content type="html" xml:base="http://localhost:4000/Attention-And-Transformer.html"><![CDATA[<p><br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://ign0relee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ign0relee.github.io/" rel="alternate" type="text/html" /><updated>2024-12-12T20:17:23+09:00</updated><id>https://ign0relee.github.io/feed.xml</id><title type="html">Jeyoung Lee’s Blog</title><subtitle>A day without laughter is a day wasted.</subtitle><author><name>Jeyoung Lee</name></author><entry><title type="html">Understanding task units of CUDA</title><link href="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" rel="alternate" type="text/html" title="Understanding task units of CUDA" /><published>2024-12-12T18:50:00+09:00</published><updated>2024-12-12T18:50:00+09:00</updated><id>https://ign0relee.github.io/Understanding_task_units_of_CUDA</id><content type="html" xml:base="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html"><![CDATA[<h2 id="0-시작하며">0. 시작하며</h2>
+<hr />
+
+<p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p>
+
+<p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p>
+
+<p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p>
+
+<p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p>
+
+<h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2>
+<hr />
+
+<p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p>
+
+<p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p>
+
+<p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p>
+
+<p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를 집고 주로 Kernel Function을 작성하는 예제로 넘어가게 됩니다.</p>
+
+<p>제가 갑자기 헷갈렸던 것은 <strong>GPU</strong>의 <strong>스펙</strong>과 <strong>thread/block</strong>과의 관계였습니다.</p>
+
+<p>제가 Ambassador로 활동하고 있는 NVIDIA DLI과정 중 Accelerating Data Engineering Pipelines Optimization 과정에선 Hardware System으로서의 Data Engineering Pipelines 파트가 있습니다.</p>
+
+<p>이 파트에서 <strong>GPU</strong>의 <strong>CUDA Core</strong>와 <strong>Streaming Multiprocessor(SM)</strong>의 언급과 쉽게 설명하기 위해 <strong>정확하진 않지만, 쉽게 말하자면, 한번에 연산가능한 CUDA Core가 thread의 개수를 의미하는 것이고 SM이 Block의 개수를 의미하는 것이다.</strong>라고 강의자료에 되어있습니다.</p>
+
+<p>그런데, <strong>실제로 Block개수와 Thread의 개수를 GPU에 작성되어있는 CORE개수와 SM개수만큼 할당하고 연산할 수 있는 것일까요??</strong></p>
+
+<p>제가 간단하게 검색해보기론 이러한 부분에 대한 이야기가 자세히 나와있지 않은것 같아서 정리해보고자 합니다.</p>
+
+<h2 id="2-간단한-예시-rtx-3090">2. 간단한 예시 RTX 3090</h2>
+<hr />
+
+<p>이에대해 파악하기 위해 우선 간단하고 유명한 GPU인 RTX 3090중 CUDA 프로그래밍 특히 이번 포스트에서 알아보고자 하는 부분을 이해하기 위한 스펙을 적어보도록하겠습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">항목</th>
+      <th style="text-align: center">세부내용</th>
+      <th style="text-align: center">항목</th>
+      <th style="text-align: center">세부내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">CUDA core 개수</td>
+      <td style="text-align: center">8704개</td>
+      <td style="text-align: center">블록당 최대 쓰레드 수</td>
+      <td style="text-align: center">1024개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM 개수</td>
+      <td style="text-align: center">68개</td>
+      <td style="text-align: center">워프 당 실행 쓰레드 수</td>
+      <td style="text-align: center">32개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM당 CUDA 코어 수</td>
+      <td style="text-align: center">128개</td>
+      <td style="text-align: center">SM당 최대 워프 수</td>
+      <td style="text-align: center">64개</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SM당 최대 쓰레드 수</td>
+      <td style="text-align: center">2048개</td>
+      <td style="text-align: center">SM당 최대 블록 수</td>
+      <td style="text-align: center">32개</td>
+    </tr>
+  </tbody>
+</table>
+
+<center> 
+table 1. RTX 3090 스펙 
+</center>
+
+<h2 id="3-gpu와-cuda-core">3. GPU와 CUDA core</h2>
+<hr />
+
+<p>일반적으로 <strong>GPU</strong>를 잘쓴다는 것은 무엇일까요? 여러가지 의미가 있겠지만, 보통 GPU를 잘 다룬다는 것은 Utilization은 최대한 100%로 유지하면서, task를 처리하는 것일 겁니다. 즉 <strong>GPU</strong>의 사용량은 최대로(효과적으로) 유지하면서 나의 작업을 빠르게 처리하는 것이 보통 GPU를 잘 다룬다는 것일 겁니다.</p>
+
+<p>그리고 실은(어찌보면 당연한 것이겠지만) 우리가 할당할 수 있는 thread의 개수와 block의 개수는 <strong>GPU</strong>별로 다르며, 또한 한번에 연산가능한 숫자와 한 Kernel function이 할당 받을 수 있는 thread와 block의 개수도 <strong>GPU</strong>의 제원을 통해 어느정도 확인 가능 합니다.</p>
+
+<p>따라서 우리는 우리가 사용하고자하는 <strong>GPU</strong>의 사양을 명확하게 알고, CUDA 프로그래밍을 시도해야겠습니다.</p>
+
+<p>일단 가장 먼저 봐야하는 것은 당연하게도 CUDA core의 개수인데요, CUDA Core의 개수는 말 그대로 CUDA core의 총 개수를 의미하는 것이기 때문에, SM당 CUDA코어 수와 SM개수를 곱하는 것으로 구할 수 있습니다. 또한 기본적으론 CUDA core의 개수가 우리가 사용하고자 하는 <strong>GPU</strong>의 <strong>한번에 연산 가능한 thread의 총 개수</strong>라고 보면 될 것 같습니다 :)</p>
+
+<p>여기서 한가지 의문이 드는데요, 한번에 연산 가능한 thread의 총 개수가 RTX 3090의 개수라고하면, 할당 가능한 총 쓰레드의 개수는 다를까요??</p>
+
+<p>정답은 다르다입니다. 이를 위해서 확인 해봐야 하는 것은 SM당 최대 쓰레드 수인데요. <strong>GPU</strong>에서 쓰레드를 할당 한다는 것은, <strong>GPU</strong>를 사용해 한번에 연산한다는 것과는 다른 의미였습니다…</p>
+
+<h2 id="4-thread-할당과-warp-연산">4. thread 할당과 warp 연산</h2>
+<hr />
+
+<p>그러면 한번에 연산 가능한 최대 개수가 8704개라는 것과 할당 가능한 thread의 개수가 차이가 나는 이유가 무엇일까요?? 이는 CUDA 코어와 쓰레드의 차이에 대해 이해 해야합니다.</p>
+
+<p>그냥 쉽게 말하자면, <strong>CUDA 코어는 실제 연산을 수행하는 물리적 계산 장치</strong>이고, <strong>쓰레드는 작업을 나누기 위한 논리적 작업 단위</strong>이기 때문입니다.</p>
+
+<p>어찌보면 모두가 알고 있는 것인데, 제대로 생각해본적이 없는 것 같습니다 :)</p>
+
+<p>그렇다면 우리가 thread를 할당할 때 최대 몇개까지 할당할 수 있을까요??</p>
+
+<p>정답은  $2048 * 68 = 139264 \; 개입니다. 그렇다면 왜 2048개의 thread까지 할당할 수 있을까요?? 이는 <strong>GPU</strong>에서의 warp연산과 스케줄링을 이해 해야합니다.</p>
+
+<p>GPU에서 연산을 처리할 때, 기본적으로 SM은 thread의 스케줄링과 실행을 담당하게 됩니다. 이때 SM의 thread를 warp 단위로 묶어서 처리하게 되는데, warp는 주로 32개의 thread가 1개로 묶여 작업하게 됩니다.</p>
+
+<p>이는 무슨 이야기냐면, SM은 쿠다 코어를 32개를 1개로 묶어 동시에 연산을 시키게 되는데요, RTX 3090은 SM 안에 쿠다 코어가 128개 씩 존재하니, 총 4개의 warp가 동시에 실행된다고 볼 수 있습니다.</p>
+
+<p>마지막으로 SM당 할당 가능한 최대 warp의 숫자는 64개이므로 $64 * 32 = 2048 \; 개까지 할당 가능합니다.</p>
+
+<h2 id="5-thread-할당과-block-할당">5. thread 할당과 block 할당</h2>
+<hr />
+
+<p>마지막으로 block에 대한 이야기인데요, 일반적으로 CUDA를 배운다고 하면, thread의 묶음을 block로 배우곤합니다.</p>
+
+<p>물론 맞는 이야기입니다만, 오늘은 GPU에서 할당되는 연산과 엮어서 같이 볼 예정이므로, block당 thread의 최대개수와 SM당 block의 최대개수를 동시에 보면서 이야기 하겠습니다.</p>
+
+<p>우선 기본적으로 block은 thread의 묶음이 맞습니다. 그래서 우리가 CUDA에서 맨처음 하는 것은 thread 개수와 block 개수를 정하게 되죠, <strong>기본적으로 CUDA는 받은 thread개수와 block개수를 SM이 최대한 공평하게 나누어 가지려고 시도</strong>합니다. 지금의 경우에는 68개의 <strong>SM이 최대한 공평하게</strong> 나누어 가지게되겠네요.</p>
+
+<p>이 때, <strong>SM은 최대 32개</strong>의 block까지 할당 가능합니다. 또한 한 block당 thread의 최대 개수는 <strong>1024개</strong>까지입니다. 이 점을 주목하며 한번 생각 해보겠습니다.</p>
+
+<p>만약 CUDA를 아래와 같이 코딩한다면 GPU에는 어떻게 할당이 될까요?</p>
+
+<pre><code class="language-CPP">#include &lt;cuda_runtime.h&gt;
+#include &lt;stdio.h&gt;
+
+__global__ void printThreadInfo() {
+    // Global ID 계산
+    int globalIdx = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // 블록 ID와 쓰레드 ID 출력
+    printf("BlockIdx.x: %d, ThreadIdx.x: %d, Global ID: %d\n", blockIdx.x, threadIdx.x, globalIdx);
+}
+
+int main(){
+    int threadsPerBlock = 128;
+    int numBlocks = 4;
+    printThreadInfo&lt;&lt;&lt;numBlocks, threadsPerBlock&gt;&gt;&gt;();
+}
+</code></pre>
+
+<p>이경우 CUDA는 4개의 SM에 Block을 하나씩 할당하여 128개의 thread씩, 총 512개의 thread를 할당할 것입니다.</p>
+
+<p>또한 RTX 3090기준으론 하나의 SM에 128개의 쿠다 코어가 존재하니 GPU는 한번에 512개의 값을 연산할 수 있을 것입니다.</p>
+
+<p>그렇다면 남은 SM은 어떻게 될까요??</p>
+
+<h2 id="6-block할당과-gpu성능">6. block할당과 GPU성능</h2>
+<hr />
+
+<p>이 때 CUDA 프로그래밍의 묘미가 발생하게 됩니다.</p>
+
+<p>실은 위의 방식은 예제이기 때문에, 간단하게 이야기했지만, 현재의 상태에선 남은 <strong>64개의 SM은 활용하고 있지 않습니다.</strong></p>
+
+<p>즉 우리가 효과적으로 GPU를 활용하기 위해선, 어떻게하면 SM을 효율적으로 사용할 수 있을지를 고민해야합니다.</p>
+
+<p>지금의 경우, 우리의 CUDA 코어는 128개이므로 한번 연산할때 128번이상 계산하지는 못할 것입니다.</p>
+
+<p>또 SM의 개수는 68개이지만, block는 32개씩할당이 가능합니다. 연산만 놓고 봤을땐, 한번에 $128 * 68 = 8704\;번 계산되겠죠? 즉 GPU가 한번 딸깍하면 8704번 덧셈합니다.</p>
+
+<p>우리는 이런 환경에서 어떻게 데이터를 잘게 쪼개어서 효과적으로 연산할지를 고민해야합니다.</p>
+
+<p>여기서 추가적으로 고려 해봐야하는 것도 있습니다. 워프의 기본단위는 32입니다. 즉 하나의 thread는 32개씩 연산이됩니다. 32의 배수로 할당하는 것이 좋을까요?</p>
+
+<p>혹은 128개의 thread를 68개의 block으로 할당할수도, 32개의 thread를 272개의 block에 할당할 수도 있을 것입니다. 두개의 차이는 무엇일까요? 둘다 RTX3090은 한번에 연산할 것입니다.</p>
+
+<p>block의 개수는 68개의 SM에맞추어 배수로 설정하는 것이 좋을까요?? thread의 처리와 block의 처리중 어느것을 우선하여 처리할까요? 예를들면, 272개의 block에 128개의 thread를 할당하면 어떻게 될까요??</p>
+
+<p>많은 질문이 새롭게 떠오르면 즐거운 밤입니다.</p>
+
+<p>감사합니다.</p>]]></content><author><name>Jeyoung Lee</name></author><category term="CUDA" /><category term="GPU" /><category term="multiprocessing" /><summary type="html"><![CDATA[0. 시작하며]]></summary></entry><entry><title type="html">Attention And Transofrmer</title><link href="https://ign0relee.github.io/Attention-And-Transformer.html" rel="alternate" type="text/html" title="Attention And Transofrmer" /><published>2021-03-23T14:00:00+09:00</published><updated>2021-03-23T14:00:00+09:00</updated><id>https://ign0relee.github.io/Attention-And-Transformer</id><content type="html" xml:base="https://ign0relee.github.io/Attention-And-Transformer.html"><![CDATA[<p><br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.</p>
 
 <p><br />학교 발표용 자료로, 자세한 내용은 생략하고, 간단하게 정리했습니다.</p>
 
@@ -16,7 +188,7 @@
 
 <iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETyN47a79QpHsDDfaEBQTKUBPFK1412g9uMFzh7b9r4pCw?e=v46CRM&amp;action=embedview&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe>
 
-</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Deep Learning" /><category term="Machine Learning" /><category term="Keras" /><category term="Tensorflow" /><category term="Attention" /><category term="Transformer" /><category term="PersonalStudy" /><summary type="html"><![CDATA[Attnetion Mechanism과 Trnasformer를 정리해보았습니다.]]></summary></entry><entry><title type="html">Tensorflow with Keras</title><link href="http://localhost:4000/Tensorflow-With-Keras.html" rel="alternate" type="text/html" title="Tensorflow with Keras" /><published>2020-12-18T22:00:00+09:00</published><updated>2020-12-18T22:00:00+09:00</updated><id>http://localhost:4000/Tensorflow-With-Keras</id><content type="html" xml:base="http://localhost:4000/Tensorflow-With-Keras.html"><![CDATA[<p><br /> Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.</p>
+</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Deep Learning" /><category term="Machine Learning" /><category term="Keras" /><category term="Tensorflow" /><category term="Attention" /><category term="Transformer" /><category term="PersonalStudy" /><summary type="html"><![CDATA[Attnetion Mechanism과 Trnasformer를 정리해보았습니다.]]></summary></entry><entry><title type="html">Tensorflow with Keras</title><link href="https://ign0relee.github.io/Tensorflow-With-Keras.html" rel="alternate" type="text/html" title="Tensorflow with Keras" /><published>2020-12-18T22:00:00+09:00</published><updated>2020-12-18T22:00:00+09:00</updated><id>https://ign0relee.github.io/Tensorflow-With-Keras</id><content type="html" xml:base="https://ign0relee.github.io/Tensorflow-With-Keras.html"><![CDATA[<p><br /> Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.</p>
 
 <p><br /> Tensorflow2 Document를 따라 제작하였으며,  내용은 거의 같습니다.</p>
 
@@ -32,7 +204,7 @@
 
 <iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETbk37N6YRtKuTZeu5S53WEBiZL6zAazIIqxCTWiyqDJxw?e=8O1qsW&amp;action=embedview&amp;wdAr=1.7777777777777776" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe>
 
-</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Deep Learning" /><category term="Machine Learning" /><category term="Keras" /><category term="Tensorflow" /><category term="Distributed Training" /><category term="Sub-Classing" /><category term="PersonalStudy" /><summary type="html"><![CDATA[Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.]]></summary></entry><entry><title type="html">03. Data Science With RAPIDS Cupy Part 02</title><link href="http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part02.html" rel="alternate" type="text/html" title="03. Data Science With RAPIDS Cupy Part 02" /><published>2020-08-19T22:00:00+09:00</published><updated>2020-08-19T22:00:00+09:00</updated><id>http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part02</id><content type="html" xml:base="http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part02.html"><![CDATA[<p><br /><br /></p>
+</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Deep Learning" /><category term="Machine Learning" /><category term="Keras" /><category term="Tensorflow" /><category term="Distributed Training" /><category term="Sub-Classing" /><category term="PersonalStudy" /><summary type="html"><![CDATA[Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.]]></summary></entry><entry><title type="html">03. Data Science With RAPIDS Cupy Part 02</title><link href="https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part02.html" rel="alternate" type="text/html" title="03. Data Science With RAPIDS Cupy Part 02" /><published>2020-08-19T22:00:00+09:00</published><updated>2020-08-19T22:00:00+09:00</updated><id>https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part02</id><content type="html" xml:base="https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part02.html"><![CDATA[<p><br /><br /></p>
 
 <p>안녕하세요, 두번째 챕터 Cupy Part 02입니다.</p>
 
@@ -538,7 +710,7 @@
 
 <p><a href="https://numpy.org/doc/">Numpy Document</a></p>
 
-<p><a href="https://docs.cupy.dev/en/stable/">Cupy Document</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="cupy" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 두번째 챕터 Cupy Part 02입니다.]]></summary></entry><entry><title type="html">02. Data Science With RAPIDS Cupy Part 01</title><link href="http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part01.html" rel="alternate" type="text/html" title="02. Data Science With RAPIDS Cupy Part 01" /><published>2020-08-09T22:00:00+09:00</published><updated>2020-08-09T22:00:00+09:00</updated><id>http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part01</id><content type="html" xml:base="http://localhost:4000/Data-Science-With-RAPIDS-Cupy-Part01.html"><![CDATA[<p><br /><br /></p>
+<p><a href="https://docs.cupy.dev/en/stable/">Cupy Document</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="cupy" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 두번째 챕터 Cupy Part 02입니다.]]></summary></entry><entry><title type="html">02. Data Science With RAPIDS Cupy Part 01</title><link href="https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part01.html" rel="alternate" type="text/html" title="02. Data Science With RAPIDS Cupy Part 01" /><published>2020-08-09T22:00:00+09:00</published><updated>2020-08-09T22:00:00+09:00</updated><id>https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part01</id><content type="html" xml:base="https://ign0relee.github.io/Data-Science-With-RAPIDS-Cupy-Part01.html"><![CDATA[<p><br /><br /></p>
 
 <p>안녕하세요, 두번째 챕터 Cupy Part 01입니다.</p>
 
@@ -992,7 +1164,7 @@
 
 <p>질문은 제가 활동하고 있는 사이트 Devstu에서 부탁드리겠습니다.</p>
 
-<p><a href="https://devstu.co.kr">질문 하러 가기</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="cupy" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 두번째 챕터 Cupy Part 01입니다.]]></summary></entry><entry><title type="html">01. RAPIDS Installation</title><link href="http://localhost:4000/Data-Science-With-RAPIDS-Install.html" rel="alternate" type="text/html" title="01. RAPIDS Installation" /><published>2020-08-02T22:00:00+09:00</published><updated>2020-08-02T22:00:00+09:00</updated><id>http://localhost:4000/Data-Science-With-RAPIDS-Install</id><content type="html" xml:base="http://localhost:4000/Data-Science-With-RAPIDS-Install.html"><![CDATA[<p><br /><br /></p>
+<p><a href="https://devstu.co.kr">질문 하러 가기</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="cupy" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 두번째 챕터 Cupy Part 01입니다.]]></summary></entry><entry><title type="html">01. RAPIDS Installation</title><link href="https://ign0relee.github.io/Data-Science-With-RAPIDS-Install.html" rel="alternate" type="text/html" title="01. RAPIDS Installation" /><published>2020-08-02T22:00:00+09:00</published><updated>2020-08-02T22:00:00+09:00</updated><id>https://ign0relee.github.io/Data-Science-With-RAPIDS-Install</id><content type="html" xml:base="https://ign0relee.github.io/Data-Science-With-RAPIDS-Install.html"><![CDATA[<p><br /><br /></p>
 
 <p>우선 첫번째 챕터 설치부터 살펴보겠습니다.</p>
 
@@ -1123,7 +1295,7 @@
 
 <p><a href="https://devstu.co.kr">질문 하러 가기</a></p>
 
-<p>감사합니다! 다음주에 뵙겠습니다.</p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="Cudf" /><category term="CuML" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[우선 첫번째 챕터 설치부터 살펴보겠습니다. 솔직히 설치 부분은 비교적 간단하기 때문에, 굳이 보시지 않으셔도 상관없습니다. 다만, 설치시에 문제가 있으시던가 하는 것을 방지하기 위하여 그리고 RAPIDS공식 홈페이지에 대해 알려드리기 위하여, 작성하였습니다. Enviroment 제가 사용한 환경은 다음과 같습니다. Ubuntu &gt;= 18.04 LST Anaconda Python &gt;= 3.6.8 RAPIDS(stable) &gt;= 0.12 CUDA &gt;= 10.0 Cudnn &gt;= 7.6 NUMPY &gt;= 1.16.1 여러분들은 각자가 원하는 환경으로 구성하시면 됩니다. 다만, 이 칼럼에서는 저랑 비교적 똑같은 환경을 구축하시는것을 추천드립니다.]]></summary></entry><entry><title type="html">00. Data Science With RAPIDS Introduction</title><link href="http://localhost:4000/Data-Science-With-RAPIDS-Intro.html" rel="alternate" type="text/html" title="00. Data Science With RAPIDS Introduction" /><published>2020-08-02T19:00:00+09:00</published><updated>2020-08-02T19:00:00+09:00</updated><id>http://localhost:4000/Data-Science-With-RAPIDS-Intro</id><content type="html" xml:base="http://localhost:4000/Data-Science-With-RAPIDS-Intro.html"><![CDATA[<p><br /><br />
+<p>감사합니다! 다음주에 뵙겠습니다.</p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="Cudf" /><category term="CuML" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[우선 첫번째 챕터 설치부터 살펴보겠습니다. 솔직히 설치 부분은 비교적 간단하기 때문에, 굳이 보시지 않으셔도 상관없습니다. 다만, 설치시에 문제가 있으시던가 하는 것을 방지하기 위하여 그리고 RAPIDS공식 홈페이지에 대해 알려드리기 위하여, 작성하였습니다. Enviroment 제가 사용한 환경은 다음과 같습니다. Ubuntu &gt;= 18.04 LST Anaconda Python &gt;= 3.6.8 RAPIDS(stable) &gt;= 0.12 CUDA &gt;= 10.0 Cudnn &gt;= 7.6 NUMPY &gt;= 1.16.1 여러분들은 각자가 원하는 환경으로 구성하시면 됩니다. 다만, 이 칼럼에서는 저랑 비교적 똑같은 환경을 구축하시는것을 추천드립니다.]]></summary></entry><entry><title type="html">00. Data Science With RAPIDS Introduction</title><link href="https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html" rel="alternate" type="text/html" title="00. Data Science With RAPIDS Introduction" /><published>2020-08-02T19:00:00+09:00</published><updated>2020-08-02T19:00:00+09:00</updated><id>https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro</id><content type="html" xml:base="https://ign0relee.github.io/Data-Science-With-RAPIDS-Intro.html"><![CDATA[<p><br /><br />
   안녕하세요, 그리고 오랜만입니다.</p>
 
 <p>기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다.</p>
@@ -1211,7 +1383,7 @@
 
 <p>질문은 제가 활동하고 있는 사이트 Devstu에서 부탁드리겠습니다.</p>
 
-<p><a href="https://devstu.co.kr">질문 하러 가기</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="Cudf" /><category term="CuML" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 그리고 오랜만입니다. 기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다. 과거 DLI Review를 진행하다가 RAPIDS와 처음 만났습니다. 그리고 RAPIDS는 제게 굉장히 큰 충격을 안겨주었습니다. 기존의 NUMPY와 PANDAS를 GPU에서 돌릴 수 있다. 매서드가 동일하여 이름만 바꾸면 된다. 이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다. 아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다. 그래서 이번기회에 한글로 소개하고자합니다. 아직 학부생이기에 부족한 점도 많고, 제가 모르는 점도 많을 것 같습니다. 다만, GPU를 이용한 데이터 과학에 대해서 한번 생각해보시는 계기가 되셨으면합니다. Enviroment 아쉽지만, 이 칼럼에서는 환경을 조금 제한해야합니다. 공식적으로 지원되고 있는 환경이 넓지는 않습니다. 왠만하면 아래 환경을 따라가시기를 권장드립니다. 또한 리눅스를 사용하기 어려우신 분들은 콜랩환경을 권장드립니다. 다만, 콜랩 환경은 세션을 실행시킬 때 마다, RAPIDS를 새로 인스톨 해주어야합니다. 이와 관련해서는 다시 글을 작성하도록 하겠습니다. Anaconda사용을 권장드립니다. 마지막으로 Ubuntu환경을 작성하기로는 18.04LST 이상이라고 적혀있으나, 제가 사용하는 버전 이상이라는 의미입니다. 또한, 하위 버전에서도 아마 가능할겁니다. 제가 아직 리눅스를 잘 다루지 못하여, 테스트를 할 수 없는점 죄송합니다. Ubuntu &gt;= 18.04 LST Anaconda Python &gt;= 3.6.8 RAPIDS(stable) &gt;= 0.12 CUDA &gt;= 10.0 Cudnn &gt;= 7.6 NUMPY &gt;= 1.16.1]]></summary></entry><entry><title type="html">Fundamentals Of Accelerated Data Science With RAPIDS</title><link href="http://localhost:4000/Nvidia-Accelerated-Data-Science-With-Rapids.html" rel="alternate" type="text/html" title="Fundamentals Of Accelerated Data Science With RAPIDS" /><published>2020-05-31T22:00:00+09:00</published><updated>2020-05-31T22:00:00+09:00</updated><id>http://localhost:4000/Nvidia-Accelerated-Data-Science-With-Rapids</id><content type="html" xml:base="http://localhost:4000/Nvidia-Accelerated-Data-Science-With-Rapids.html"><![CDATA[<p><br />
+<p><a href="https://devstu.co.kr">질문 하러 가기</a></p>]]></content><author><name>Jeyoung Lee</name></author><category term="RAPIDS" /><category term="Python" /><category term="Machine Learning" /><category term="DataScience" /><category term="Cupy" /><category term="Cudf" /><category term="CuML" /><category term="Data" /><category term="Data Science" /><summary type="html"><![CDATA[안녕하세요, 그리고 오랜만입니다. 기나긴 준비 시간이 끝나고, 드디어 새로운 칼럼을 연재하고자합니다. 과거 DLI Review를 진행하다가 RAPIDS와 처음 만났습니다. 그리고 RAPIDS는 제게 굉장히 큰 충격을 안겨주었습니다. 기존의 NUMPY와 PANDAS를 GPU에서 돌릴 수 있다. 매서드가 동일하여 이름만 바꾸면 된다. 이런 이야기들을 처음 그대로 들었을때는 별거 아니다 싶다가도 실제로 돌려보니 굉장히 개선되는 점이 많았습니다. 아직 RAPIDS는 우리나라에 제대로 소개하는 글이 없어서 아쉬웠습니다. 그래서 이번기회에 한글로 소개하고자합니다. 아직 학부생이기에 부족한 점도 많고, 제가 모르는 점도 많을 것 같습니다. 다만, GPU를 이용한 데이터 과학에 대해서 한번 생각해보시는 계기가 되셨으면합니다. Enviroment 아쉽지만, 이 칼럼에서는 환경을 조금 제한해야합니다. 공식적으로 지원되고 있는 환경이 넓지는 않습니다. 왠만하면 아래 환경을 따라가시기를 권장드립니다. 또한 리눅스를 사용하기 어려우신 분들은 콜랩환경을 권장드립니다. 다만, 콜랩 환경은 세션을 실행시킬 때 마다, RAPIDS를 새로 인스톨 해주어야합니다. 이와 관련해서는 다시 글을 작성하도록 하겠습니다. Anaconda사용을 권장드립니다. 마지막으로 Ubuntu환경을 작성하기로는 18.04LST 이상이라고 적혀있으나, 제가 사용하는 버전 이상이라는 의미입니다. 또한, 하위 버전에서도 아마 가능할겁니다. 제가 아직 리눅스를 잘 다루지 못하여, 테스트를 할 수 없는점 죄송합니다. Ubuntu &gt;= 18.04 LST Anaconda Python &gt;= 3.6.8 RAPIDS(stable) &gt;= 0.12 CUDA &gt;= 10.0 Cudnn &gt;= 7.6 NUMPY &gt;= 1.16.1]]></summary></entry><entry><title type="html">Fundamentals Of Accelerated Data Science With RAPIDS</title><link href="https://ign0relee.github.io/Nvidia-Accelerated-Data-Science-With-Rapids.html" rel="alternate" type="text/html" title="Fundamentals Of Accelerated Data Science With RAPIDS" /><published>2020-05-31T22:00:00+09:00</published><updated>2020-05-31T22:00:00+09:00</updated><id>https://ign0relee.github.io/Nvidia-Accelerated-Data-Science-With-Rapids</id><content type="html" xml:base="https://ign0relee.github.io/Nvidia-Accelerated-Data-Science-With-Rapids.html"><![CDATA[<p><br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.</p>
 
 <p><br /><br /> 다섯번째 시간입니다! 이번엔 Fundamentals Of Accelerated Data Science With RAPIDS Review로 돌아왔습니다!</p>
@@ -1538,7 +1710,7 @@
 
 <br /><br /> 감사합니다! 다음번에 다른 포스트로 다시 찾아뵙겠습니다!
 </div>
-</div></div></center></div>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="Data Science" /><category term="RAPIDS" /><category term="Python" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry><entry><title type="html">Fundamentals of Accelerated Computing with CUDA Python Review</title><link href="http://localhost:4000/Nvidia-DLI-CUDA-WITH-Python.html" rel="alternate" type="text/html" title="Fundamentals of Accelerated Computing with CUDA Python Review" /><published>2020-05-24T22:00:00+09:00</published><updated>2020-05-24T22:00:00+09:00</updated><id>http://localhost:4000/Nvidia-DLI-CUDA-WITH-Python</id><content type="html" xml:base="http://localhost:4000/Nvidia-DLI-CUDA-WITH-Python.html"><![CDATA[<p><br />
+</div></div></center></div>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="Data Science" /><category term="RAPIDS" /><category term="Python" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry><entry><title type="html">Fundamentals of Accelerated Computing with CUDA Python Review</title><link href="https://ign0relee.github.io/Nvidia-DLI-CUDA-WITH-Python.html" rel="alternate" type="text/html" title="Fundamentals of Accelerated Computing with CUDA Python Review" /><published>2020-05-24T22:00:00+09:00</published><updated>2020-05-24T22:00:00+09:00</updated><id>https://ign0relee.github.io/Nvidia-DLI-CUDA-WITH-Python</id><content type="html" xml:base="https://ign0relee.github.io/Nvidia-DLI-CUDA-WITH-Python.html"><![CDATA[<p><br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.</p>
 
 <p><br />네번째 시간입니다! 이번엔 Fundamentals of Accelerated Computing with CUDA Python Review로 돌아왔습니다!</p>
@@ -1970,7 +2142,7 @@
 
 <br /><br />다음주에는 Fundamentals of Accelerated Data Science with RAPIDS리뷰로 돌아오겠습니다! 감사합니다!
 </div>
-</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="CUDA" /><category term="Numba" /><category term="Python" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry><entry><title type="html">Image Super Resolution Using AutoEncoder Review</title><link href="http://localhost:4000/Nvidia-Image-Super-Resolution-Using-AutoEncoder.html" rel="alternate" type="text/html" title="Image Super Resolution Using AutoEncoder Review" /><published>2020-05-17T22:00:00+09:00</published><updated>2020-05-17T22:00:00+09:00</updated><id>http://localhost:4000/Nvidia-Image-Super-Resolution-Using-AutoEncoder</id><content type="html" xml:base="http://localhost:4000/Nvidia-Image-Super-Resolution-Using-AutoEncoder.html"><![CDATA[<p><br />
+</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="CUDA" /><category term="Numba" /><category term="Python" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry><entry><title type="html">Image Super Resolution Using AutoEncoder Review</title><link href="https://ign0relee.github.io/Nvidia-Image-Super-Resolution-Using-AutoEncoder.html" rel="alternate" type="text/html" title="Image Super Resolution Using AutoEncoder Review" /><published>2020-05-17T22:00:00+09:00</published><updated>2020-05-17T22:00:00+09:00</updated><id>https://ign0relee.github.io/Nvidia-Image-Super-Resolution-Using-AutoEncoder</id><content type="html" xml:base="https://ign0relee.github.io/Nvidia-Image-Super-Resolution-Using-AutoEncoder.html"><![CDATA[<p><br />
 안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.</p>
 
 <p><br />세번째 시간입니다! 이번엔 Image Super Resolution Using AutoEncoder Review로 돌아왔습니다!</p>
@@ -2364,301 +2536,4 @@
 
 <br /><br />다음주에는 Fundamentals of Accelerated Computing with CUDA Python리뷰로 돌아오겠습니다!
 </div>
-</center></center></center></center>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="AutoEncoder" /><category term="Image Super Resolution" /><category term="Computer Vison" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry><entry><title type="html">Fundamentals of Accelerated Computing with CUDA C/C++ Review</title><link href="http://localhost:4000/Nvidia-DLI-CUDA-WITH-C-C++.html" rel="alternate" type="text/html" title="Fundamentals of Accelerated Computing with CUDA C/C++ Review" /><published>2020-05-10T22:00:00+09:00</published><updated>2020-05-10T22:00:00+09:00</updated><id>http://localhost:4000/Nvidia-DLI-CUDA-WITH-C-C++</id><content type="html" xml:base="http://localhost:4000/Nvidia-DLI-CUDA-WITH-C-C++.html"><![CDATA[<p><br />
-안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.</p>
-
-<p><br />드디어 두번째 시간이 다가왔습니다! 스터디를 이어가게 해주신 손해인님, Nvidia-Korea분들 모두에게 감사드립니다!</p>
-
-<p><br />이번주는 저번주에 말씀드렸듯이  ACCELERATED COMPUTING WITH CUDA C/C++을 진행하였습니다.</p>
-
-<p><br />기존에 CUDA 코딩과 관련하여 공부해보고 싶었지만 NVCC Document는 솔직히 저같은 초보자가 보기에는 조금 어려운 점이 많았습니다.</p>
-
-<p><br />이번 스터디를 통해 관련한 내용을 조금이라도 배울 수 있어서 매우 의미 있는 시간이었습니다. 감사합니다!</p>
-
-<p><br />많이 부족하지만 앞으로도 잘 부탁드리겠습니다.</p>
-
-<p><br />질문있으시면 언제든지 메일을 보내주세요! 기다리고 있겠습니다.</p>
-
-<hr />
-
-<center>
-
-<br /><h1>Review</h1>
-
-<img src="./assets/img/images/DLI_CUDA/Review/1.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-
-<h2>Index </h2><br />
-
-<h4>-Summary</h4>
-
-<h4>-Experience</h4>
-
-
-</center>
-
-<hr />
-
-<p><br /></p>
-<center>
-<h2>Summary</h2>
-<hr />
-
-<br />
-<h4>Accelerating Applications with CUDA C/C++</h4>
-</center>
-
-<p><br /><br />CUDA는 세계에서 가장 성능이 뛰어난 병렬 프로세서인 NVIDA GPU에서 가속화되고 대량 병렬화된 코드를 실행할 수 있도록 해준다. 따라서 CUDA를 배운다면 CPU로는 불가능한 계산을 가능하게 해줍니다.</p>
-
-<p><br /><br />__global__ void GPUFunciont() : __global__ 키워드는 뒤에 함수가 GPU에서 실행된다는 것을 말합니다.</p>
-
-<p><br /><br />GPUFunction«&lt;a, b, c, d, e»&gt;() : GPU함수를 실행시킬 때 “«&lt; … »&gt;”  이런 기호를 쓰는데 a에는 블록 수, b에는 스레드 수, c에는 바이트 수, d에는 스트림, e에는 뭐라한다. 우린 이런 함수를 커널이라고 부릅니다.</p>
-
-<p><br /><br />cudaDeviceSynchronize() : 실행 커널은 비동기적이기 때문에 CPU 코드는 커널의 끝을 기다리지 않는다. 따라서 이 코드를 호출한다면 커널이 완료될 때까지 CPU코드를 기다리게 할 수 있습니다.</p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Writing Application Code for the GPU</h4>
-</center>
-<div style="text-align: left">
-<br />
-cudaDeviceSynchronize() 이 코드를 어디에서 호출하냐에 따라 결과가 달라집니다.
-<img src="./assets/img/images/DLI_CUDA/Review/2.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Launching Parallel Kernels</h4>
-</center>
-<div style="text-align: left">
-<br /><br />
-&lt;&lt;&lt; NUMBER_OF_BLOCKS, NUMBER_OF_THREADS_PER_BLOCKS&gt;&gt;&gt;
-<br /><br />
-grdiDim.x = NOB, blockDim.x = NOT, blockIdx.x = 특정 블록, threadIdx.x = 특정 스레드
-<br /><br />
-커널을 이용해 다음과 같이 바꿔줄 수 있습니다.
-<br /><br />
-<img src="./assets/img/images/DLI_CUDA/Review/3.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Allocating Memory to be accessed on the GPU and the CPU</h4>
-</center>
-<div style="text-align: left">
-<br /><br />
-Malloc() 함수로 메모리를 할당 받은 포인터는 GPU 코드를 참조 할 수 없습니다. 
-
-<br /><br />GPU 코드를 실행하기 위해서는 cudaMallocManaged() 함수를 사용해야 하며 free() 함수 말고 cudaFree() 함수를 통해 해제를 해줘야한다.
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Accelerated Computing Summary</h4>
-</center>
-<div style="text-align: left">
-<br />
-
-<ul>
-<li>At this point in time you have accomplished all of the following lab objectives:</li><br />
-	<ul>
-	<li>C/C++을 이용하여 CPU functions와 GPU kernel 연결하는 프로그램을 쓰고, 컴파일하고, 돌려보았습니다.</li><br />
-	<li>Execution Configuration을 사용하여 병렬 스레드 계층 제어를 해보았습니다.</li><br />
-	<li>Loop 문을 리팩토링하여 GPU에서 병렬로 실행했습니다.</li><br />
-	<li>CPU와 GPU에 메모리를 할당하고, 비우고를 해보았습니다.</li><br />
-	<li>CUDA 코드를 이용한 Error Handling을 해보았습니다.</li><br />
-	</ul>
-	
-<li>Now you will complete the final objective of the lab:</li><br />
-	<ul>
-	<li>CPU-only applications을 가속화 하였습니다.</li><br />
-	</ul>
-</ul>
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Iterative Optimizations with the NVIDIA Command Line Profiler</h4>
-</center>
-<div style="text-align: left">
-<br /><br />Nsys는 Nsight Systems 명령어 도구입니다. 
-
-<br /><br />응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
-
-<br /><img src="./assets/img/images/DLI_CUDA/Review/4.png" width="656" height="800" layout="responsive" alt="" class="mb3" />
-<br /><img src="./assets/img/images/DLI_CUDA/Review/5.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Asynchronous Memory Prefetching</h4>
-</center>
-<div style="text-align: left">
-
-<br /><br />호스트나 디바이스가 메모리에 접근하려고 하면 Page fault가 발생하여 필요한 데이터를 일괄적으로 이동합니다. 
-
-<br /><br />이런 Page fault와 요구로 인한 메모리의 이동의 오버헤드를 줄이기 위한 기술을 비동기 메모리 프리패치라고 합니다. 
-
-<br /><br />코드를 사용하기 전에 통합메모리를 비동기적으로 이동시켜 GPU 커널과 CPU 성능을 높일 수 있습니다.
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Managing Accelerated Application Memory with CUDA Unified Memory and nsys Summary</h4>
-</center>
-<div style="text-align: left">
-<br />
-<ul>
-<li>At this point in the lab, you are able to:</li><br />
-	<ul>
-	<li>Nsight Systems 명령 줄 도구 (nsys)를 사용하여 가속화 된 응용 프로그램 성능을 profile할 수 있었습니다..</li><br />
-	<li>"Streaming MultiProcessors"에 대한 이해를 활용하여 실행 구성을 최적화 해보았습니다.</li><br />
-	<li>Page Faulting 및 Data Migrations과 관련하여 "Unified Memory"의 동작을 이해했습니다.</li><br />
-	<li>성능 향상을 도모한 Page Faulting및 Data Migrations을 줄이기 위해 "Asynchronous Memory Prefetching"을 사용해보았습니다.</li><br />
-	<li>Iterative Development Cycle를 사용하여 애플리케이션을 빠르게 가속화하고 배포해보았습니다.</li><br />
-	<li>학습을 통합하고 애플리케이션을 반복적으로 가속화, 최적화 및 배포 할 수있는 능력을 강화하기위해 실습의 최종 실습을 진행했습니다. </li><br />
-	<li>완료 한 후 시간과 관심이있는 사람들을 위해 만들어진 "고급 컨텐츠"섹션을 진행했습니다.</li><br />
-	</ul>
-</ul>
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Iterative Optimizations with the NVIDIA Command Line Profiler</h4>
-</center>
-<div style="text-align: left">
-
-<br />Nsys는 Nsight Systems 명령어 도구다. 응용 프로그램의 GPU 활동 요약, CUDA API 호출 및 Unified Memory 활동에 대한 정보를 출력해줍니다.
-
-<br /><br /><img src="./assets/img/images/DLI_CUDA/Review/6.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Concurrent CUDA Streams</h4>
-</center>
-<div style="text-align: left">
-
-<br />CUDA 프로그래밍에서 스트림은 순서대로 실행되는 명령이 연속적으로 있습니다.
-
-<br /><br />하지만 기본 스트림 외에 다른 스트림을 생성하여 활용한다면 다중 작업을 서로 다른 스트림에서 동시에 수행할 수 있습니다. 
-
-<br /><br />기본 스트림이 아닌 다른 스트림에서 커널을 실행하기 위해서는 커널의 4번째 인수를 사용해야 합니다.
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Manual Device Memory Allocation and Copying</h4>
-</center>
-<div style="text-align: left">
-
-<br />cudaMallocManaged()와 cudaMemPrefetchAsync()도 충분히 성능이 좋지만 좀 더 좋게하는 방법이 있습니다.
-
-<br /><br />cudaMalloc()은 메모리를 GPU에 직접 할당하지만 반환되는 포인터는 호스트 코드로 접근이 불가능합니다.
-
-<br /><br />cudaMallocHost()는 CPU에 직접 할당하고 마찬가지로 디바이스 코드는 접근이 불가능합니다.
-
-<br /><br />cudaMemcpy()를 통해 호스트와 디바이스간에 메모리를 복사해서 사용할 수 있습니다.
-
-<br /><br />마무리로 고정된 메모리는 cudaFreeHost()와 cudaFree()로 해제하면 됩니다.
-</div>
-<p><br /></p>
-<hr />
-
-<p><br /></p>
-
-<center>
-<h4>Asynchronous Streaming, and Visual Profiling for Accelerated Applications with CUDA C/C++ Summary</h4>
-</center>
-<div style="text-align: left">
-<br />
-<ul>
-<li>At this point in the lab, you are able to:</li><br />
-	<ul>
-	<li>"Nsight Systems"를 사용하여 GPU 가속 CUDA 애플리케이션의 타임 라인을 시각적으로 Profile했습니다.</li><br />
-	<li>Nsight Systems를 사용하여 GPU 가속 CUDA 애플리케이션에서 최적화 기회를 식별하고 활용해 보았습니다.</li><br />
-	<li>가속화 된 애플리케이션에서 동시 커널 실행을 위해 CUDA 스트림을 활용 해보았습니다.</li><br />
-	<li>마지막 연습에서 신체-시뮬레이터를 가속화하기 위해 배운 모든 것을 적용 할 수 있었습니다. </li><br />
-	</ul>
-</ul>
-
-
-<hr />
-<center>
-<h2>Experience</h2>
-</center>
-<hr />
-
-<br />
-<center> 
-<h4>Experience-이제영</h4>
-</center>
-<br /><br />솔직히 nvcc 도큐멘트 보다 잘 만든것 같다.
-<br /><br />NVCC를 너무 쉽게 잘 설명해주었다.
-<br /><br />Nsight을 왜 설치 하는지 드디어 알게 되었다.
-<br /><br />C/C++의 이해가 조금 부족해도 잘 할 수 있었다.
-<br /><br />NVCC를 처음 접하는 사람에게 추천합니다.
-<br /><br />NVIDIA CUDA를 이해하고 싶은 사람에게 추천합니다.
-<br /><br />분산 컴퓨팅에 대해 이해하고 싶은 사람에게 추천합니다.
-<br /><br />
-<hr />
-<br /><br />
-<center> 
-<h4>Experience-박경훈</h4>
-</center>
-<br /><br />GPU와 CPU를 다룰 수 있어 흥미로웠다.
-<br /><br />Nsight System을 통해 시각적으로 볼 수 있어 재미있다.
-<br /><br />단계 별로 비교하는 문제에서 좀 더 구체적인 솔루션이 있었으면 좋겠다
-<br /><br />GPU에 관심이 있는 사람에게 추천해주고 싶다.
-<hr />
-<center>
-<h2>인증서</h2>
-</center>
-<hr />
-<img src="./assets/img/images/DLI_CUDA/In/박경훈.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-<br />
-<img src="./assets/img/images/DLI_CUDA/In/이제영.png" width="656" height="400" layout="responsive" alt="" class="mb3" />
-
-<br /><br />
-<hr />
-
-<br />긴 글 읽어주셔서 감사합니다! 이번주는 내용이 많으면서도 적어서 최대한 흐름만 적기위해 노력하다보니 더 길어졌습니다!
-
-<br />마찬가지로 모든 리뷰는 주관적이라는점 알아주시면 감사하겠습니다!
-
-<br />앞으로 저희의 리뷰를 통해 Nvidia에서 열리는 DLI 프로그램에 대해 궁금하신점을 해결해가셨으면 좋겠습니다!
-
-<br />지금 리뷰는 내용 요약이 들어가있지만, 실제로 DLI프로그램을 진행하면 직접 코딩하시면서 하실 수 있습니다.
-
-<br />이런 흐름이다~ 라고 생각하시고 보시면 좋을 것 같습니다 ㅎㅎ 감사합니다!
-
-<br />다음주에는 Image Super Resolution Using Autoencoders리뷰로 돌아오겠습니다!
-</div>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="CUDA" /><category term="NVCC" /><category term="C/C++" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry></feed>
+</center></center></center></center>]]></content><author><name>Jeyoung Lee</name></author><category term="Nvidia Deep Learning Institute" /><category term="Review" /><category term="DLI" /><category term="AutoEncoder" /><category term="Image Super Resolution" /><category term="Computer Vison" /><category term="Deep Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[안녕하세요, NVIDIA DEEP LEARNING INSTITUTE REVIEW를 진행하고 있는 이제영입니다.]]></summary></entry></feed>
