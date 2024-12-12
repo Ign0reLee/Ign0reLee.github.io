@@ -5,7 +5,7 @@ show_date: true
 img: images/images/tree.jpg
 title: Understanding task units of CUDA
 published: true
-date: 2024-12-12 18:50:00 0900
+date: 2024-12-12 14:00:00 0900
 tags: [CUDA, GPU, multiprocessing,]
 author: Jeyoung Lee
 mathjax: yes 
