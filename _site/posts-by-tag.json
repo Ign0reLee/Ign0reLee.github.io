@@ -210,6 +210,8 @@
   "tag" : "GPU",
   "posts" : [
       
+      "./RAY_with_RAPIDS_Part_1.html",
+      
       "./Understanding_task_units_of_CUDA.html"
       
     ]
@@ -342,6 +344,8 @@
   "tag" : "RAPIDS",
   "posts" : [
       
+      "./RAY_with_RAPIDS_Part_1.html",
+      
       "./Data-Science-With-RAPIDS-Cupy-Part02.html",
       
       "./Data-Science-With-RAPIDS-Cupy-Part01.html",
@@ -351,6 +355,16 @@
       "./Data-Science-With-RAPIDS-Intro.html",
       
       "./Nvidia-Accelerated-Data-Science-With-Rapids.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "RAY",
+  "posts" : [
+      
+      "./RAY_with_RAPIDS_Part_1.html"
       
     ]
   } ,
@@ -407,6 +421,36 @@
     
       
   {
+  "tag" : "XGBoost",
+  "posts" : [
+      
+      "./RAY_with_RAPIDS_Part_1.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "cuDF",
+  "posts" : [
+      
+      "./RAY_with_RAPIDS_Part_1.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "cuML",
+  "posts" : [
+      
+      "./RAY_with_RAPIDS_Part_1.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "cupy",
   "posts" : [
       
@@ -421,6 +465,8 @@
   {
   "tag" : "multiprocessing",
   "posts" : [
+      
+      "./RAY_with_RAPIDS_Part_1.html",
       
       "./Understanding_task_units_of_CUDA.html"
       

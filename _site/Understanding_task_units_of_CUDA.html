@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Understanding task units of CUDA - Jeyoung Lee's Blog</title>
-	<link rel="canonical" href="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html">
+	<link rel="canonical" href="http://localhost:4000/Understanding_task_units_of_CUDA.html">
 	<meta name="description" content="A day without laughter is a day wasted.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -18,14 +18,14 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ign0relee.github.io"},
+    "@id": "http://localhost:4000"},
   "headline": "Understanding task units of CUDA",
   "abstract": "",
     "keywords": "CUDA, GPU, multiprocessing",
-    "wordcount": "960",
-    "image": ["https://ign0relee.github.io/assets/imgimages/images/tree.jpg"],
-  "datePublished": "2024-12-12 18:50:00 +0900",
-  "dateModified": "2024-12-12 18:50:00 +0900",
+    "wordcount": "999",
+    "image": ["http://localhost:4000/assets/imgimages/images/tree.jpg"],
+  "datePublished": "2024-12-11 14:00:00 +0900",
+  "dateModified": "2024-12-11 14:00:00 +0900",
   "author": {
     "@type": "Person",
     "name": "Jeyoung Lee"},
@@ -34,27 +34,27 @@
     "logo": {
         "@type": "ImageObject",
         "encodingFormat": "image/png",
-        "contentUrl": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png",
-        "url": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png"},
+        "contentUrl": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png",
+        "url": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png"},
     "name" : "Jeyoung Lee's Blog"}
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="https://ign0relee.github.io/Understanding_task_units_of_CUDA.html"/>
+<meta property="og:url" content="http://localhost:4000/Understanding_task_units_of_CUDA.html"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Understanding task units of CUDA"/>
 <meta property="og:description" content=""/>
-<meta property="og:image" content="https://ign0relee.github.io/assets/imgimages/images/tree.jpg"/>
+<meta property="og:image" content="http://localhost:4000/assets/imgimages/images/tree.jpg"/>
 <meta property="og:image:alt" content="Understanding task units of CUDA"/>
 <meta property="og:site_name" content="Jeyoung Lee's Blog" />
-<meta property="article:published_time" content="2024-12-12 18:50:00 +0900" />
-<meta property="article:modified_time" content="2024-12-12 18:50:00 +0900" />
+<meta property="article:published_time" content="2024-12-11 14:00:00 +0900" />
+<meta property="article:modified_time" content="2024-12-11 14:00:00 +0900" />
 <meta property="article:tag" content="CUDA, GPU, multiprocessing" />
 <meta property="fb:admins" content="ar.maybach" />
 <!-- Schema.org markup for Google -->
 <meta itemprop="name" content="Understanding task units of CUDA">
 <meta itemprop="description" content="">
-<meta itemprop="image" content="https://ign0relee.github.io/assets/imgimages/images/tree.jpg">
+<meta itemprop="image" content="http://localhost:4000/assets/imgimages/images/tree.jpg">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
@@ -62,8 +62,8 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="960"/>
-<meta name="twitter:image:src" content="https://ign0relee.github.io/assets/img/images/images/tree.jpg">
+<meta data-rh="true" name="twitter:data1" content="999"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/images/images/tree.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -151,7 +151,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
+        <time datetime="2024-12-11T14:00:00+09:00">December 11, 2024</time>
       </span>
     
     
@@ -171,7 +171,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
+            <h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 라고하며 보통 CUDA 프로그래밍에서 Grid는 작업을 구성하는 가장 상위 단위로, 하나의 GPU는 여러 Grid를 동시에 실행할 수 있습니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
         </div>
   </div>
 </section>
@@ -271,7 +271,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Understanding task units of CUDA">
 
-<meta itemprop="datePublished" content="2024-12-12T18:50:00+09:00">
+<meta itemprop="datePublished" content="2024-12-11T14:00:00+09:00">
 
     <div class="page-image">
       <div class="cover-image" style="background: url('./assets/img/images/images/tree.jpg') center no-repeat; background-size: cover;"></div>
@@ -291,7 +291,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
+        <time datetime="2024-12-11T14:00:00+09:00">December 11, 2024</time>
       </span>
     
     
@@ -335,11 +335,11 @@
     <div class="share-hover side">
         <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons side" id="sidebar-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -373,7 +373,7 @@
 
 <p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p>
 
-<p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p>
+<p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 라고하며 보통 CUDA 프로그래밍에서 Grid는 작업을 구성하는 가장 상위 단위로, 하나의 GPU는 여러 Grid를 동시에 실행할 수 있습니다.</p>
 
 <p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p>
 
@@ -407,7 +407,7 @@
     <tr>
       <td style="text-align: center">CUDA core 개수</td>
       <td style="text-align: center">8704개</td>
-      <td style="text-align: center">블록당 최대 쓰레드 수</td>
+      <td style="text-align: center">블록당 최대 쓰레드 수의 곱</td>
       <td style="text-align: center">1024개</td>
     </tr>
     <tr>
@@ -463,7 +463,7 @@ table 1. RTX 3090 스펙
 
 <p>정답은  $2048 * 68 = 139264 \; 개입니다. 그렇다면 왜 2048개의 thread까지 할당할 수 있을까요?? 이는 <strong>GPU</strong>에서의 warp연산과 스케줄링을 이해 해야합니다.</p>
 
-<p>GPU에서 연산을 처리할 때, 기본적으로 SM은 thread의 스케줄링과 실행을 담당하게 됩니다. 이때 SM의 thread를 warp 단위로 묶어서 처리하게 되는데, warp는 주로 32개의 thread가 1개로 묶여 작업하게 됩니다.</p>
+<p>GPU에서 연산을 처리할 때, SM은 thread를 <strong>Warp(32개의 쓰레드 단위)</strong>로 묶어 실행합니다. SM은 한 번에 4개의 Warp를 병렬로 실행하며, 나머지 Warp는 대기 상태로 스케줄링됩니다.</p>
 
 <p>이는 무슨 이야기냐면, SM은 쿠다 코어를 32개를 1개로 묶어 동시에 연산을 시키게 되는데요, RTX 3090은 SM 안에 쿠다 코어가 128개 씩 존재하니, 총 4개의 warp가 동시에 실행된다고 볼 수 있습니다.</p>
 
@@ -478,7 +478,7 @@ table 1. RTX 3090 스펙
 
 <p>우선 기본적으로 block은 thread의 묶음이 맞습니다. 그래서 우리가 CUDA에서 맨처음 하는 것은 thread 개수와 block 개수를 정하게 되죠, <strong>기본적으로 CUDA는 받은 thread개수와 block개수를 SM이 최대한 공평하게 나누어 가지려고 시도</strong>합니다. 지금의 경우에는 68개의 <strong>SM이 최대한 공평하게</strong> 나누어 가지게되겠네요.</p>
 
-<p>이 때, <strong>SM은 최대 32개</strong>의 block까지 할당 가능합니다. 또한 한 block당 thread의 최대 개수는 <strong>1024개</strong>까지입니다. 이 점을 주목하며 한번 생각 해보겠습니다.</p>
+<p>이 때, <strong>SM은 최대 32개</strong>의 block까지 할당 가능합니다. 또한 한 block당 thread의 최대 개수는 <strong>1024개</strong>까지입니다. 이는 1차원 thread가 기준으로 만약 2차원 이상이라면 각 차원의 곱이 해당 개수까지만 할당 가능합니다. 이 점을 주목하며 한번 생각 해보겠습니다.</p>
 
 <p>만약 CUDA를 아래와 같이 코딩한다면 GPU에는 어떻게 할당이 될까요?</p>
 
@@ -515,7 +515,7 @@ int main(){
 
 <p>즉 우리가 효과적으로 GPU를 활용하기 위해선, 어떻게하면 SM을 효율적으로 사용할 수 있을지를 고민해야합니다.</p>
 
-<p>지금의 경우, 우리의 CUDA 코어는 128개이므로 한번 연산할때 128번이상 계산하지는 못할 것입니다.</p>
+<p>지금의 경우, 각 SM은 한 번에 128개의 쓰레드만 처리할 수 있으므로 4개의 블록이 128개의 쓰레드를 포함할 때, GPU는 한 번에 512개의 쓰레드를 실행할 수 있습니다. 나머지 SM은 비활성 상태로 남게 됩니다.</p>
 
 <p>또 SM의 개수는 68개이지만, block는 32개씩할당이 가능합니다. 연산만 놓고 봤을땐, 한번에 $128 * 68 = 8704\;번 계산되겠죠? 즉 GPU가 한번 딸깍하면 8704번 덧셈합니다.</p>
 
@@ -553,11 +553,11 @@ int main(){
     <div class="share-hover inline">
         <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
         <div class="share-icons inline" id="post-end-icons">
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="facebook" href="https://facebook.com/sharer.php?u=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="reddit" href="http://www.reddit.com/submit?url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: https://ign0relee.github.io/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Understanding task units of CUDA&url=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Understanding_task_units_of_CUDA.html&title=Understanding task units of CUDA&summary=&source=http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=Understanding task units of CUDA&body=%0A%0ARead more here: http://localhost:4000/Understanding_task_units_of_CUDA.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
         </div>
     </div>
@@ -600,6 +600,37 @@ int main(){
 <div class="recent-box">
   <h2 class="page-subtitle">Recent posts</h2>
   <div class="recent-list">
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./RAY_with_RAPIDS_Part_1.html" class="recent-item-img" style="background: url('./assets/img/./images/RAPIDS/Main.png') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>RAY with RAPIDS Part-1</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        4 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
     
       
         <div class="recent-item">
@@ -694,37 +725,6 @@ int main(){
         </div>
       
     
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./Data-Science-With-RAPIDS-Cupy-Part02.html" class="recent-item-img" style="background: url('./assets/img/images/RAPIDS/Main.png') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>03. Data Science With RAPIDS Cupy Part 02</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        5 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
   </div>
 </div> <!-- End Recent-Box -->
 
@@ -792,7 +792,7 @@ int main(){
             </a>
         </div>
         <div class="copyright">
-          <p>2024 &copy; Jeyoung Lee</p>
+          <p>2025 &copy; Jeyoung Lee</p>
         </div>
         <div class="footer-nav">
             <div>
@@ -950,14 +950,14 @@ int main(){
     }
 
     function copyToClipboard() {
-      navigator.clipboard.writeText('https://ign0relee.github.io/Understanding_task_units_of_CUDA.html').then(function() {
+      navigator.clipboard.writeText('http://localhost:4000/Understanding_task_units_of_CUDA.html').then(function() {
       alerts = document.getElementsByClassName('alert')
       for (i=0; i < alerts.length; i++){
         alerts[i].innerHTML='\u00ABlink copied\u00BB';
         setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
       };
       }, function() {
-        prompt("Unable to copy, please use this link:", "https://ign0relee.github.io/Understanding_task_units_of_CUDA.html");
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/Understanding_task_units_of_CUDA.html");
       });
     }
 

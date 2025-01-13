@@ -1,6 +1,8 @@
 {
   "posts" : [
     
+    "./RAY_with_RAPIDS_Part_1.html",
+    
     "./Understanding_task_units_of_CUDA.html",
     
     "./Attention-And-Transformer.html",

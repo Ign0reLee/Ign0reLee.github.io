@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Archive - Jeyoung Lee's Blog</title>
-	<link rel="canonical" href="https://ign0relee.github.io/archive.html">
+	<link rel="canonical" href="http://localhost:4000/archive.html">
 	<meta name="description" content="A day without laughter is a day wasted.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -18,12 +18,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ign0relee.github.io"},
+    "@id": "http://localhost:4000"},
   "headline": "Archive",
   "abstract": "",
     "keywords": "",
     "wordcount": "43",
-    "image": ["https://ign0relee.github.io/assets/img"],
+    "image": ["http://localhost:4000/assets/img"],
   "datePublished": "",
   "dateModified": "",
   "author": {
@@ -34,17 +34,17 @@
     "logo": {
         "@type": "ImageObject",
         "encodingFormat": "image/png",
-        "contentUrl": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png",
-        "url": "https://ign0relee.github.io/assets/img/branding/MVM-symbol-black.png"},
+        "contentUrl": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png",
+        "url": "http://localhost:4000/assets/img/branding/MVM-symbol-black.png"},
     "name" : "Jeyoung Lee's Blog"}
 }
 </script>
 <!-- Open Graph data -->
-<meta property="og:url" content="https://ign0relee.github.io/archive.html"/>
+<meta property="og:url" content="http://localhost:4000/archive.html"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Archive"/>
 <meta property="og:description" content=""/>
-<meta property="og:image" content="https://ign0relee.github.io/assets/img"/>
+<meta property="og:image" content="http://localhost:4000/assets/img"/>
 <meta property="og:image:alt" content="Archive"/>
 <meta property="og:site_name" content="Jeyoung Lee's Blog" />
 <meta property="article:published_time" content="" />
@@ -54,7 +54,7 @@
 <!-- Schema.org markup for Google -->
 <meta itemprop="name" content="Archive">
 <meta itemprop="description" content="">
-<meta itemprop="image" content="https://ign0relee.github.io/assets/img">
+<meta itemprop="image" content="http://localhost:4000/assets/img">
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
@@ -63,7 +63,7 @@
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
 <meta data-rh="true" name="twitter:data1" content="43"/>
-<meta name="twitter:image:src" content="https://ign0relee.github.io/assets/img/">
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
@@ -240,7 +240,7 @@
 		<div class="post">
 			
 
-			<a class="post-list-title" href="./Understanding_task_units_of_CUDA.html">Understanding task units of CUDA</a>
+			<a class="post-list-title" href="./RAY_with_RAPIDS_Part_1.html">RAY with RAPIDS Part-1</a>
 			
 
   <span class = "post-card-meta">
@@ -252,7 +252,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2024-12-12T18:50:00+09:00">December 12, 2024</time>
+        <time datetime="2025-01-12T00:00:00+09:00">January 12, 2025</time>
       </span>
     
     
@@ -272,7 +272,46 @@
   </span>
 
 			<div class="post-excerpt">
-				<h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 보통 GPU하나가 하나의 grid라는 형태로 이해하고 대략적으로 코딩하게 됩니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각 단위의 의미와 한번에 <strong>병렬 처리</strong> 하여 연산한다는 것 정도를...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
+				<h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>혹시 여러분들은 NVIDIA Tech Blog를 구독 하시나요? 저는 NVIDIA에서 Ambassador로 활동하고 있기 때문에, NVIDIA Tech Blog를 자주 보는 편입니다.</p><p>그 중 제가 주로 활동하고 있는 GPU-based Data Science와 관련한 글들은 실습까지 꼭 진행해 보는데요, 지난 2024년 12월 20일 RAPIDS를 RAY와 함께 사용하는 좋은 글이 올라왔습니다.<a href="https://developer.nvidia.com/blog/accelerating-gpu-analytics-using-rapids-and-ray/" target="_blank">Accelerating GPU Analytics Using RAPIDS and RAY LINK</a></p><p>실은 저는 RAPIDS를 사용할때 RAY를 굉장히 많이 활용하고 있습니다.로주로 RAY를 사용한 Hyper Paramter Optimization을 자주 수행하는데요, RAY Tune을 RAPIDS와 함께 사용하면 굉장히 빠른 속도로 HPO를 수행할 수 있습니다.</p><p>따라서 오늘은 RAY와 RAPIDS를 사용한 Data Engineering Pipelines 실습과 XGBoost를 사용하여 Hyper Parameter...<a class="read-more" href="./RAY_with_RAPIDS_Part_1.html"> read more</a>
+			</div>
+		</div>
+	
+		<div class="post">
+			
+
+			<a class="post-list-title" href="./Understanding_task_units_of_CUDA.html">Understanding task units of CUDA</a>
+			
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-12-11T14:00:00+09:00">December 11, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        4 minute read
+      
+    </span>
+  
+  
+  </span>
+
+			<div class="post-excerpt">
+				<h2 id="0-시작하며">0. 시작하며</h2><hr /><p>안녕하세요, 가톨릭 대학교 박사 과정 이제영입니다.</p><p>오랫동안 blog를 방치하고 있었는데, 가끔은 제가 공부했던 것이나 생각나는 것을 정리해두면 좋을 것 같아 새로운 형태로 다시 시작하게 되었습니다.</p><p>오늘은 Cupy를 이용하여 CUDA Custom Kernel을 작성하는 연습을 진행하다가 CUDA에서 헷갈렸던 부분을 다시 정리해봅니다.</p><p>개인적으로 정리하는 것이니 제가 이렇게 이해했다 정도로 참고해주시면 감사하겠습니다.</p><h2 id="1-thread-block-grid와-gpu">1. Thread, Block, Grid와 GPU</h2><hr /><p>CUDA를 사용한 GPU 프로그래밍시 <strong>thread</strong>와 <strong>block</strong>, <strong>grid</strong>에 대한 이야기는 항상 등장합니다.</p><p>CUDA를 배울땐, thread가 모여서 block, block이 모여서 grid 라고하며 보통 CUDA 프로그래밍에서 Grid는 작업을 구성하는 가장 상위 단위로, 하나의 GPU는 여러 Grid를 동시에 실행할 수 있습니다.</p><p>그리고 일반적으로 thread와 block를 내가 할당할수 있다는 것과 어떻게 할당 해야 하는지,</p><p>각...<a class="read-more" href="./Understanding_task_units_of_CUDA.html"> read more</a>
 			</div>
 		</div>
 	
@@ -312,45 +351,6 @@
 
 			<div class="post-excerpt">
 				<p><br />Attnetion Mechanism과 Trnasformer를 정리해보았습니다.</p><p><br />학교 발표용 자료로, 자세한 내용은 생략하고, 간단하게 정리했습니다.</p><p><br /></p><p><a href="https://www.nvidia.com/ko-kr/training/">참고 사이트1: Nvidia-DLI</a><br /><a href="https://wikidocs.net/31379">참고 사이트2: Wikidocs</a><br /><a href="http://cs231n.stanford.edu/">참고 사이트3: CS231N</a><br /></p><style>.responsive-wrap iframe{ max-width: 100%;}</style><div class="responsive-wrap"><iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETyN47a79QpHsDDfaEBQTKUBPFK1412g9uMFzh7b9r4pCw?e=v46CRM&amp;action=embedview&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe></div><a class="read-more" href="./Attention-And-Transformer.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./Tensorflow-With-Keras.html">Tensorflow with Keras</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2020-12-18T22:00:00+09:00">December 18, 2020</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<p><br /> Tensorflow2에서 Keras를 이용한 다양한 학습 방법들에 대해서 정리해보았습니다.</p><p><br /> Tensorflow2 Document를 따라 제작하였으며,  내용은 거의 같습니다.</p><p><a href="https://www.tensorflow.org/guide/keras/customizing_what_happens_in_fit">참고 사이트1</a><br /><a href="https://www.tensorflow.org/guide/distributed_training?hl=ko">참고 사이트2</a><br /><a href="https://github.com/Ign0reLee/Study_repository/tree/master/Keras">PPT의 코드</a></p><style>.responsive-wrap iframe{ max-width: 100%;}</style><div class="responsive-wrap"><iframe src="https://catholicackr-my.sharepoint.com/:p:/g/personal/dlwpdud_catholic_ac_kr/ETbk37N6YRtKuTZeu5S53WEBiZL6zAazIIqxCTWiyqDJxw?e=8O1qsW&amp;action=embedview&amp;wdAr=1.7777777777777776" width="610px" height="367px" frameborder="0">포함된 <a target="_blank" href="https://office.com">Microsoft Office</a> 프레젠테이션, 제공: <a target="_blank" href="https://office.com/webapps">Office</a></iframe></div><a class="read-more" href="./Tensorflow-With-Keras.html"> read more</a>
 			</div>
 		</div>
 	
@@ -452,7 +452,7 @@
             </a>
         </div>
         <div class="copyright">
-          <p>2024 &copy; Jeyoung Lee</p>
+          <p>2025 &copy; Jeyoung Lee</p>
         </div>
         <div class="footer-nav">
             <div>
