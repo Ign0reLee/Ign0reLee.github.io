@@ -1,0 +1,65 @@
+---
+layout: default
+---
+{% include calculate_relative_base.html %}
+{% capture post_url %}{{ relativebase }}{{ page.url }}{% endcapture %}
+{% assign post_url = post_url | replace: "//", "/" %}
+<section class="hidden">
+  <div class="post">
+      <a  class="post-list-title" href="{{ post_url }}">{{ page.title }}</a>
+      {% include post_meta.html type="post-card-meta" %}
+        <div class="post-excerpt">
+            {{ page.content | markdownify | strip_newlines | truncatewords: 100 }}<a class="read-more" href="{{ post_url }}"> read more</a>
+        </div>
+  </div>
+</section>
+<div class="flex-container transparent">
+  <center>
+  <h1 class="page-title">{{ page.title }}</h1>
+  </center>
+  <p class="page-subtitle">
+    {{ page.subtitle }} <br/>
+    {% for author in page.authors %}
+      <a href="{{ author.url }}" style="text-decoration: none;">{{ author.name }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}<br/>
+    {% for affiliation in page.affiliations %}
+      <a href="{{ affiliation.url }}" style="text-decoration: none;">{{ affiliation.name }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %} <br/>
+    {% for university in page.universities %}
+      {{ university.name }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}<br/>
+
+    <a href={{ page.papers }} style="text-decoration: none;">
+    <img  src="https://img.shields.io/badge/%20-paper-97979A?style=flat-square&logo=readthedocs&logoColor=FFFFFF&labelColor=8CA1AF"/>
+    </a>
+    <a href={{ page.github }} style="text-decoration: none;">
+    <img  src="https://img.shields.io/badge/%20-github-97979A?style=flat-square&logo=github&logoColor=FFFFFF&labelColor=181717"/>
+    </a>
+    <a href={{ page.arxiv }} style="text-decoration: none;">
+    <img  src="https://img.shields.io/badge/%20-arXiv-97979A?style=flat-square&logo=arXiv&logoColor=FFFFFF&labelColor=B31B1B"/>
+    </a>   
+  </p>
+  <p>
+  </p>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
+    <!-- <div class="page-image">
+      <div class="cover-image" style="background: url('{{ relativebase }}assets/img/{{ page.img }}') center no-repeat; background-size: cover;"></div>
+    </div>
+    </div> -->
+    <div class="wrapper">
+      <div class="page-content">
+        <br/>
+        {% include sidebar.html context="post" class="side" id="sidebar" %}
+        {{page.content | markdownify}}
+        {% if page.toc %}{% include sidebar-toc.html %}{% endif %}
+        {% include sidebar.html context="post" class="inline" id="post-end" %}
+      </div>
+    </div> <!-- End Wrapper -->
+    <!-- {{page.title}} : {{page.subtitle}} -->
+  </article>
+
+  <center> {{page.title}} : {{page.subtitle}}</center>
+  <!-- </div> -->
+</div>
