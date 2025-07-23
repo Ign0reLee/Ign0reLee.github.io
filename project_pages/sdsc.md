@@ -7,7 +7,7 @@ authors:
     - name: Jeyoung Lee
       url: https://ign0relee.github.io/
     - name: Hochul Kang
-      url:  hhttps://cvmilab-cuk.github.io/
+      url:  https://cvmilab-cuk.github.io/
 affiliations:
     - name: Department of Digital Media Engineering
       url:  https://mtc.catholic.ac.kr/mtc/index.do
@@ -21,7 +21,7 @@ published: true
 
 <figure style="text-align: center;">
     <img src="./assets/img/projects/sdsc/fig2.png" width="656" height="400" layout="responsive" alt="" class="mb3">
-    <figcaption style="font-size: 14px; color: #666;">Fig. our proposed methods, a structure-aware metric function for time series elf-supervised representation learning</figcaption>
+    <figcaption style="font-size: 20px; color: #666; text-align:center; margin-top:10px;">Figure 2. our proposed methods, a structure-aware metric function for time series elf-supervised representation learning</figcaption>
 </figure>
 
 <center>
@@ -55,10 +55,85 @@ published: true
 <br/>
 
 
-|||
-|:---:|:---:|
-|<img src="./assets/img/projects/sdsc/fig1_a.png" width="656" height="400" layout="responsive" alt="" class="mb3">| <img src="./assets/img/projects/sdsc/fig1_b.png" width="656" height="400" layout="responsive" alt="" class="mb3">|
-|Inverted|Scaled|
-|<img src="./assets/img/projects/sdsc/fig1_c.png" width="656" height="400" layout="responsive" alt="" class="mb3">| <img src="./assets/img/projects/sdsc/fig1_d.png" width="656" height="400" layout="responsive" alt="" class="mb3">|
-|zero|noise-shifted|
+<!-- Image swiper -->
+<center><h2>MSE vs SDSC Example</h2></center>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="./assets/img/projects/sdsc/fig1_a.png" style="width:100%;" />
+      <figcaption style="text-align:center; margin-top:10px;">
+        <em>Figure 1_a. Inverted Example <br/> Inverted : MSE=0.0200, SDSC=0.0000</em>
+      </figcaption>
+    </div>
+    <div class="swiper-slide">
+      <img src="./assets/img/projects/sdsc/fig1_b.png" style="width:100%;" />
+      <figcaption style="text-align:center; margin-top:10px;">
+        <em>Figure 1_b. Scaled Example <br/>Scaled 0.5x : MSE=0.1249, SDSC=0.6667 <br/>Scaled  2x : MSE=0.4995, SDSC=0.6667</em>
+      </figcaption>
+    </div>
+    <div class="swiper-slide">
+      <img src="./assets/img/projects/sdsc/fig1_c.png" style="width:100%;" />
+      <figcaption style="text-align:center; margin-top:10px;">
+        <em>Figure 1_c. Constant Zero Exmaple <br/> Zero : MSE=0.4995, SDSC=0.0000 <br/>Scaled  2x : MSE=0.4995, SDSC=0.6667</em>
+      </figcaption>
+    </div>
+    <div class="swiper-slide">
+      <img src="./assets/img/projects/sdsc/fig1_d.png" style="width:100%;" />
+      <figcaption style="text-align:center; margin-top:10px;">
+        <em>Figure 1_c. Shifted, Noise Example<br/> Shifted &pm; 1: MSE=1.0000, SDSC=0.3887<br/> Noise : MSE=0.5062, SDSC=0.1137</em>
+      </figcaption>
+    </div>  
+  </div>
+  
 
+  <!-- 네비게이션 버튼 -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- 페이지네이션 (dots) -->
+  <div class="swiper-pagination"></div>
+</div>
+<p>
+    Although numerically favorable, the output is structurally misaligned and functionally misleading. Such insensitivity to
+    signal semantics is particularly problematic for physiological data like EEG or ECG, where subtle structural components often carry diagnostic significance. Therefore, exclusive reliance on amplitude-centric metrics may lead to semantically incorrect reconstructions.
+</p>
+
+
+<center>
+    <h2>Definition of SDSC</h2>
+</center>
+<p>
+    The SDSC extends DSC's concept to the signal domain by interpreting the area under the curve as
+    a proxy for the waveform structure.
+</p>
+<center>
+    $$ S(t) = E(t) \cdot R(t) $$
+    $$ M(t) = \frac{ (|E(t)| + |R(t)|) - (|E(t)| - |R(t)|) }{2} $$
+    $$ SDSC(E(t), R(t)) = \frac{ 2 \cdot \int  H(S(t)) \cdot M(t) \, dt }{ \int (E(t) + R(t)) \, dt} $$
+</center>
+<p>
+    The objective in signal representation learning is
+    to maximize SDSC toward 1. However, directly computing SDSC via integration is infeasible in practice, as realworld signals, such as EEG, lack known analytical expressions. 
+    To address this, a discrete approximation is adopted.
+</p>
+<center>
+    $$ SDSC(E(t), R(t)) \approx \frac{  2 \cdot \sum H(S(s)) \cdot M(s) }{ \sum (E(s) + R(s)) } $$
+</center>
+<p>
+    Since the SDSC score is bounded in [0, 1], we can define the
+    loss as 1 − SDSC(·).
+</p>
+<center>
+    $$  \mathcal{L}_{sdsc} = 1 - SDSC(E(S), R(S)) $$
+</center>
+
+<p>
+However, the use of the Heaviside step function in the SDSC introduces discontinuities, which can negatively affect the stability of training. 
+To enable stable gradient-based optimization, a smooth approximation of the Heaviside function is introduced. 
+The following sigmoid-based formulation is used, with a sharpness parameter &alpha;.
+</p>
+
+<center>
+    $$ \hat{H}(x) = \frac{1}{1 + e^{-\alpha x}} \quad $$
+    $$ SDSC(E(t), R(t)) \approx \frac{  2 \cdot \sum \hat{H}(S(s)) \cdot M(s) }{ \sum (E(s) + R(s)) }  $$
+</center>
