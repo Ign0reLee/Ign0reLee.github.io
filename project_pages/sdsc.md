@@ -61,25 +61,25 @@ published: true
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <img src="./assets/img/projects/sdsc/fig1_a.png" style="width:100%;" />
-      <figcaption style="text-align:center; margin-top:10px;">
+      <figcaption style="14px;text-align:center; margin-top:10px; margin-bottom: 20px;">
         <em>Figure 1_a. Inverted Example <br/> Inverted : MSE=0.0200, SDSC=0.0000</em>
       </figcaption>
     </div>
     <div class="swiper-slide">
       <img src="./assets/img/projects/sdsc/fig1_b.png" style="width:100%;" />
-      <figcaption style="text-align:center; margin-top:10px;">
+      <figcaption style="text-align:center; margin-top:10px; margin-bottom: 20px;">
         <em>Figure 1_b. Scaled Example <br/>Scaled 0.5x : MSE=0.1249, SDSC=0.6667 <br/>Scaled  2x : MSE=0.4995, SDSC=0.6667</em>
       </figcaption>
     </div>
     <div class="swiper-slide">
       <img src="./assets/img/projects/sdsc/fig1_c.png" style="width:100%;" />
-      <figcaption style="text-align:center; margin-top:10px;">
+      <figcaption style="text-align:center; margin-top:10px; margin-bottom: 20px;">
         <em>Figure 1_c. Constant Zero Exmaple <br/> Zero : MSE=0.4995, SDSC=0.0000 <br/>Scaled  2x : MSE=0.4995, SDSC=0.6667</em>
       </figcaption>
     </div>
     <div class="swiper-slide">
       <img src="./assets/img/projects/sdsc/fig1_d.png" style="width:100%;" />
-      <figcaption style="text-align:center; margin-top:10px;">
+      <figcaption style="text-align:center; margin-top:10px; margin-bottom: 20px;">
         <em>Figure 1_c. Shifted, Noise Example<br/> Shifted &pm; 1: MSE=1.0000, SDSC=0.3887<br/> Noise : MSE=0.5062, SDSC=0.1137</em>
       </figcaption>
     </div>  
@@ -137,3 +137,24 @@ The following sigmoid-based formulation is used, with a sharpness parameter &alp
     $$ \hat{H}(x) = \frac{1}{1 + e^{-\alpha x}} \quad $$
     $$ SDSC(E(t), R(t)) \approx \frac{  2 \cdot \sum \hat{H}(S(s)) \cdot M(s) }{ \sum (E(s) + R(s)) }  $$
 </center>
+
+<center>
+<h2>
+    Live DEMO
+</h2>
+</center>
+
+<!-- <iframe
+	src="https://ignorelee-sdsc-demo.hf.space"
+	frameborder="0"
+	width="850"
+	height="800"
+></iframe> -->
+
+
+<div style="position: relative; width: 100%; height:100%;padding-bottom: 170%;">
+  <iframe src="https://ignorelee-sdsc-demo.hf.space"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen></iframe>
+</div>
