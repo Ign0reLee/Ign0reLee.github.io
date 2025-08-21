@@ -5,4 +5,4 @@ subtitle:  LINK for NVIDIA
 permalink: link
 ---
 
-[LINK](https://drive.google.com/drive/folders/17wDQRX8Qna1rgoLZn2-PIWH24-TB4HYb?usp=sharing)
+[LINK](https://drive.google.com/file/d/1OJ69euzk4lRz9yn6J9djjzA5l5EAkWFC/view?usp=sharing)
