@@ -5,7 +5,7 @@ subtitle:  Manufacturing AI Transformation (AX) Challenge
 permalink: ksa_ai
 ---
 
-# Manufacturing AI Transformation (AX) Challenge 추가 강의 자료
+# 추가 강의 자료
 
 |제목|내용|링크|
 |---|---|---|
