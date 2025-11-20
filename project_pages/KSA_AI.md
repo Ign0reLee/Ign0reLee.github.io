@@ -2,7 +2,7 @@
 layout: project_post
 title: KSA_AI
 subtitle:  Manufacturing AI Transformation (AX) Challenge
-permalink: link
+permalink: ksa_ai
 ---
 
 # Manufacturing AI Transformation (AX) Challenge 추가 강의 자료
