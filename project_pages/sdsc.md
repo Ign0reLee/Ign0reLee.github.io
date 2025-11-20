@@ -30,8 +30,6 @@ published: true
     </h2>
 </center>
 
-[LINK Drive](https://drive.google.com/drive/folders/18wjg8lqu7DdONsNRHqeJVCiA2Kx8YopV?usp=drive_link)
-
 <div style="max-width: 600px; margin: 0 auto; font-size:15px; text-align: justify; line-height: 1.0">
     
     We propose the Signal Dice Similarity Coefficient (SDSC), a structure-aware metric function for time series self-supervised representation learning. 
