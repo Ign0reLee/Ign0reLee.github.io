@@ -12,3 +12,6 @@ permalink: link
 [경량화](https://drive.google.com/drive/folders/1wqoWkPOdx_fgGSIP80LcMeMOmzHYokYa?usp=sharing)
 
 [RAPIDS정답](https://drive.google.com/drive/folders/18wjg8lqu7DdONsNRHqeJVCiA2Kx8YopV?usp=sharing)
+
+
+[EDSO정답](https://drive.google.com/drive/folders/1l6uS4L-Mibn6fRaceduHBFI_edSOOdM3?usp=sharing)
