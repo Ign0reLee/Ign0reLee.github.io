@@ -13,10 +13,11 @@ permalink: about:output_ext
         <a href='{{ site.website }}'><img src="{{ relativebase }}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{site.author}}"></a>
       </div>
       <h3>{{site.author}}</h3>
-      <p class="subtitle">{{site.about-author}}</p>
-    </section>
-    <section class="about-body">
-      <h3>publications</h3>
+
+      {{site.about-author}}
+
+      <h3>publications</h3>          
+      <ul class="publications-list">
       Lee, Jeyoung, and Hochul Kang. "PIPformers: Patch based inpainting with vision transformers for generalize paintings." Computer Animation and Virtual Worlds 35.3 (2024): e2270.
       Lee, Jeyoung, and Hochul Kang. "A study of duck detection using deep neural network based on RetinaNet model in smart farming." Journal of Animal Science and Technology 66.4 (2024): 846.
       이제영, and 강호철. "딥러닝 기반 Dental CT 2D 영상의 의미론적 분할 방법 연구." 한국 HCI 학회 학술대회 (2023): 1050-1054.
@@ -24,11 +25,19 @@ permalink: about:output_ext
       이제영, and 강호철. "AI 기반 객체 검출 알고리즘을 이용한 오리 검출에 관한 연구." 한국농공학회 학술대회초록집 2022 (2022): 275-275.
       이제영, and 강호철. "사람 부분 분할을 이용한 어깨 및 허리 선 검출 연구." 한국정보과학회 학술발표논문집 (2021): 804-806.
       구정수, 이제영, and 강호철. "딥러닝을 이용한 초상화에서의 사람 검출." 한국정보과학회 학술발표논문집 (2021): 807-809.
+      </ul>
       <h3>under review</h3>
+      <ul class="under-review-list">
       Lee, Jeyoung, and Hochul Kang. "SYNAPSE: Synergizing an Adapter and Finetuning for High-Fidelity EEG Synthesis from a CLIP-Aligned Encoder." arXiv preprint arXiv:2511.17547 (2025).
       Lee, Jeyoung, and Hochul Kang. "SDSC: A Structure-Aware Metric for Semantic Signal Representation Learning." arXiv preprint arXiv:2507.14516 (2025).
+      </ul>
       <h3>book</h3>
+      <ul class="book-list">
       <a href="https://wikidocs.net/book/13459">Fundamentals of Accelerated Data Science with NVIDIA RAPIDS</a>
+      </ul>
+
+    </section>
+    <section class="about-body">      
       <ul class="contact-list">
       {% if site.twitter %}
         <li class="twitter"><a class="twitter" href="https://twitter.com/{{site.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
